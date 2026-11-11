@@ -1,8 +1,8 @@
 name: Update SNU events
 
 on:
-  schedule:
-    - cron: '0 21 * * *' # UTC 21:00 = 다음 날 한국 시간 06:00
+  # 예약 실행은 뺐다. 러너에서는 www.snu.ac.kr 이 응답을 중간에 끊어 실패한다(2026-11-11).
+  # 매일 갱신은 scripts/update_local.cmd 를 PC 예약 작업으로 돌린다.
   workflow_dispatch:
 
 permissions:
