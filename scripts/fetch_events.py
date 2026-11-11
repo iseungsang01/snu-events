@@ -71,14 +71,15 @@ def parse_detail(html: str) -> dict:
 
 
 def get(session: requests.Session, *, params: dict, tries: int = 4):
-    """Reference retry policy: 5xx/connection/timeout, 2/4/8 seconds, no 4xx retry."""
+    """Retry transient HTTP/transport failures after 2/4/8 seconds, never 4xx."""
     for attempt in range(1, tries + 1):
         try:
             response = session.get(LIST_URL, params=params, timeout=30)
             response.raise_for_status()
             return response
         except requests.RequestException as exc:
-            retryable = isinstance(exc, (requests.Timeout, requests.ConnectionError)) or (
+            retryable = isinstance(exc, (requests.Timeout, requests.ConnectionError,
+                                        requests.exceptions.ChunkedEncodingError)) or (
                 exc.response is not None and exc.response.status_code in {500, 502, 503, 504})
             if not retryable or attempt == tries:
                 raise
@@ -109,7 +110,7 @@ def fetch_all(today: date) -> list[dict]:
                 break
         # Any request failure aborts publication, preserving the previous complete file.
         for idx, row in events.items():
-            row.update(parse_detail(get(session, params={"md": "v", "bbsidx": idx}, tries=2).text))
+            row.update(parse_detail(get(session, params={"md": "v", "bbsidx": idx}).text))
             time.sleep(REQUEST_INTERVAL)
     return list(events.values())
 
