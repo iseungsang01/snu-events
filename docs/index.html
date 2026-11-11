@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="이번 주 서울대학교의 공연, 전시, 특강을 날짜순으로 한눈에 확인하세요.">
+<title>이번 주 서울대 행사 한눈에</title>
+<style>
+:root{color-scheme:light dark;--bg:#f6f7f9;--surface:#fff;--ink:#17263e;--muted:#59677b;--line:#dce2e9;--navy:#142e53;--accent:#c7f075;--soft:#edf3fc;--shadow:0 6px 24px #17263e06}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}button,input{font:inherit}button,a,input{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:inherit}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #4c83d1;outline-offset:4px}button{color:var(--ink)}.wrap{width:min(1120px,calc(100% - 48px));margin:auto}.masthead{background:var(--surface);border-bottom:1px solid var(--line)}.brandline{display:flex;align-items:center;justify-content:space-between;padding:20px 0}.brand{display:flex;align-items:center;gap:12px;font-weight:750;letter-spacing:.03em}.mark{display:grid;place-items:center;width:38px;height:38px;background:var(--navy);color:white;border-radius:10px;font-size:13px;letter-spacing:-.03em}.source-top{font-size:12px;color:var(--muted);text-decoration:none}.hero{display:flex;justify-content:space-between;align-items:flex-end;padding:42px 0 38px;gap:20px}.eyebrow{font-size:11px;font-weight:750;letter-spacing:.18em;color:var(--muted)}h1{font-size:clamp(29px,4vw,42px);line-height:1.3;letter-spacing:-.055em;margin:10px 0 12px}h1 span{color:#537334}.intro{margin:0;color:var(--muted)}.today{flex-shrink:0;text-align:right;font-size:13px;color:var(--muted)}.today strong{display:block;font-size:23px;color:var(--ink);letter-spacing:-.04em}.periods{display:flex;gap:6px;padding-bottom:18px;overflow:auto}.periods button{white-space:nowrap;padding:10px 22px;border:1px solid transparent;border-radius:8px;background:transparent;color:var(--muted);font-weight:650}.periods button[aria-pressed=true]{background:var(--navy);color:white}.periods button:hover{border-color:var(--line)}main{padding:30px 0 64px}.layout{display:grid;grid-template-columns:232px minmax(0,1fr);gap:36px}.filters{align-self:start;position:sticky;top:24px}.filter-label{display:block;font-weight:750;font-size:13px;margin:0 0 10px}.search{position:relative;margin-bottom:27px}.search input{width:100%;border:1px solid var(--line);border-radius:9px;padding:12px;background:var(--surface);color:var(--ink);min-width:0}.filter-heading{display:flex;justify-content:space-between;align-items:baseline}.reset{border:0;background:none;color:var(--muted);font-size:12px;padding:4px}.reset:hover{text-decoration:underline}.chips{display:flex;flex-direction:column;gap:7px}.chip{display:flex;align-items:center;gap:10px;text-align:left;border:1px solid var(--line);background:var(--surface);padding:9px 12px;border-radius:8px;font-size:13px}.chip::before{content:"";width:12px;height:12px;border:1px solid #91a0b5;border-radius:3px}.chip[aria-pressed=true]{background:var(--soft);border-color:#7a9dc9}.chip[aria-pressed=true]::before{background:var(--navy);box-shadow:inset 0 0 0 2px var(--surface)}.chip small{margin-left:auto;color:var(--muted)}.filter-note{font-size:12px;color:var(--muted);margin:12px 0 25px}.guide{padding:17px;border-radius:10px;background:var(--soft);font-size:12px;color:var(--muted)}.guide strong{display:block;color:var(--ink);margin-bottom:5px}.results-head{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding:0 0 17px;margin-bottom:24px}.results-head h2{font-size:19px;letter-spacing:-.04em;margin:0}.range{font-size:12px;color:var(--muted)}.count{font-size:13px;background:var(--accent);color:#253b13;border-radius:20px;padding:4px 12px;white-space:nowrap;font-weight:650}.notice{font-size:13px;border:1px solid var(--line);border-radius:8px;padding:12px 15px;margin-bottom:22px;color:var(--muted);background:var(--surface)}.group{margin-bottom:30px}.group-title{display:flex;gap:10px;align-items:center;font-size:14px;margin:0 0 12px}.group-title span{font-size:11px;color:var(--muted);font-weight:400}.group-title .dot{width:7px;height:7px;border-radius:50%;background:#728d51}.cards{display:grid;gap:12px}.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;box-shadow:var(--shadow)}.card-top{display:flex;align-items:center;gap:8px;margin-bottom:9px}.badge{display:inline-block;background:var(--soft);color:var(--ink);border-radius:4px;padding:2px 7px;font-size:11px;font-weight:650}.badge[data-type="공연"]{background:#f8e8e2;color:#85523c}.badge[data-type="전시"]{background:#e7eee1;color:#476338}.badge[data-type="대회·공모"]{background:#f5eedb;color:#786022}.status{font-size:11px;color:var(--muted)}.card h4{font-size:17px;line-height:1.55;letter-spacing:-.025em;margin:0 0 9px;overflow-wrap:anywhere}.title-link{text-decoration:none}.title-link:hover{text-decoration:underline;text-underline-offset:4px}.meta{font-size:12px;color:var(--muted);display:flex;gap:5px 18px;flex-wrap:wrap}.summary{font-size:13px;color:var(--muted);overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin:11px 0 0}.card-bottom{display:flex;justify-content:flex-end;margin-top:10px}.original{font-size:12px;font-weight:650;text-decoration:none;color:var(--ink)}.original:hover{text-decoration:underline}.empty{padding:48px 20px;text-align:center;border:1px dashed var(--line);border-radius:12px;color:var(--muted)}.empty strong{color:var(--ink);display:block;font-size:17px;margin-bottom:8px}.empty button{border:1px solid var(--line);background:var(--surface);padding:8px 14px;border-radius:6px;margin-top:16px}footer{border-top:1px solid var(--line);padding:26px 0 32px;font-size:12px;color:var(--muted)}.footer-line{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}footer p{margin:7px 0 0}.skip{position:absolute;top:-60px;padding:10px;background:var(--surface);z-index:2}.skip:focus{top:10px}noscript p{padding:20px}
+@media(max-width:760px){.wrap{width:calc(100% - 32px)}.hero{padding:30px 0 25px;display:block}.today{display:none}.source-top{font-size:11px}.periods{gap:3px}.periods button{padding:9px 16px}.layout{display:block}.filters{position:static;margin-bottom:27px}.search{margin-bottom:16px}.chips{flex-direction:row;flex-wrap:wrap;gap:6px}.chip{font-size:12px;padding:7px 10px;gap:6px}.chip small{display:none}.chip::before{width:10px;height:10px}.guide{display:none}.filter-note{margin:9px 0 0}.card{padding:17px}.card h4{font-size:16px}.results-head{margin-bottom:20px}.meta{display:block}.meta span{display:block;margin-top:3px}main{padding-top:23px}.footer-line{display:block}.footer-line span{display:block;margin-top:5px}}
+@media(prefers-color-scheme:dark){:root{--bg:#111923;--surface:#192331;--ink:#e6edf7;--muted:#abb8ca;--line:#344155;--navy:#c7dcfc;--accent:#bddf83;--soft:#243449;--shadow:none}.mark,.periods button[aria-pressed=true]{color:#142e53}.chip[aria-pressed=true]::before{background:#c7dcfc}h1 span{color:#badb8b}.badge[data-type="공연"]{background:#48332d;color:#f5c2ae}.badge[data-type="전시"]{background:#2c3b2a;color:#c1d8ad}.badge[data-type="대회·공모"]{background:#413b29;color:#e3d09b}}
+.cards{grid-template-columns:minmax(0,1fr)}.card{min-width:0}.meta span{overflow-wrap:anywhere}
+.past-events{border-top:1px solid var(--line);padding-top:18px;margin-top:24px}.past-events summary{cursor:pointer;font-weight:650;margin-bottom:18px}
+</style>
+</head>
+<body>
+<a class="skip" href="#results">행사 목록으로 건너뛰기</a>
+<header class="masthead"><div class="wrap">
+  <div class="brandline"><div class="brand"><span class="mark" aria-hidden="true">SNU</span>캠퍼스 캘린더</div><a class="source-top" href="https://www.snu.ac.kr/snunow/events" target="_blank" rel="noopener noreferrer">SNU 캘린더 ↗</a></div>
+  <div class="hero"><div><div class="eyebrow">YOUR WEEK ON CAMPUS</div><h1>이번 주 서울대 행사 <span>한눈에</span></h1><p class="intro">배움부터 문화까지, 캠퍼스의 다음 일정을 만나보세요.</p></div><div class="today">오늘, 서울<strong id="today-label"></strong></div></div>
+  <nav class="periods" aria-label="조회 기간"><button data-period="today" aria-pressed="false">오늘</button><button data-period="week" aria-pressed="true">이번 주</button><button data-period="next" aria-pressed="false">다음 주</button><button data-period="month" aria-pressed="false">이번 달</button><button data-period="all" aria-pressed="false">전체</button></nav>
+</div></header>
+<main class="wrap"><div class="layout">
+  <aside class="filters" aria-label="행사 필터">
+    <label class="filter-label" for="search">어떤 행사를 찾으세요?</label><div class="search"><input id="search" type="search" placeholder="제목·내용 검색" autocomplete="off"></div>
+    <div class="filter-heading"><p class="filter-label">행사 종류</p><button class="reset" id="reset" type="button">필터 초기화</button></div>
+    <div class="chips" id="chips" role="group" aria-label="종류 선택"></div><p class="filter-note">여러 종류를 함께 선택할 수 있어요.<br>선택하지 않으면 모든 종류를 보여드려요.</p>
+    <div class="guide"><strong>일정을 확인하기 전에</strong>여러 날에 걸친 행사는 별도로 모았어요. 회차별 일정, 휴관일과 신청 기한은 원문을 확인해 주세요.</div>
+  </aside>
+  <section id="results" aria-label="행사 목록" aria-busy="true">
+    <div class="results-head"><div><h2 id="period-title">이번 주의 행사</h2><div class="range" id="range"></div></div><span class="count" id="count" role="status">불러오는 중</span></div>
+    <div id="notice" class="notice" hidden></div><div id="list"><p class="empty">행사를 불러오고 있어요.</p></div>
+  </section>
+</div><noscript><p>행사 목록을 보려면 JavaScript를 켜 주세요. <a href="https://www.snu.ac.kr/snunow/events">SNU 캘린더 원문 보기</a></p></noscript></main>
+<footer><div class="wrap"><div class="footer-line"><span>데이터 출처 · <a href="https://www.snu.ac.kr/snunow/events" target="_blank" rel="noopener noreferrer">서울대학교 SNU 캘린더 ↗</a></span><span id="updated">마지막 갱신 시각 확인 중</span></div><p>행사 정보는 원문이 기준입니다. 모든 날짜와 갱신 시각은 한국 시간(Asia/Seoul) 기준입니다.</p></div></footer>
+<script>
+'use strict';
+const TYPES=['공연','전시','대회·공모','특강·세미나','모집·안내','기타'];
+const LABELS={today:'오늘의 행사',week:'이번 주의 행사',next:'다음 주의 행사',month:'이번 달의 행사',all:'전체 행사'};
+const state={events:[],period:'week',selected:new Set(),query:'',loaded:false};
+const $=id=>document.getElementById(id);
+const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function seoulToday(now=new Date()){
+  const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(now);
+  return ['year','month','day'].map(k=>parts.find(p=>p.type===k).value).join('-');
+}
+// UTC here represents a calendar day, never the visitor's local midnight.
+const dayDate=day=>new Date(day+'T00:00:00Z');
+function addDays(day,n){const d=dayDate(day);d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10)}
+function bounds(period,today){
+  const d=dayDate(today),monday=addDays(today,-((d.getUTCDay()+6)%7));
+  if(period==='today')return [today,today];
+  if(period==='week')return [monday,addDays(monday,6)];
+  if(period==='next')return [addDays(monday,7),addDays(monday,13)];
+  if(period==='month')return [today.slice(0,7)+'-01',new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth()+1,0)).toISOString().slice(0,10)];
+  return ['0000-01-01','9999-12-31'];
+}
+function displayDate(day,year=false){return new Intl.DateTimeFormat('ko-KR',{timeZone:'UTC',...(year?{year:'numeric'}:{}),month:'long',day:'numeric',weekday:'short'}).format(dayDate(day))}
+function inPeriod(event,start,end){return event.begin<=end&&event.end>=start}
+function periodEvents(today){const [start,end]=bounds(state.period,today);return state.events.filter(e=>inPeriod(e,start,end))}
+function filtered(events){const q=state.query.trim().normalize('NFKC').toLocaleLowerCase('ko');return events.filter(e=>(!state.selected.size||state.selected.has(e.type))&&(!q||[e.title,e.summary,e.search_text].join(' ').normalize('NFKC').toLocaleLowerCase('ko').includes(q)))}
+function card(event,today){
+  const multi=event.begin!==event.end;
+  const dates=displayDate(event.begin,true)+(multi?' – '+displayDate(event.end,true):'');
+  const status=multi?(event.begin>today?'시작 예정':event.end<today?'종료':'진행 중'):'';
+  // Only the source's fixed HTTPS origin is accepted as an outbound link.
+  const url=new URL(event.url);const href=url.origin==='https://www.snu.ac.kr'?url.href:'https://www.snu.ac.kr/snunow/events';
+  return `<article class="card"><div class="card-top"><span class="badge" data-type="${esc(event.type)}">${esc(event.type)}</span>${status?`<span class="status">${status}</span>`:''}</div><h4><a class="title-link" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(event.title)}</a></h4><div class="meta"><span>일정 · ${esc(dates)}${event.time?' · '+esc(event.time):''}</span>${event.place?`<span>장소 · ${esc(event.place)}</span>`:''}</div>${event.summary?`<p class="summary">${esc(event.summary)}</p>`:''}<div class="card-bottom"><a class="original" href="${esc(href)}" target="_blank" rel="noopener noreferrer">원문 보기 <span aria-hidden="true">↗</span><span class="sr-only" hidden>${esc(event.title)}</span></a></div></article>`;
+}
+function render(){
+  const today=seoulToday(),[start,end]=bounds(state.period,today);
+  $('today-label').textContent=displayDate(today);
+  $('period-title').textContent=LABELS[state.period];
+  $('range').textContent=state.period==='all'?'수집된 모든 일정 · 종료 후 7일까지 보관':`${displayDate(start,true)} – ${displayDate(end)}${['week','next'].includes(state.period)?' · 월–일':''}`;
+  document.querySelectorAll('[data-period]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.period===state.period));
+  const candidates=periodEvents(today);
+  $('chips').innerHTML=TYPES.map(type=>`<button class="chip" type="button" data-type="${esc(type)}" aria-pressed="${state.selected.has(type)}">${esc(type)}<small>${candidates.filter(e=>e.type===type).length}</small></button>`).join('');
+  if(!state.loaded)return;
+  const events=filtered(candidates).sort((a,b)=>a.begin.localeCompare(b.begin)||a.time.localeCompare(b.time)||a.title.localeCompare(b.title,'ko'));
+  $('count').textContent=`${events.length}개의 행사`;
+  if(!events.length){$('list').innerHTML='<div class="empty"><strong>조건에 맞는 행사가 없어요</strong>다른 기간을 선택하거나 검색어와 종류를 바꿔 보세요.<br><button type="button" id="empty-reset">검색·종류 초기화</button></div>';return}
+  const collapsePast=['week','month'].includes(state.period);
+  const upcoming=events.filter(e=>!collapsePast||e.end>=today);
+  const past=collapsePast?events.filter(e=>e.end<today):[];
+  $('list').innerHTML=renderGroups(upcoming,today)+(past.length?`<details class="past-events"><summary>${state.period==='week'?'이번 주':'이번 달'} 지난 행사 · ${past.length}개</summary>${renderGroups(past,today)}</details>`:'');
+}
+function renderGroups(events,today){
+  const groups=new Map();
+  const multi=events.filter(e=>e.begin!==e.end);
+  for(const e of events.filter(e=>e.begin===e.end)){if(!groups.has(e.begin))groups.set(e.begin,[]);groups.get(e.begin).push(e)}
+  if(multi.length)groups.set('기간 행사',multi);
+  return [...groups].map(([key,items])=>`<section class="group"><h3 class="group-title">${key==='기간 행사'?'<i class="dot" aria-hidden="true"></i>'+key:esc(displayDate(key))}${key===today?' · 오늘':''}<span>${items.length}개</span></h3><div class="cards">${items.map(e=>card(e,today)).join('')}</div></section>`).join('');
+}
+function reset(){state.selected.clear();state.query='';$('search').value='';render()}
+document.querySelector('.periods').addEventListener('click',e=>{const button=e.target.closest('[data-period]');if(button){state.period=button.dataset.period;render()}});
+$('chips').addEventListener('click',e=>{const button=e.target.closest('[data-type]');if(!button)return;const type=button.dataset.type;state.selected.has(type)?state.selected.delete(type):state.selected.add(type);render()});
+$('search').addEventListener('input',e=>{state.query=e.target.value;render()});
+$('reset').addEventListener('click',reset);
+$('list').addEventListener('click',e=>{if(e.target.id==='empty-reset')reset()});
+async function load(){
+  render();
+  try{
+    const response=await fetch('./events.json',{cache:'no-cache'});if(!response.ok)throw new Error('HTTP '+response.status);
+    const data=await response.json();if(!Array.isArray(data.events))throw new Error('Invalid data');
+    state.events=data.events;state.loaded=true;
+    const fetched=new Date(data.fetched_at);
+    $('updated').textContent='마지막 갱신 · '+new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',dateStyle:'medium',timeStyle:'short'}).format(fetched);
+    const notes=[];
+    if(data.sample_source)notes.push(`${data.sample_source}에 수집한 샘플 데이터입니다. 최신 일정은 원문을 확인해 주세요.`);
+    if(Date.now()-fetched.getTime()>48*60*60*1000)notes.push('갱신된 지 48시간이 지났습니다.');
+    if(notes.length){$('notice').textContent=notes.join(' ');$('notice').hidden=false}
+    render();
+  }catch(error){
+    $('count').textContent='불러오기 실패';$('list').innerHTML='<div class="empty"><strong>행사 데이터를 불러오지 못했어요</strong>잠시 후 다시 시도해 주세요. 로컬에서는 HTTP 서버로 열어 주세요.<br><button id="retry" type="button">다시 시도</button></div>';
+    $('updated').textContent='마지막 갱신 시각을 확인할 수 없습니다.';
+    $('retry').addEventListener('click',load);
+  }finally{$('results').setAttribute('aria-busy','false')}
+}
+let lastToday=seoulToday();setInterval(()=>{const now=seoulToday();if(now!==lastToday){lastToday=now;render()}},30000);
+load();
+</script>
+</body>
+</html>
