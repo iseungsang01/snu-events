@@ -79,6 +79,56 @@ def test_explicit_only(content, expected):
     assert extract_place_time(content) == expected
 
 
+@pytest.mark.parametrize("text,expected", [
+    ('302동 105호 ㅇ 온라인 생중계: YOUTUBE https://www.youtube.com/example "뇌로 소통할 수 있을까?',
+     "302동 105호"),
+    ("서울대학교 943동 1층 대형세미나실 ▪ 진행방식: 오프라인 교육(ZOOM 실시간 병행) ▪ 참여대상: 구성원",
+     "서울대학교 943동 1층 대형세미나실"),
+    ("서울대학교 미술관 오디토리움 ㅇ대상: 서울대학교 구성원 및 외부인 ㅇ신청마감: 2026. 11. 7.(토)",
+     "서울대학교 미술관 오디토리움"),
+    ("인문대학 신양관 국제회의실(4동 302호) 참석을 미리 알려주신 분들께는 간단한 점심식사를 제공합니다. history4@snu.ac.kr 02-880-8068",
+     "인문대학 신양관 국제회의실(4동 302호)"),
+    ("504동 105호 Hannah Walters 박사님께서는 Nature Aging 논문 출판 프로세스의 내용을 설명합니다.",
+     "504동 105호"),
+])
+def test_place_flattened_sentence_regressions(text, expected):
+    assert extract_place_time("장소: " + text)[0] == expected
+
+
+@pytest.mark.parametrize("boundary", [
+    "ㅇ", "▪", "·", "■", "📌", "대상:", "언어:", "모집기간:", "진행방식：",
+    "https://example.com", "HTTP://example.com", "www.example.com",
+    "ftp://example.com", "example.com/meeting",
+    "history4@snu.ac.kr", "staff @ snu.ac.kr", "02-880-8068", "02)880-8068",
+    "02 880 8068", "01012345678", "0311234567", "+82-2-880-8068",
+])
+def test_place_stops_before_metadata_and_contacts(boundary):
+    assert extract_place_time(f"장소: 온라인 Zoom {boundary} 뒤에 붙은 안내문")[0] == "온라인 Zoom"
+
+
+@pytest.mark.parametrize("venue", ["302동 105호", "문화홀", "대형세미나실", "미술관", "대강당"])
+def test_place_stops_before_unlabelled_sentence(venue):
+    assert extract_place_time(f"장소: {venue} 참석자에게 점심을 제공합니다.")[0] == venue
+
+
+def test_place_length_limit_and_transform():
+    for length, expected in [(40, "가" * 40), (41, "")]:
+        assert extract_place_time("장소: " + "가" * length)[0] == expected
+    row = {**BY_ID["177989"], "content": "장소: " + "가" * 41 + " staff@snu.ac.kr"}
+    assert transform([row], date(2026, 10, 26))[0]["place"] == ""
+    assert extract_place_time("장소: https://example.com/302동")[0] == ""
+    assert extract_place_time("장소: staff@snu.ac.kr 302동")[0] == ""
+
+
+def test_sample_places_have_no_contact_details():
+    for event in transform(SAMPLE, date(2026, 10, 26)):
+        place = event["place"]
+        assert len(place) <= 40
+        assert "@" not in place
+        assert "://" not in place
+        assert "www." not in place.lower()
+
+
 @pytest.mark.parametrize("content,clock", [
     ("18:00 / 20:50", "18:00~20:50"),
     ("10:00 / 23:59 / 13:50 / 15:30", ""),

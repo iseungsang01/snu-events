@@ -189,9 +189,41 @@ def label_value(content: str, label: str) -> str:
     return BOUNDARY.split(content[match.end():], maxsplit=1)[0].strip(" ,-•") if match else ""
 
 
+PLACE_BOUNDARY = re.compile(
+    r"[ㅇ▪·📌]|(?<!\w)[가-힣A-Za-z]+\s*[:：]|"
+    r"(?:[a-z][a-z0-9+.-]*://|www\.)\S*|"
+    r"(?<!\w)(?:[a-z0-9-]+\.)+[a-z]{2,}(?=$|[\s/:?#])|"
+    r"(?<!\d)0\d{8,10}(?!\d)", re.I)
+PLACE_END = re.compile(
+    r"(?:\d+(?:-\d+)?\s*동|\d+(?:-\d+)?\s*호|"
+    r"[가-힣A-Za-z]+(?:홀|실|관|강당)|강당|오디토리움)"
+    r"(?:\s*\([^()]*\))?(?=$|\s|[.,]|에서|에서의)")
+PLACE_CONTINUATION = re.compile(
+    r"(?:\d\S*|\([^()]*\)|[가-힣A-Za-z]+(?:동|호|홀|실|관|강당|연구소)|"
+    r"오디토리움|로비|내|및|전시|공간)(?=$|\s|\d|[()~–-])")
+
+
+def clean_place(place: str) -> str:
+    # Cut before metadata/contact details, even when the body has no line breaks.
+    place = BOUNDARY.split(place, maxsplit=1)[0]
+    boundaries = [m.start() for pattern in (PLACE_BOUNDARY, EMAIL, PHONE)
+                  if (m := pattern.search(place))]
+    if boundaries:
+        place = place[:min(boundaries)]
+    place = clean(place).strip(" ,-•")
+    for end in PLACE_END.finditer(place):
+        tail = place[end.end():].lstrip()
+        if tail and not PLACE_CONTINUATION.match(tail):
+            place = place[:end.end()]
+            break
+    # Long unresolved text is ambiguous; never publish an arbitrary substring.
+    return place if len(place) <= 40 else ""
+
+
 def extract_place_time(content: str) -> tuple[str, str]:
-    place = label_value(content, r"장\s*소")
-    if not place:
+    label = re.search(r"장\s*소\s*[:：|]\s*", content)
+    place = content[label.end():] if label else ""
+    if not label:
         # Only an explicit building / room token; never infer a campus from an organizer.
         match = re.search(r"\d{1,3}(?:-\d+)?\s*동(?:\s*\d+\s*층)?(?:\s*\d+(?:-\d+)?\s*호)?", content)
         place = match[0] if match else ""
@@ -199,7 +231,7 @@ def extract_place_time(content: str) -> tuple[str, str]:
     # Without a time label, discard deadline/contact clauses before looking for a clock.
     if not scope:
         scope = re.split(r"신청\s*마감|제출\s*마감|접수\s*마감|문의|담당", content, maxsplit=1)[0]
-    return clean(place), extract_time(scope)
+    return clean_place(place), extract_time(scope)
 
 
 def transform(raw_events: list[dict], today: date) -> list[dict]:
