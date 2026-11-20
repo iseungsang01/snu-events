@@ -4,6 +4,110 @@ import subprocess
 from pathlib import Path
 
 
+def run_page_script(script):
+    node = shutil.which("node")
+    assert node, "Node.js is required for personalization regression tests"
+    page = Path(__file__).resolve().parents[1] / "docs/index.html"
+    setup = r"""
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const page=fs.readFileSync(process.argv[1],'utf8');
+const source=page.split('<script>')[1].split('</script>')[0];
+const elements={};
+const context=vm.createContext({URL,Intl,Date,document:{
+ getElementById:id=>elements[id]||={},querySelectorAll:()=>[]}});
+vm.runInContext(source.split("document.querySelector('.periods')")[0],context);
+const run=code=>vm.runInContext(code,context);
+"""
+    result = subprocess.run([node, "-e", setup + script, str(page)],
+                            stdin=subprocess.DEVNULL, capture_output=True,
+                            text=True, encoding="utf-8", timeout=20)
+    assert result.returncode == 0, result.stderr
+
+
+def test_interest_word_boundaries_and_exclusions():
+    run_page_script(r"""
+const cases=[
+ ['AI','KAIST',false],['AI','domain',false],['AI','AI 강연',true],
+ ['AI','(AI)',true],['AI','생성형AI',true],['AI','AI강연',true],
+ ['AI','ai',true],['AI','ＡＩ 강연',true],['AI',' AI ',true],
+ ['AI','AI2',false],['AI','2AI',false],['AI','xAI',false],['AI','AIx',false],
+ ['AI','A I',false],['AI','공연 AI 안내',true],['AI','AI_AI',true],
+ ['2026','(2026)',true],['2026','20260',false],['2026','a2026',false],
+ ['GPT4','GPT4 강연',true],['GPT4','GPT40',false],
+ ['생성형 AI','최신 생성형AI강연',true],['생성형AI','생 성 형 A I 강연',true],
+ ['글쓰기 상담','글 쓰 기상담 안내',true]
+];
+// Run the same matrix for inclusion and exclusion, across every searchable field.
+for(const [word,text,expected] of cases){
+ for(const field of ['title','summary','search_text','body','description']){
+  context.row={type:'특강·세미나',[field]:text};context.word=word;
+  run('preferences={types:[],keywords:[word],excluded:[]}');
+  assert.equal(run('matchesInterests(row)'),expected,`include ${word}: ${field}=${text}`);
+  run('preferences={types:[],keywords:[],excluded:[word]}');
+  assert.equal(run('matchesInterests(row)'),!expected,`exclude ${word}: ${field}=${text}`);
+ }
+}
+// Joining fields must preserve boundaries rather than creating English words.
+context.row={title:'AI',summary:'lecture',type:'특강·세미나'};
+run("preferences={types:[],keywords:['AI'],excluded:[]}");
+assert.equal(run('matchesInterests(row)'),true);
+context.row={title:'A',summary:'I',type:'특강·세미나'};
+assert.equal(run('matchesInterests(row)'),false);
+""")
+
+
+def test_my_interests_groups_ongoing_before_today_and_future():
+    run_page_script(r"""
+run(`seoulToday=()=> '2026-11-20';state.loaded=true;state.period='me';
+ state.events=[
+ ['later','2026-11-23','2026-11-25'],['tomorrow','2026-11-21','2026-11-21'],
+ ['today','2026-11-20','2026-11-20'],['starts-today','2026-11-20','2026-12-01'],
+ ['ongoing','2026-09-03','2026-12-01'],['ends-today','2026-11-19','2026-11-20'],
+ ['past','2026-09-01','2026-11-19']
+ ].map(([id,begin,end])=>({id,title:id,begin,end,type:'공연',time:'',
+ url:'https://www.snu.ac.kr/snunow/events'}));render()`);
+const html=elements.list.innerHTML;
+const groups=html.split('<section class="group">').slice(1);
+const title=group=>group.split('</h3>')[0];
+assert.equal(groups.length,4);
+assert.ok(title(groups[0]).includes('진행 중<span>2개</span>'));
+assert.ok(!title(groups[0]).includes('9월'));
+for(const id of ['ongoing','ends-today'])assert.ok(groups[0].includes(`>${id}</a>`));
+for(const id of ['today','starts-today'])assert.ok(groups[1].includes(`>${id}</a>`));
+for(const [i,date] of [[1,'2026-11-20'],[2,'2026-11-21'],[3,'2026-11-23']]){
+ context.date=date;assert.ok(title(groups[i]).includes(run('displayDate(date)')));
+}
+assert.ok(title(groups[1]).includes(' · 오늘'));
+assert.ok(groups[2].includes('>tomorrow</a>'));assert.ok(groups[3].includes('>later</a>'));
+assert.ok(!html.includes('>past</a>'));assert.equal(elements.count.textContent,'6개의 행사');
+for(const id of ['ongoing','ends-today','today','starts-today','tomorrow','later']){
+ assert.equal(html.split(`>${id}</a>`).length-1,1);
+}
+// Filtering away ongoing events must also remove their heading.
+run("state.query='later';render()");
+assert.ok(!elements.list.innerHTML.includes('진행 중'));
+assert.ok(elements.list.innerHTML.includes('>later</a>'));
+run("state.query='ongoing';render()");
+assert.equal(elements.list.innerHTML.split('<section class="group">').length-1,1);
+assert.ok(elements.list.innerHTML.includes('진행 중'));
+""")
+
+
+def test_word_entry_buttons_keep_single_line():
+    run_page_script(r"""
+// Both add buttons share the flex rule; inputs may shrink, buttons may not.
+const style=page.split('<style>')[1].split('</style>')[0];
+const rule=style.match(/\.word-entry button\{([^}]+)\}/)[1];
+assert.match(rule,/(?:^|;)white-space:nowrap(?:;|$)/);
+assert.match(rule,/(?:^|;)flex-shrink:0(?:;|$)/);
+assert.match(rule,/(?:^|;)min-width:4em(?:;|$)/);
+assert.match(style,/\.word-entry input\{[^}]*min-width:0/);
+for(const key of ['keywords','excluded']){
+ assert.ok(page.includes(`<button type="button" data-add-word="${key}">추가</button>`));
+}
+""")
+
+
 def test_personalization_browser_flow():
     node = shutil.which("node")
     assert node

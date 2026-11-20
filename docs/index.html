@@ -15,7 +15,7 @@
 .past-events{border-top:1px solid var(--line);padding-top:18px;margin-top:24px}.past-events summary{cursor:pointer;font-weight:650;margin-bottom:18px}
 .meta-item{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}.evidence{font-size:11px;max-width:100%}.evidence summary{cursor:pointer;text-decoration:underline;text-underline-offset:3px}.evidence blockquote{margin:6px 0;padding:8px 10px;border-left:2px solid var(--line);white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink)}.card-bottom{align-items:center;gap:16px}.calendar-add{font:inherit;font-size:12px;cursor:pointer;border:1px solid var(--line);border-radius:6px;background:var(--soft);color:var(--ink);padding:5px 9px}
 .calendar-add{text-decoration:none}.calendar-other{font-size:11px;color:var(--muted);border:0;background:none;padding:2px;text-decoration:underline}.card-bottom{flex-wrap:wrap;gap:8px 14px}.subscription{padding:0 0 20px}.subscribe-note{font-size:12px;color:var(--muted);margin:8px 0 0}.subscribe-dialog{width:min(540px,calc(100% - 32px));max-height:85vh;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);padding:22px}.subscribe-dialog::backdrop{background:#0008}.dialog-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}.dialog-heading h2{font-size:19px;margin:0}.dialog-heading button{border:0;background:none;font-size:14px}.subscribe-feed{padding:14px 0;border-bottom:1px solid var(--line)}.subscribe-feed h3{font-size:14px;margin:0 0 7px}.subscribe-actions{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:12px}.subscribe-actions button{font-size:12px;background:none;border:0;padding:0;color:var(--ink);text-decoration:underline}.copy-address{width:100%;margin-top:8px;font-size:12px;color:var(--ink);background:var(--soft);border:1px solid var(--line);padding:7px}
-.type-checks{display:flex;flex-wrap:wrap;gap:10px 18px;margin:14px 0}.type-checks label{font-size:14px}.settings-field{border:0;padding:0;margin:18px 0}.settings-field legend{font-weight:650}.word-entry{display:flex;gap:8px;margin-top:8px}.word-entry input{min-width:0;width:100%;padding:8px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:6px}.word-chip{margin:6px 6px 0 0;border:1px solid var(--line);border-radius:16px;padding:4px 10px;background:var(--soft);overflow-wrap:anywhere}.settings-help{color:var(--muted);font-size:14px}.settings-actions{display:flex;gap:8px;flex-wrap:wrap}
+.type-checks{display:flex;flex-wrap:wrap;gap:10px 18px;margin:14px 0}.type-checks label{font-size:14px}.settings-field{border:0;padding:0;margin:18px 0}.settings-field legend{font-weight:650}.word-entry{display:flex;gap:8px;margin-top:8px}.word-entry button{flex-shrink:0;white-space:nowrap;min-width:4em}.word-entry input{min-width:0;width:100%;padding:8px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:6px}.word-chip{margin:6px 6px 0 0;border:1px solid var(--line);border-radius:16px;padding:4px 10px;background:var(--soft);overflow-wrap:anywhere}.settings-help{color:var(--muted);font-size:14px}.settings-actions{display:flex;gap:8px;flex-wrap:wrap}
 </style>
 </head>
 <body>
@@ -30,8 +30,8 @@
 <dialog class="subscribe-dialog" id="settings-dialog" aria-labelledby="settings-title"><div class="dialog-heading"><h2 id="settings-title">내 관심 설정</h2><button id="settings-close" type="button" autofocus>닫기</button></div>
 <p class="settings-help">설정은 이 브라우저에만 저장돼요. 설정 링크로 다른 기기에 옮길 수 있어요.</p>
 <fieldset class="settings-field"><legend>관심 종류</legend><div id="interest-types" class="type-checks"></div><p class="settings-help">선택하지 않으면 모든 종류를 포함해요.</p></fieldset>
-<fieldset class="settings-field"><legend>관심 키워드</legend><p class="settings-help" id="keywords-help">제목·본문에 하나라도 있으면 포함해요. 띄어쓰기는 무시해요.</p><div id="interest-keywords"></div><div class="word-entry"><input id="keywords-input" aria-label="관심 키워드" aria-describedby="keywords-help" placeholder="입력 후 Enter 또는 추가"><button type="button" data-add-word="keywords">추가</button></div></fieldset>
-<fieldset class="settings-field"><legend>빼고 싶은 말</legend><p class="settings-help" id="excluded-help">하나라도 있으면 제외해요.</p><div id="interest-excluded"></div><div class="word-entry"><input id="excluded-input" aria-label="빼고 싶은 말" aria-describedby="excluded-help" placeholder="입력 후 Enter 또는 추가"><button type="button" data-add-word="excluded">추가</button></div></fieldset>
+<fieldset class="settings-field"><legend>관심 키워드</legend><p class="settings-help" id="keywords-help">제목·본문에 하나라도 있으면 포함해요. 영문·숫자만 쓴 말은 앞뒤에 영문·숫자가 없어야 해요(AI는 생성형AI에도 일치). 그 외에는 띄어쓰기를 무시해요.</p><div id="interest-keywords"></div><div class="word-entry"><input id="keywords-input" aria-label="관심 키워드" aria-describedby="keywords-help" placeholder="입력 후 Enter 또는 추가"><button type="button" data-add-word="keywords">추가</button></div></fieldset>
+<fieldset class="settings-field"><legend>빼고 싶은 말</legend><p class="settings-help" id="excluded-help">하나라도 있으면 제외해요. 관심 키워드와 같은 일치 규칙을 적용해요.</p><div id="interest-excluded"></div><div class="word-entry"><input id="excluded-input" aria-label="빼고 싶은 말" aria-describedby="excluded-help" placeholder="입력 후 Enter 또는 추가"><button type="button" data-add-word="excluded">추가</button></div></fieldset>
 <div class="settings-actions"><button class="calendar-add" id="settings-copy" type="button">설정 링크 복사</button><button class="calendar-add" id="settings-view" type="button">내 관심 보기</button></div><input id="settings-link" class="copy-address" readonly hidden aria-label="복사할 설정 링크"><p id="settings-status" role="status" class="settings-help"></p>
 </dialog>
 <main class="wrap"><div class="layout">
@@ -58,7 +58,15 @@ let preferences={types:[],keywords:[],excluded:[]};
 let subscriptionSelection=new Set();
 const $=id=>document.getElementById(id);
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const matchText=value=>String(value??'').normalize('NFKC').toLocaleLowerCase('ko').replace(/\s+/g,'');
+const normalizeText=value=>String(value??'').normalize('NFKC').toLocaleLowerCase('ko');
+const matchText=value=>normalizeText(value).replace(/\s+/g,'');
+function matchesWord(text,word){
+  const normalized=normalizeText(word).trim();
+  // Only ASCII letters/digits block a boundary; attached Korean still matches AI.
+  return /^[a-z0-9]+$/.test(normalized)
+    ?new RegExp('(^|[^a-z0-9])'+normalized+'(?=$|[^a-z0-9])').test(text)
+    :matchText(text).includes(matchText(word));
+}
 function cleanSettings(value){
   if(!value||typeof value!=='object'||Array.isArray(value))throw new Error('Invalid settings');
   const words=key=>[...new Set((Array.isArray(value[key])?value[key]:[]).filter(v=>typeof v==='string').map(v=>v.trim()).filter(Boolean))];
@@ -78,11 +86,11 @@ function importSettingsHash(){
   if(imported){preferences=imported;state.period='me';saveSettings()}
 }
 function matchesInterests(event){
-  const text=matchText([event.title,event.summary,event.search_text,event.body,event.description].filter(Boolean).join(' '));
+  const text=normalizeText([event.title,event.summary,event.search_text,event.body,event.description].filter(Boolean).join(' '));
   const key=CALENDAR_KEYS[TYPES.indexOf(event.type)]??'other';
   return (!preferences.types.length||preferences.types.includes(key))&&
-    (!preferences.keywords.length||preferences.keywords.some(word=>text.includes(matchText(word))))&&
-    !preferences.excluded.some(word=>text.includes(matchText(word)));
+    (!preferences.keywords.length||preferences.keywords.some(word=>matchesWord(text,word)))&&
+    !preferences.excluded.some(word=>matchesWord(text,word));
 }
 function typeCheckboxes(selected,attribute){
   return CALENDAR_KEYS.map((key,i)=>`<label><input type="checkbox" ${attribute}="${key}" ${selected.has(key)?'checked':''}> ${TYPES[i]}</label>`).join('');
@@ -237,10 +245,14 @@ function render(){
 }
 function renderGroups(events,today){
   const groups=new Map();
+  if(state.period==='me'){
+    const ongoing=events.filter(e=>e.begin<today&&e.end>=today);
+    if(ongoing.length)groups.set('진행 중',ongoing);
+  }
   const multi=state.period==='me'?[]:events.filter(e=>e.begin!==e.end);
-  for(const e of events.filter(e=>state.period==='me'||e.begin===e.end)){if(!groups.has(e.begin))groups.set(e.begin,[]);groups.get(e.begin).push(e)}
+  for(const e of events.filter(e=>state.period==='me'?e.begin>=today:e.begin===e.end)){if(!groups.has(e.begin))groups.set(e.begin,[]);groups.get(e.begin).push(e)}
   if(multi.length)groups.set('기간 행사',multi);
-  return [...groups].map(([key,items])=>`<section class="group"><h3 class="group-title">${key==='기간 행사'?'<i class="dot" aria-hidden="true"></i>'+key:esc(displayDate(key))}${key===today?' · 오늘':''}<span>${items.length}개</span></h3><div class="cards">${items.map(e=>card(e,today)).join('')}</div></section>`).join('');
+  return [...groups].map(([key,items])=>`<section class="group"><h3 class="group-title">${['기간 행사','진행 중'].includes(key)?'<i class="dot" aria-hidden="true"></i>'+key:esc(displayDate(key))}${key===today?' · 오늘':''}<span>${items.length}개</span></h3><div class="cards">${items.map(e=>card(e,today)).join('')}</div></section>`).join('');
 }
 function reset(){state.selected.clear();state.query='';$('search').value='';if(state.period==='me'){preferences.types=[];updateSettings()}else render()}
 document.querySelector('.periods').addEventListener('click',e=>{const button=e.target.closest('[data-period]');if(button){state.period=button.dataset.period;render()}});
