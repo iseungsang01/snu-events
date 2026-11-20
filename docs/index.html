@@ -16,6 +16,7 @@
 .meta-item{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}.evidence{font-size:11px;max-width:100%}.evidence summary{cursor:pointer;text-decoration:underline;text-underline-offset:3px}.evidence blockquote{margin:6px 0;padding:8px 10px;border-left:2px solid var(--line);white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink)}.card-bottom{align-items:center;gap:16px}.calendar-add{font:inherit;font-size:12px;cursor:pointer;border:1px solid var(--line);border-radius:6px;background:var(--soft);color:var(--ink);padding:5px 9px}
 .calendar-add{text-decoration:none}.calendar-other{font-size:11px;color:var(--muted);border:0;background:none;padding:2px;text-decoration:underline}.card-bottom{flex-wrap:wrap;gap:8px 14px}.subscription{padding:0 0 20px}.subscribe-note{font-size:12px;color:var(--muted);margin:8px 0 0}.subscribe-dialog{width:min(540px,calc(100% - 32px));max-height:85vh;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);padding:22px}.subscribe-dialog::backdrop{background:#0008}.dialog-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}.dialog-heading h2{font-size:19px;margin:0}.dialog-heading button{border:0;background:none;font-size:14px}.subscribe-feed{padding:14px 0;border-bottom:1px solid var(--line)}.subscribe-feed h3{font-size:14px;margin:0 0 7px}.subscribe-actions{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:12px}.subscribe-actions button{font-size:12px;background:none;border:0;padding:0;color:var(--ink);text-decoration:underline}.copy-address{width:100%;margin-top:8px;font-size:12px;color:var(--ink);background:var(--soft);border:1px solid var(--line);padding:7px}
 .type-checks{display:flex;flex-wrap:wrap;gap:10px 18px;margin:14px 0}.type-checks label{font-size:14px}.settings-field{border:0;padding:0;margin:18px 0}.settings-field legend{font-weight:650}.word-entry{display:flex;gap:8px;margin-top:8px}.word-entry button{flex-shrink:0;white-space:nowrap;min-width:4em}.word-entry input{min-width:0;width:100%;padding:8px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:6px}.word-chip{margin:6px 6px 0 0;border:1px solid var(--line);border-radius:16px;padding:4px 10px;background:var(--soft);overflow-wrap:anywhere}.settings-help{color:var(--muted);font-size:14px}.settings-actions{display:flex;gap:8px;flex-wrap:wrap}
+.periods #trash-open{margin-left:auto;border-color:var(--line)}.list-actions{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}.list-actions button,.discard{border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);padding:5px 10px;font-size:12px}.card-select{margin-right:auto;font-size:12px}.undo-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:5;max-width:calc(100% - 32px);padding:12px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);box-shadow:0 4px 24px #0003}.undo-toast button{margin-left:12px}.undo-toast[hidden]{display:none}
 </style>
 </head>
 <body>
@@ -23,10 +24,10 @@
 <header class="masthead"><div class="wrap">
   <div class="brandline"><div class="brand"><span class="mark" aria-hidden="true">SNU</span>캠퍼스 캘린더</div><a class="source-top" href="https://www.snu.ac.kr/snunow/events" target="_blank" rel="noopener noreferrer">SNU 캘린더 ↗</a></div>
   <div class="hero"><div><div class="eyebrow">YOUR WEEK ON CAMPUS</div><h1>이번 주 서울대 행사 <span>한눈에</span></h1><p class="intro">배움부터 문화까지, 캠퍼스의 다음 일정을 만나보세요.</p></div><div class="today">오늘, 서울<strong id="today-label"></strong></div></div>
-  <nav class="periods" aria-label="조회 기간"><button data-period="today" aria-pressed="false">오늘</button><button data-period="week" aria-pressed="true">이번 주</button><button data-period="next" aria-pressed="false">다음 주</button><button data-period="month" aria-pressed="false">이번 달</button><button data-period="all" aria-pressed="false">전체</button><button data-period="me" aria-pressed="false">내 관심</button></nav>
+  <nav class="periods" aria-label="조회 기간"><button data-period="today" aria-pressed="false">오늘</button><button data-period="week" aria-pressed="true">이번 주</button><button data-period="next" aria-pressed="false">다음 주</button><button data-period="month" aria-pressed="false">이번 달</button><button data-period="all" aria-pressed="false">전체</button><button data-period="me" aria-pressed="false">내 관심</button><button id="trash-open" type="button" aria-pressed="false">휴지통 0</button></nav>
   <div class="subscription"><button class="calendar-add" id="subscribe-open" type="button" aria-haspopup="dialog">내 캘린더에 구독</button><button class="calendar-add" id="settings-open" type="button" aria-haspopup="dialog">관심 설정</button><p class="subscribe-note" id="subscribe-note">구독하면 매일 아침 갱신된 행사가 캘린더에 자동으로 들어옵니다(캘린더 앱마다 반영 주기는 다를 수 있음).</p></div>
 </div></header>
-<dialog class="subscribe-dialog" id="subscribe-dialog" aria-labelledby="subscribe-title" aria-describedby="subscribe-note"><div class="dialog-heading"><h2 id="subscribe-title">내 캘린더에 구독</h2><button id="subscribe-close" type="button" autofocus>닫기</button></div><fieldset class="settings-field"><legend>구독할 종류</legend><div id="subscribe-types" class="type-checks"></div></fieldset><p class="settings-help">키워드 조건은 페이지에서만 적용되고, 구독 캘린더는 고른 종류 기준</p><div id="subscribe-mix" aria-live="polite"></div><details><summary>전체·종류별 주소</summary><div id="subscribe-feeds"></div></details><p id="copy-status" role="status" class="subscribe-note"></p></dialog>
+<dialog class="subscribe-dialog" id="subscribe-dialog" aria-labelledby="subscribe-title" aria-describedby="subscribe-note"><div class="dialog-heading"><h2 id="subscribe-title">내 캘린더에 구독</h2><button id="subscribe-close" type="button" autofocus>닫기</button></div><fieldset class="settings-field"><legend>구독할 종류</legend><div id="subscribe-types" class="type-checks"></div></fieldset><p class="settings-help">키워드 조건은 페이지에서만 적용되고, 구독 캘린더는 고른 종류 기준</p><p class="settings-help">구독 캘린더(.ics)는 미리 만든 파일이므로 휴지통에 버린 행사도 포함됩니다.</p><div id="subscribe-mix" aria-live="polite"></div><details><summary>전체·종류별 주소</summary><div id="subscribe-feeds"></div></details><p id="copy-status" role="status" class="subscribe-note"></p></dialog>
 <dialog class="subscribe-dialog" id="settings-dialog" aria-labelledby="settings-title"><div class="dialog-heading"><h2 id="settings-title">내 관심 설정</h2><button id="settings-close" type="button" autofocus>닫기</button></div>
 <p class="settings-help">설정은 이 브라우저에만 저장돼요. 설정 링크로 다른 기기에 옮길 수 있어요.</p>
 <fieldset class="settings-field"><legend>관심 종류</legend><div id="interest-types" class="type-checks"></div><p class="settings-help">선택하지 않으면 모든 종류를 포함해요.</p></fieldset>
@@ -43,18 +44,19 @@
   </aside>
   <section id="results" aria-label="행사 목록" aria-busy="true">
     <div class="results-head"><div><h2 id="period-title">이번 주의 행사</h2><div class="range" id="range"></div></div><span class="count" id="count" role="status">불러오는 중</span></div>
-    <div id="notice" class="notice" hidden></div><div id="list"><p class="empty">행사를 불러오고 있어요.</p></div>
+    <div id="list-actions" class="list-actions" role="group" aria-label="행사 관리"></div><div id="notice" class="notice" hidden></div><div id="list"><p class="empty">행사를 불러오고 있어요.</p></div>
   </section>
 </div><noscript><p>행사 목록을 보려면 JavaScript를 켜 주세요. <a href="https://www.snu.ac.kr/snunow/events">SNU 캘린더 원문 보기</a></p></noscript></main>
 <footer><div class="wrap"><div class="footer-line"><span>데이터 출처 · <a href="https://www.snu.ac.kr/snunow/events" target="_blank" rel="noopener noreferrer">서울대학교 SNU 캘린더 ↗</a></span><span id="updated">마지막 갱신 시각 확인 중</span></div><p>행사 정보는 원문이 기준입니다. 모든 날짜와 갱신 시각은 한국 시간(Asia/Seoul) 기준입니다.</p></div></footer>
+<div id="undo-toast" class="undo-toast" role="status" hidden><span id="undo-message"></span><button id="trash-undo" class="calendar-add" type="button">되돌리기</button></div>
 <script>
 'use strict';
 const TYPES=['공연','전시','대회·공모','특강·세미나','모집·안내','기타'];
 const CALENDAR_KEYS=['performance','exhibition','contest','lecture','recruit','other'];
 const LABELS={today:'오늘의 행사',week:'이번 주의 행사',next:'다음 주의 행사',month:'이번 달의 행사',all:'전체 행사',me:'내 관심 행사'};
-const state={events:[],period:'week',selected:new Set(),query:'',loaded:false};
+const state={events:[],period:'week',selected:new Set(),query:'',loaded:false,trash:false,selecting:false,checked:new Set()};
 const SETTINGS_KEY='snu-events.me.v1';
-let preferences={types:[],keywords:[],excluded:[]};
+let preferences={types:[],keywords:[],excluded:[],dismissed:[],purged:[],dismissalEnds:{}};
 let subscriptionSelection=new Set();
 const $=id=>document.getElementById(id);
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -70,7 +72,13 @@ function matchesWord(text,word){
 function cleanSettings(value){
   if(!value||typeof value!=='object'||Array.isArray(value))throw new Error('Invalid settings');
   const words=key=>[...new Set((Array.isArray(value[key])?value[key]:[]).filter(v=>typeof v==='string').map(v=>v.trim()).filter(Boolean))];
-  return {types:words('types').filter(key=>CALENDAR_KEYS.includes(key)).sort(),keywords:words('keywords'),excluded:words('excluded')};
+  const dismissed=words('dismissed'),ids=new Set(dismissed);
+  const dismissalEnds=Object.fromEntries(Object.entries(
+    value.dismissalEnds&&typeof value.dismissalEnds==='object'?value.dismissalEnds:{}
+  ).filter(([id,end])=>ids.has(id)&&typeof end==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(end)));
+  return {types:words('types').filter(key=>CALENDAR_KEYS.includes(key)).sort(),
+    keywords:words('keywords'),excluded:words('excluded'),dismissed,
+    purged:words('purged').filter(id=>ids.has(id)),dismissalEnds};
 }
 function encodeSettings(value){return '#me='+encodeURIComponent(JSON.stringify(cleanSettings(value)))}
 function decodeSettings(hash){
@@ -83,7 +91,61 @@ function restoreSettings(){
 }
 function importSettingsHash(){
   const imported=decodeSettings(typeof location==='undefined'?'':location.hash);
-  if(imported){preferences=imported;state.period='me';saveSettings()}
+  if(imported){preferences=imported;state.period='me';state.trash=false;state.checked.clear();saveSettings()}
+}
+// End dates are kept with IDs because the feed drops old events before 30 days.
+let undoAction=null,undoTimer;
+function trashIds(){return (preferences.dismissed??[]).filter(id=>!(preferences.purged??[]).includes(id))}
+function isDismissed(event){return (preferences.dismissed??[]).includes(String(event.id))}
+function pruneDismissed(today=seoulToday()){
+  const before=JSON.stringify(preferences);
+  preferences=cleanSettings(preferences);
+  const ends=new Map(state.events.map(e=>[String(e.id),e.end]));
+  for(const id of preferences.dismissed)preferences.dismissalEnds[id]=ends.get(id)||preferences.dismissalEnds[id]||today;
+  const cutoff=addDays(today,-30);
+  preferences.dismissed=preferences.dismissed.filter(id=>preferences.dismissalEnds[id]>=cutoff);
+  preferences=cleanSettings(preferences);
+  if(JSON.stringify(preferences)!==before)saveSettings();
+}
+function showUndo(message,action){
+  if(undoTimer!==undefined)clearTimeout(undoTimer);
+  undoAction=action;$('undo-message').textContent=message;$('undo-toast').hidden=false;
+  undoTimer=setTimeout(()=>{undoAction=null;$('undo-toast').hidden=true},6000);
+}
+function undoTrash(){
+  if(!undoAction)return;
+  const action=undoAction;undoAction=null;clearTimeout(undoTimer);$('undo-toast').hidden=true;
+  action();saveSettings();render();
+}
+function restoreIds(ids){
+  const restored=new Set(ids);
+  preferences.dismissed=(preferences.dismissed??[]).filter(id=>!restored.has(id));
+  preferences=cleanSettings(preferences);saveSettings();render();
+}
+function discardIds(ids){
+  const available=new Set(state.events.map(e=>String(e.id)));
+  const added=[...new Set(ids)].filter(id=>available.has(id)&&!(preferences.dismissed??[]).includes(id));
+  if(!added.length)return;
+  preferences=cleanSettings(preferences);preferences.dismissed.push(...added);
+  state.checked.clear();pruneDismissed();saveSettings();render();
+  showUndo(`${added.length}개 행사를 버렸어요.`,()=>restoreIds(added));
+}
+function emptyTrash(){
+  const ids=trashIds();if(!ids.length)return;
+  preferences.purged=[...(preferences.purged??[]),...ids];saveSettings();render();
+  showUndo('휴지통을 비웠어요.',()=>{preferences.purged=preferences.purged.filter(id=>!ids.includes(id))});
+}
+function renderTrashActions(candidates){
+  const ids=trashIds();
+  $('trash-open').textContent=`휴지통 ${ids.length}`;
+  $('trash-open').setAttribute?.('aria-pressed',String(state.trash));
+  if(state.trash){
+    $('list-actions').innerHTML=`<button type="button" id="restore-all" ${ids.length?'':'disabled'}>모두 되살리기</button><button type="button" id="trash-empty" ${ids.length?'':'disabled'}>휴지통 비우기</button><span class="range">비우면 되살릴 수 없고 일반 목록에서도 계속 숨겨집니다.</span>`;
+  }else{
+    const visible=new Set(filtered(candidates).map(e=>String(e.id)));
+    for(const id of state.checked)if(!visible.has(id))state.checked.delete(id);
+    $('list-actions').innerHTML=`<button type="button" id="select-mode" aria-pressed="${state.selecting}">${state.selecting?'선택 취소':'선택'}</button>${state.selecting?`<button type="button" id="discard-selected" ${state.checked.size?'':'disabled'}>선택한 ${state.checked.size}개 버리기</button>`:''}`;
+  }
 }
 function matchesInterests(event){
   const text=normalizeText([event.title,event.summary,event.search_text,event.body,event.description].filter(Boolean).join(' '));
@@ -132,8 +194,8 @@ function bounds(period,today){
 }
 function displayDate(day,year=false){return new Intl.DateTimeFormat('ko-KR',{timeZone:'UTC',...(year?{year:'numeric'}:{}),month:'long',day:'numeric',weekday:'short'}).format(dayDate(day))}
 function inPeriod(event,start,end){return event.begin<=end&&event.end>=start}
-function periodEvents(today){const [start,end]=bounds(state.period,today);return state.events.filter(e=>inPeriod(e,start,end)&&(state.period!=='me'||matchesInterests(e)))}
-function filtered(events){const q=matchText(state.query);return events.filter(e=>(state.period==='me'||!state.selected.size||state.selected.has(e.type))&&(!q||matchText([e.title,e.summary,e.search_text].join(' ')).includes(q)))}
+function periodEvents(today){if(state.trash)return state.events.filter(e=>trashIds().includes(String(e.id)));const [start,end]=bounds(state.period,today);return state.events.filter(e=>!isDismissed(e)&&inPeriod(e,start,end)&&(state.period!=='me'||matchesInterests(e)))}
+function filtered(events){if(state.trash)return events;const q=matchText(state.query);return events.filter(e=>(state.period==='me'||!state.selected.size||state.selected.has(e.type))&&(!q||matchText([e.title,e.summary,e.search_text].join(' ')).includes(q)))}
 function sourceHref(event){
   try{const url=new URL(event.url);if(url.origin==='https://www.snu.ac.kr')return url.href}catch{}
   return 'https://www.snu.ac.kr/snunow/events';
@@ -224,27 +286,34 @@ function card(event,today){
   const status=multi?(event.begin>today?'시작 예정':event.end<today?'종료':'진행 중'):'';
   // Only the source's fixed HTTPS origin is accepted as an outbound link.
   const href=sourceHref(event);
-  return `<article class="card"><div class="card-top"><span class="badge" data-type="${esc(event.type)}">${esc(event.type)}</span>${status?`<span class="status">${status}</span>`:''}</div><h4><a class="title-link" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(event.title)}</a></h4><div class="meta"><div class="meta-item"><span>일정 · ${esc(dates)}${event.time?' · '+esc(event.time):''}</span>${evidence(event,'time')}</div>${event.place?`<div class="meta-item"><span>장소 · ${esc(event.place)}</span>${evidence(event,'place')}</div>`:''}</div>${event.summary?`<p class="summary">${esc(event.summary)}</p>`:''}<div class="card-bottom"><a class="calendar-add" href="${esc(googleCalendarUrl(event))}" target="_blank" rel="noopener noreferrer" aria-label="${esc(event.title)} Google 캘린더에 추가">Google 캘린더에 추가</a><button class="calendar-other" type="button" data-calendar-id="${esc(event.id)}" aria-label="${esc(event.title)} 다른 캘린더(.ics)">다른 캘린더(.ics)</button><a class="original" href="${esc(href)}" target="_blank" rel="noopener noreferrer">원문 보기 <span aria-hidden="true">↗</span><span class="sr-only" hidden>${esc(event.title)}</span></a></div></article>`;
+  return `<article class="card"><div class="card-top"><span class="badge" data-type="${esc(event.type)}">${esc(event.type)}</span>${status?`<span class="status">${status}</span>`:''}</div><h4><a class="title-link" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(event.title)}</a></h4><div class="meta"><div class="meta-item"><span>일정 · ${esc(dates)}${event.time?' · '+esc(event.time):''}</span>${evidence(event,'time')}</div>${event.place?`<div class="meta-item"><span>장소 · ${esc(event.place)}</span>${evidence(event,'place')}</div>`:''}</div>${event.summary?`<p class="summary">${esc(event.summary)}</p>`:''}<div class="card-bottom">${state.selecting&&!state.trash?`<label class="card-select"><input type="checkbox" data-select-id="${esc(event.id)}" ${state.checked.has(String(event.id))?'checked':''} aria-label="${esc(event.title)} 선택"> 선택</label>`:''}<button class="discard" type="button" data-${state.trash?'restore':'discard'}-id="${esc(event.id)}" aria-label="${esc(event.title)} ${state.trash?'되살리기':'버리기'}">${state.trash?'되살리기':'버리기'}</button><a class="calendar-add" href="${esc(googleCalendarUrl(event))}" target="_blank" rel="noopener noreferrer" aria-label="${esc(event.title)} Google 캘린더에 추가">Google 캘린더에 추가</a><button class="calendar-other" type="button" data-calendar-id="${esc(event.id)}" aria-label="${esc(event.title)} 다른 캘린더(.ics)">다른 캘린더(.ics)</button><a class="original" href="${esc(href)}" target="_blank" rel="noopener noreferrer">원문 보기 <span aria-hidden="true">↗</span><span class="sr-only" hidden>${esc(event.title)}</span></a></div></article>`;
 }
 function render(){
   const today=seoulToday(),[start,end]=bounds(state.period,today);
+  if(state.loaded)pruneDismissed(today);
   $('today-label').textContent=displayDate(today);
-  $('period-title').textContent=LABELS[state.period];
-  $('range').textContent=state.period==='me'?'오늘 이후 · 관심 설정 기준':state.period==='all'?'수집된 모든 일정 · 종료 후 7일까지 보관':`${displayDate(start,true)} – ${displayDate(end)}${['week','next'].includes(state.period)?' · 월–일':''}`;
-  document.querySelectorAll('[data-period]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.period===state.period));
+  $('period-title').textContent=state.trash?'휴지통':LABELS[state.period];
+  $('range').textContent=state.trash?'기간·검색·종류와 무관하게 버린 모든 행사 · 날짜순':state.period==='me'?'오늘 이후 · 관심 설정 기준':state.period==='all'?'수집된 모든 일정 · 종료 후 7일까지 보관':`${displayDate(start,true)} – ${displayDate(end)}${['week','next'].includes(state.period)?' · 월–일':''}`;
+  document.querySelectorAll('[data-period]').forEach(b=>b.setAttribute('aria-pressed',!state.trash&&b.dataset.period===state.period));
   const candidates=periodEvents(today);
+  renderTrashActions(candidates);
   $('chips').innerHTML=TYPES.map((type,i)=>`<button class="chip" type="button" data-type="${esc(type)}" aria-pressed="${state.period==='me'?preferences.types.includes(CALENDAR_KEYS[i]):state.selected.has(type)}">${esc(type)}<small>${candidates.filter(e=>e.type===type).length}</small></button>`).join('');
   if(!state.loaded)return;
   const events=filtered(candidates).sort((a,b)=>a.begin.localeCompare(b.begin)||a.time.localeCompare(b.time)||a.title.localeCompare(b.title,'ko'));
   $('count').textContent=`${events.length}개의 행사`;
+  if(!events.length&&state.trash){$('list').innerHTML=trashIds().length?'<div class="empty"><strong>현재 데이터에 없는 행사만 남아 있어요</strong>위의 모두 되살리기로 숨김을 해제할 수 있어요. 종료 후 30일이 지나면 기록은 자동 정리됩니다.</div>':'<div class="empty"><strong>휴지통이 비어 있어요</strong>버린 행사는 이곳에서 되살릴 수 있어요.</div>';return}
   if(!events.length){$('list').innerHTML='<div class="empty"><strong>조건에 맞는 행사가 없어요</strong>다른 기간을 선택하거나 검색어와 종류를 바꿔 보세요.<br><button type="button" id="empty-reset">검색·종류 초기화</button></div>';return}
-  const collapsePast=['week','month'].includes(state.period);
+  const collapsePast=!state.trash&&['week','month'].includes(state.period);
   const upcoming=events.filter(e=>!collapsePast||e.end>=today);
   const past=collapsePast?events.filter(e=>e.end<today):[];
   $('list').innerHTML=renderGroups(upcoming,today)+(past.length?`<details class="past-events"><summary>${state.period==='week'?'이번 주':'이번 달'} 지난 행사 · ${past.length}개</summary>${renderGroups(past,today)}</details>`:'');
 }
 function renderGroups(events,today){
   const groups=new Map();
+  if(state.trash){
+    for(const e of events){if(!groups.has(e.begin))groups.set(e.begin,[]);groups.get(e.begin).push(e)}
+    return [...groups].map(([day,items])=>`<section class="group"><h3 class="group-title">${esc(displayDate(day,true))}<span>${items.length}개</span></h3><div class="cards">${items.map(e=>card(e,today)).join('')}</div></section>`).join('');
+  }
   if(state.period==='me'){
     const ongoing=events.filter(e=>e.begin<today&&e.end>=today);
     if(ongoing.length)groups.set('진행 중',ongoing);
@@ -255,7 +324,7 @@ function renderGroups(events,today){
   return [...groups].map(([key,items])=>`<section class="group"><h3 class="group-title">${['기간 행사','진행 중'].includes(key)?'<i class="dot" aria-hidden="true"></i>'+key:esc(displayDate(key))}${key===today?' · 오늘':''}<span>${items.length}개</span></h3><div class="cards">${items.map(e=>card(e,today)).join('')}</div></section>`).join('');
 }
 function reset(){state.selected.clear();state.query='';$('search').value='';if(state.period==='me'){preferences.types=[];updateSettings()}else render()}
-document.querySelector('.periods').addEventListener('click',e=>{const button=e.target.closest('[data-period]');if(button){state.period=button.dataset.period;render()}});
+document.querySelector('.periods').addEventListener('click',e=>{const button=e.target.closest('[data-period]');if(button){state.period=button.dataset.period;state.trash=false;state.checked.clear();render()}});
 $('subscribe-open').addEventListener('click',()=>{renderSubscriptions();$('subscribe-dialog').showModal()});
 $('subscribe-types').addEventListener('change',e=>{const key=e.target.dataset.subscribeType;if(!key)return;e.target.checked?subscriptionSelection.add(key):subscriptionSelection.delete(key);renderCombination();$('copy-status').textContent=''});
 $('subscribe-close').addEventListener('click',()=>$('subscribe-dialog').close());
@@ -271,7 +340,7 @@ $('search').addEventListener('input',e=>{state.query=e.target.value;render()});
 $('reset').addEventListener('click',reset);
 $('settings-open').addEventListener('click',()=>{renderSettings();$('settings-status').textContent='';$('settings-link').hidden=true;$('settings-dialog').showModal()});
 $('settings-close').addEventListener('click',()=>$('settings-dialog').close());
-$('settings-view').addEventListener('click',()=>{state.period='me';$('settings-dialog').close();render()});
+$('settings-view').addEventListener('click',()=>{state.period='me';state.trash=false;$('settings-dialog').close();render()});
 $('settings-copy').addEventListener('click',copySettingsLink);
 $('interest-types').addEventListener('change',e=>{const key=e.target.dataset.interestType;if(!key)return;const types=new Set(preferences.types);e.target.checked?types.add(key):types.delete(key);preferences.types=[...types].sort();updateSettings()});
 $('settings-dialog').addEventListener('click',e=>{
@@ -285,7 +354,16 @@ for(const key of ['keywords','excluded']){
   input.addEventListener('compositionend',()=>{input.dataset.composing='false'});
   input.addEventListener('keydown',e=>keywordEnter(e,key));
 }
-$('list').addEventListener('click',e=>{if(e.target.id==='empty-reset')reset();const button=e.target.closest('[data-calendar-id]');if(button){const event=state.events.find(event=>String(event.id)===button.dataset.calendarId);if(event)downloadCalendar(event)}});
+$('trash-open').addEventListener('click',()=>{state.trash=!state.trash;state.selecting=false;state.checked.clear();render()});
+$('trash-undo').addEventListener('click',undoTrash);
+$('list-actions').addEventListener('click',e=>{
+  if(e.target.id==='select-mode'){state.selecting=!state.selecting;state.checked.clear();render()}
+  if(e.target.id==='discard-selected')discardIds([...state.checked]);
+  if(e.target.id==='restore-all')restoreIds(trashIds());
+  if(e.target.id==='trash-empty')emptyTrash();
+});
+$('list').addEventListener('change',e=>{const id=e.target.dataset.selectId;if(id===undefined)return;e.target.checked?state.checked.add(id):state.checked.delete(id);renderTrashActions(periodEvents(seoulToday()))});
+$('list').addEventListener('click',e=>{if(e.target.id==='empty-reset')reset();const discard=e.target.closest('[data-discard-id]');if(discard)discardIds([discard.dataset.discardId]);const restore=e.target.closest('[data-restore-id]');if(restore)restoreIds([restore.dataset.restoreId]);const button=e.target.closest('[data-calendar-id]');if(button){const event=state.events.find(event=>String(event.id)===button.dataset.calendarId);if(event)downloadCalendar(event)}});
 async function load(){
   render();
   try{
