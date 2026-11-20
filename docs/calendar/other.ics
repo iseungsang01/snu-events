@@ -1,0 +1,145 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SNU Events//Campus Calendar//KO
+CALSCALE:GREGORIAN
+X-WR-CALNAME:서울대 행사 — 기타
+X-WR-TIMEZONE:Asia/Seoul
+BEGIN:VTIMEZONE
+TZID:Asia/Seoul
+BEGIN:STANDARD
+DTSTART:19881009T030000
+TZOFFSETFROM:+1000
+TZOFFSETTO:+0900
+TZNAME:KST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:176255@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261130
+SUMMARY:「하루 400g\, 과일·채소 먹기 60일 챌린지(2기)」 참
+ 여자 모집
+LOCATION:
+DESCRIPTION:「하루 400g\, 과일·채소 먹기 60일 챌린지」 참
+ 여자 모집\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176
+ 255
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176255
+END:VEVENT
+BEGIN:VEVENT
+UID:178520@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261118
+SUMMARY:10\,000보 드림 챌린지 보조 봉사 - 대학생활문화원 
+ 이웃사랑 11월 1차 특별단기봉사활동 및 나눔교육 참여
+ 자 모집
+LOCATION:영등포공원
+DESCRIPTION:11월 1차 특별단기봉사활동 및 나눔교육 참여자
+ 를 아래와 같이 모집하고 있사오니 많은 관심과 신청 바
+ 랍니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178520
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178520
+END:VEVENT
+BEGIN:VEVENT
+UID:177662@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261210
+SUMMARY:[보건진료소]2026년 겨울 금연클리닉 참여자 모집
+LOCATION:
+DESCRIPTION:[보건진료소]2026년 겨울 금연클리닉 참여자 모
+ 집 "오늘도 금연!"\n원문: https://www.snu.ac.kr/snunow/events?md=v&
+ bbsidx=177662
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=177662
+END:VEVENT
+BEGIN:VEVENT
+UID:179084@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261120
+SUMMARY:프로네시스 나눔실천단 2026학년도 겨울 나눔교실 
+ 모집
+LOCATION:
+DESCRIPTION:서울대학교 프로네시스 나눔실천단에서 ★2026
+ 학년도 겨울 나눔교실★에 참여할 봉사자를 모집합니다
+ !!\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179084
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179084
+END:VEVENT
+BEGIN:VEVENT
+UID:178805@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261119
+SUMMARY:[ 대학생활문화원 이웃사랑 11월 2차 특별단기봉사
+ 활동 및 나눔교육 참여자 모집 ]
+LOCATION:서울보라매초등학교 2층 강당
+DESCRIPTION:도전! 골든벨을 울려라 장애 인식 개선 캠페인 
+ 보조 자원봉사 - 대학생활문화원 이웃사랑 11월 2차 특별
+ 단기봉사활동 및 나눔교육 참여자 모집\n원문: https://www.
+ snu.ac.kr/snunow/events?md=v&bbsidx=178805
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178805
+END:VEVENT
+BEGIN:VEVENT
+UID:179225@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261120
+SUMMARY:학업 미루기 개선을 위한 인지행동치료(CBT) 프로그
+ 램 참여자 모집 안내
+LOCATION:
+DESCRIPTION:학업 미루기 개선을 위한 인지행동치료 프로그
+ 램의 참여자를 모집합니다.\n원문: https://www.snu.ac.kr/snunow
+ /events?md=v&bbsidx=179225
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179225
+END:VEVENT
+BEGIN:VEVENT
+UID:179618@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261121
+SUMMARY:2026학년도 동계 일본어 캠프 안내
+LOCATION:서울대학교 인문대학 내 강의실
+DESCRIPTION:2026학년도 동계 일본어 캠프 안내\n원문: https://w
+ ww.snu.ac.kr/snunow/events?md=v&bbsidx=179618
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179618
+END:VEVENT
+BEGIN:VEVENT
+UID:178961@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261116T160000
+DTEND;TZID=Asia/Seoul:20261116T164500
+SUMMARY:2026년 11월 서울대학교 천체투영관 상영회
+LOCATION:28동 201호 관허 코스모스홀
+DESCRIPTION:사람과 우주를 이어주는 공간인 천체투영관 '관
+ 허 코스모스 홀'은 교내외 방문객들을 위한 행사를 진행
+ 하고 있습니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbs
+ idx=178961
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178961
+END:VEVENT
+BEGIN:VEVENT
+UID:179525@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261119T160000
+DTEND;TZID=Asia/Seoul:20261119T170000
+SUMMARY:[해피아워]SNU OGA_HAPPY HOUR (2026-11-19\, Thu\, 16:00~17:00) I
+ nvitation (2026 Fall)
+LOCATION:국제처 1층 라운지(152동\, CJ International Center)
+DESCRIPTION:2026학년도 2학기 OGA HAPPY HOUR가 이번 주에도 계속
+  진행됩니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx
+ =179525
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179525
+END:VEVENT
+BEGIN:VEVENT
+UID:179516@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261120T180000
+DTEND;TZID=Asia/Seoul:20261120T190000
+SUMMARY:[SNU 80: The OGA Chapter]SISA 2nd Homecoming: The SISA Soirée (Nov
+ . 20)
+LOCATION:서울대학교 국제처(152동)
+DESCRIPTION:서울대학교 외국인학생회(SISA)에서 두 번째 홈
+ 커밍 행사 「The SISA Soirée: Stories Beyond SNU」를 개최합니
+ 다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179516
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179516
+END:VEVENT
+END:VCALENDAR

@@ -21,6 +21,7 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from scripts.fetch_events import EMAIL, PHONE, classify, clean, extract_place_time
+from scripts.build_calendars import write_calendars
 
 ROOT = Path(__file__).resolve().parents[1]
 CACHE_VERSION = 1
@@ -257,6 +258,7 @@ def main() -> None:
     cache, stats = enrich_events(payload["events"], args.cache, timeout=args.timeout)
     apply_results(payload["events"], cache)
     atomic_json(args.events, payload)
+    write_calendars(payload, args.events.parent / "calendar")
     if stats["failed"]:
         raise SystemExit(1)
 

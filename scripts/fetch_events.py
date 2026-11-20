@@ -4,12 +4,18 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sys
 import time
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
+
+if __package__ in (None, ""):
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from scripts.build_calendars import write_calendars
 
 ROOT = Path(__file__).resolve().parents[1]
 LIST_URL = "https://www.snu.ac.kr/snunow/events"
@@ -276,6 +282,7 @@ def main() -> None:
     temporary = args.output.with_suffix(".json.tmp")
     temporary.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     temporary.replace(args.output)
+    write_calendars(payload, args.output.parent / "calendar")
     print(f"Saved {len(payload['events'])} events to {args.output}")
 
 

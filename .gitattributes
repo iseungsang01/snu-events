@@ -1,0 +1,2 @@
+# RFC 5545 calendars must retain CRLF on every checkout, including GitHub Pages.
+docs/calendar/*.ics -text

@@ -1,5 +1,6 @@
 """Exercise the page's actual rendering code offline with Node's VM."""
 import shutil
+import os
 import subprocess
 from pathlib import Path
 
@@ -85,6 +86,69 @@ if (['week','month'].includes(period)) {
     assert result.returncode == 0, result.stderr
 
 
+@pytest.mark.parametrize("timezone", ["UTC", "America/Los_Angeles", "Asia/Seoul"])
+def test_google_links_and_subscriptions(timezone):
+    node = shutil.which("node")
+    assert node
+    page = Path(__file__).resolve().parents[1] / "docs/index.html"
+    script = r"""
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const page=fs.readFileSync(process.argv[1],'utf8');
+const source=page.split('<script>')[1].split('</script>')[0];
+const elements={},handlers={};let copied;
+const element=id=>elements[id]||=( {addEventListener(type,fn){handlers[id+':'+type]=fn},
+  showModal(){this.open=true},close(){this.open=false}} );
+const context=vm.createContext({URL,Intl,Date,navigator:{clipboard:{async writeText(value){copied=value}}},
+  document:{getElementById:element,querySelector(){return {addEventListener(){}}}}});
+vm.runInContext(source.split("$('list').addEventListener")[0],context);
+const evaluate=code=>vm.runInContext(code,context);
+context.event={id:'123',title:'공연 & 특별',begin:'2026-11-20',end:'2026-11-20',
+  time:'14:00~16:20',place:'예술관, 콘서트홀',summary:'소개\n한 줄',url:'https://www.snu.ac.kr/snunow/events?bbsidx=123'};
+const params=()=>new URL(evaluate('googleCalendarUrl(event)')).searchParams;
+let p=params();
+assert.equal(p.get('action'),'TEMPLATE');assert.equal(p.get('text'),context.event.title);
+assert.equal(p.get('dates'),'20261120T140000/20261120T162000');assert.equal(p.get('ctz'),'Asia/Seoul');
+assert.equal(p.get('location'),context.event.place);assert.equal(p.get('details'),'소개 한 줄\n원문: '+context.event.url);
+for(const [time,end,expected,tz] of [
+  ['14:00','2026-11-20','20261120T140000/20261120T150000','Asia/Seoul'],
+  ['23:30','2026-11-20','20261120T233000/20261121T003000','Asia/Seoul'],
+  ['23:30~01:00','2026-11-20','20261120T233000/20261121T010000','Asia/Seoul'],
+  ['','2026-11-20','20261120/20261121',null],
+  ['14:00~16:20','2026-11-22','20261120/20261123',null],
+  ['','2026-11-22','20261120/20261123',null],
+  ['미정','2026-11-20','20261120/20261121',null]
+]){context.event.time=time;context.event.end=end;p=params();assert.equal(p.get('dates'),expected);assert.equal(p.get('ctz'),tz)}
+context.event.begin='2026-12-31';context.event.end='2026-12-31';context.event.time='';
+assert.equal(params().get('dates'),'20261231/20270101');
+const html=evaluate('card(event,"2026-11-20")');
+assert.match(html,/<a class="calendar-add"[^>]*calendar.google.com[^>]*target="_blank"[^>]*rel="noopener noreferrer"/);
+assert.ok(html.includes('Google 캘린더에 추가'));assert.ok(html.includes('다른 캘린더(.ics)'));
+evaluate("state.selected.add('전시');state.selected.add('특강·세미나')");
+handlers['subscribe-open:click']();assert.equal(elements['subscribe-dialog'].open,true);
+const feeds=elements['subscribe-feeds'].innerHTML;
+assert.ok(feeds.indexOf('<h3>전시</h3>')<feeds.indexOf('<h3>전체</h3>'));
+assert.ok(feeds.indexOf('<h3>특강·세미나</h3>')<feeds.indexOf('<h3>전체</h3>'));
+for(const key of ['all','performance','exhibition','contest','lecture','recruit','other']){
+  const address=`webcal://iseungsang01.github.io/snu-events/calendar/${key}.ics`;
+  assert.ok(feeds.includes(`href="${address}"`));
+  assert.ok(feeds.includes('https://calendar.google.com/calendar/r?cid='+encodeURIComponent(address)));
+  assert.ok(feeds.includes(`data-copy-calendar="${key}"`));
+}
+context.button={dataset:{copyCalendar:'exhibition'}};
+(async()=>{
+ await evaluate('copySubscription(button)');
+ assert.equal(copied,'webcal://iseungsang01.github.io/snu-events/calendar/exhibition.ics');
+ assert.equal(elements['copy-status'].textContent,'캘린더 주소를 복사했어요.');
+ handlers['subscribe-close:click']();assert.equal(elements['subscribe-dialog'].open,false);
+ assert.ok(page.includes('구독하면 매일 아침 갱신된 행사가 캘린더에 자동으로 들어옵니다(캘린더 앱마다 반영 주기는 다를 수 있음).'));
+})().catch(error=>{console.error(error);process.exitCode=1});
+"""
+    result = subprocess.run([node, "-e", script, str(page)], stdin=subprocess.DEVNULL,
+                            capture_output=True, text=True, encoding="utf-8", timeout=20,
+                            env={**os.environ, "TZ": timezone})
+    assert result.returncode == 0, result.stderr
+
+
 def test_evidence_and_calendar_download():
     node = shutil.which("node")
     assert node, "Node.js is required for calendar tests"
@@ -133,9 +197,9 @@ assert.ok(overnight.includes('DTSTART:20261120T143000Z'));
 assert.ok(overnight.includes('DTEND:20261120T160000Z'));
 event.time='00:30';const single=unfold(evaluate('makeIcs(event)'));
 assert.ok(single.includes('DTSTART:20261119T153000Z'));
-assert.ok(!single.includes('DTEND'));
+assert.ok(single.includes('DTEND:20261119T163000Z'));
 event.time='14:00~16:00';event.end='2026-11-22';
-assert.ok(unfold(evaluate('makeIcs(event)')).includes('DTEND:20261122T070000Z'));
+assert.ok(unfold(evaluate('makeIcs(event)')).includes('DTEND;VALUE=DATE:20261123'));
 event.title='가나다😀'.repeat(80);
 const folded=evaluate('makeIcs(event)');
 for(const line of folded.split('\r\n'))assert.ok(Buffer.byteLength(line,'utf8')<=75);

@@ -14,6 +14,7 @@
 .cards{grid-template-columns:minmax(0,1fr)}.card{min-width:0}.meta span{overflow-wrap:anywhere}
 .past-events{border-top:1px solid var(--line);padding-top:18px;margin-top:24px}.past-events summary{cursor:pointer;font-weight:650;margin-bottom:18px}
 .meta-item{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}.evidence{font-size:11px;max-width:100%}.evidence summary{cursor:pointer;text-decoration:underline;text-underline-offset:3px}.evidence blockquote{margin:6px 0;padding:8px 10px;border-left:2px solid var(--line);white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink)}.card-bottom{align-items:center;gap:16px}.calendar-add{font:inherit;font-size:12px;cursor:pointer;border:1px solid var(--line);border-radius:6px;background:var(--soft);color:var(--ink);padding:5px 9px}
+.calendar-add{text-decoration:none}.calendar-other{font-size:11px;color:var(--muted);border:0;background:none;padding:2px;text-decoration:underline}.card-bottom{flex-wrap:wrap;gap:8px 14px}.subscription{padding:0 0 20px}.subscribe-note{font-size:12px;color:var(--muted);margin:8px 0 0}.subscribe-dialog{width:min(540px,calc(100% - 32px));max-height:85vh;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);padding:22px}.subscribe-dialog::backdrop{background:#0008}.dialog-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}.dialog-heading h2{font-size:19px;margin:0}.dialog-heading button{border:0;background:none;font-size:14px}.subscribe-feed{padding:14px 0;border-bottom:1px solid var(--line)}.subscribe-feed h3{font-size:14px;margin:0 0 7px}.subscribe-actions{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:12px}.subscribe-actions button{font-size:12px;background:none;border:0;padding:0;color:var(--ink);text-decoration:underline}.copy-address{width:100%;margin-top:8px;font-size:12px;color:var(--ink);background:var(--soft);border:1px solid var(--line);padding:7px}
 </style>
 </head>
 <body>
@@ -22,7 +23,9 @@
   <div class="brandline"><div class="brand"><span class="mark" aria-hidden="true">SNU</span>캠퍼스 캘린더</div><a class="source-top" href="https://www.snu.ac.kr/snunow/events" target="_blank" rel="noopener noreferrer">SNU 캘린더 ↗</a></div>
   <div class="hero"><div><div class="eyebrow">YOUR WEEK ON CAMPUS</div><h1>이번 주 서울대 행사 <span>한눈에</span></h1><p class="intro">배움부터 문화까지, 캠퍼스의 다음 일정을 만나보세요.</p></div><div class="today">오늘, 서울<strong id="today-label"></strong></div></div>
   <nav class="periods" aria-label="조회 기간"><button data-period="today" aria-pressed="false">오늘</button><button data-period="week" aria-pressed="true">이번 주</button><button data-period="next" aria-pressed="false">다음 주</button><button data-period="month" aria-pressed="false">이번 달</button><button data-period="all" aria-pressed="false">전체</button></nav>
+  <div class="subscription"><button class="calendar-add" id="subscribe-open" type="button" aria-haspopup="dialog">내 캘린더에 구독</button><p class="subscribe-note" id="subscribe-note">구독하면 매일 아침 갱신된 행사가 캘린더에 자동으로 들어옵니다(캘린더 앱마다 반영 주기는 다를 수 있음).</p></div>
 </div></header>
+<dialog class="subscribe-dialog" id="subscribe-dialog" aria-labelledby="subscribe-title" aria-describedby="subscribe-note"><div class="dialog-heading"><h2 id="subscribe-title">내 캘린더에 구독</h2><button id="subscribe-close" type="button" autofocus>닫기</button></div><div id="subscribe-feeds"></div><p id="copy-status" role="status" class="subscribe-note"></p></dialog>
 <main class="wrap"><div class="layout">
   <aside class="filters" aria-label="행사 필터">
     <label class="filter-label" for="search">어떤 행사를 찾으세요?</label><div class="search"><input id="search" type="search" placeholder="제목·내용 검색" autocomplete="off"></div>
@@ -39,6 +42,7 @@
 <script>
 'use strict';
 const TYPES=['공연','전시','대회·공모','특강·세미나','모집·안내','기타'];
+const CALENDAR_KEYS=['performance','exhibition','contest','lecture','recruit','other'];
 const LABELS={today:'오늘의 행사',week:'이번 주의 행사',next:'다음 주의 행사',month:'이번 달의 행사',all:'전체 행사'};
 const state={events:[],period:'week',selected:new Set(),query:'',loaded:false};
 const $=id=>document.getElementById(id);
@@ -70,6 +74,47 @@ function evidence(event,field){
   const quote=event.evidence?.[field+'_quote'];
   return event.source==='codex'&&event[field]&&quote?`<details class="evidence"><summary aria-label="${field==='time'?'시간':'장소'} 근거">근거</summary><blockquote>${esc(quote)}</blockquote></details>`:'';
 }
+function calendarRange(event){
+  const compact=day=>day.replace(/-/g,'');
+  if(event.begin!==event.end||!/^(?:[01]\d|2[0-3]):[0-5]\d(?:~(?:[01]\d|2[0-3]):[0-5]\d)?$/.test(event.time??'')){
+    return {start:compact(event.begin),end:compact(addDays(event.end,1)),allDay:true};
+  }
+  const [start,end]=event.time.split('~');
+  const startDate=new Date(`${event.begin}T${start}:00Z`);
+  let endDate=end?new Date(`${event.begin}T${end}:00Z`):new Date(startDate.getTime()+3600000);
+  if(endDate<=startDate)endDate.setUTCDate(endDate.getUTCDate()+1);
+  // These are Seoul wall-clock values; UTC arithmetic avoids the viewer's timezone.
+  const stamp=date=>date.toISOString().replace(/[-:]/g,'').slice(0,15);
+  return {start:stamp(startDate),end:stamp(endDate),allDay:false};
+}
+function googleCalendarUrl(event){
+  const range=calendarRange(event),url=new URL('https://calendar.google.com/calendar/render');
+  for(const [key,value] of Object.entries({action:'TEMPLATE',text:event.title,dates:range.start+'/'+range.end,
+    location:event.place??'',details:[String(event.summary??'').replace(/\s+/g,' ').trim(),'원문: '+sourceHref(event)].filter(Boolean).join('\n')}))url.searchParams.set(key,value);
+  if(!range.allDay)url.searchParams.set('ctz','Asia/Seoul');
+  return url.href;
+}
+function subscriptionFeeds(){
+  const feeds=[{key:'all',label:'전체'},...TYPES.map((label,i)=>({key:CALENDAR_KEYS[i],label}))];
+  return feeds.sort((a,b)=>Number(state.selected.has(b.label))-Number(state.selected.has(a.label)));
+}
+function subscriptionUrl(key){return `webcal://iseungsang01.github.io/snu-events/calendar/${key}.ics`}
+function renderSubscriptions(){
+  $('subscribe-feeds').innerHTML=subscriptionFeeds().map(({key,label})=>{
+    const address=subscriptionUrl(key);
+    return `<section class="subscribe-feed"><h3>${esc(label)}</h3><div class="subscribe-actions"><a href="https://calendar.google.com/calendar/r?cid=${encodeURIComponent(address)}" target="_blank" rel="noopener noreferrer">Google 캘린더에 구독</a><a href="${address}">Apple·Outlook</a><button type="button" data-copy-calendar="${key}" aria-label="${esc(label)} 캘린더 주소 복사">주소 복사</button></div></section>`;
+  }).join('');
+  $('copy-status').textContent='';
+}
+async function copySubscription(button){
+  const address=subscriptionUrl(button.dataset.copyCalendar);
+  try{await navigator.clipboard.writeText(address);$('copy-status').textContent='캘린더 주소를 복사했어요.'}
+  catch{
+    let input=button.closest('.subscribe-feed').querySelector('input');
+    if(!input){input=document.createElement('input');input.className='copy-address';input.readOnly=true;input.setAttribute('aria-label','복사할 캘린더 주소');button.closest('.subscribe-feed').appendChild(input)}
+    input.value=address;input.focus();input.select();$('copy-status').textContent='주소를 선택했어요. 복사해 주세요.';
+  }
+}
 function icsEscape(value){return String(value??'').replace(/\\/g,'\\\\').replace(/\r\n|\r|\n/g,'\\n').replace(/;/g,'\\;').replace(/,/g,'\\,')}
 function foldIcs(line){
   const encoder=new TextEncoder();let result='',length=0;
@@ -77,15 +122,14 @@ function foldIcs(line){
   return result;
 }
 function makeIcs(event,now=new Date()){
-  const compact=day=>day.replace(/-/g,'');
-  const utc=(day,time)=>new Date(`${day}T${time}:00+09:00`).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');
+  const range=calendarRange(event);
+  const utc=stamp=>new Date(`${stamp.slice(0,4)}-${stamp.slice(4,6)}-${stamp.slice(6,8)}T${stamp.slice(9,11)}:${stamp.slice(11,13)}:00+09:00`).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');
   const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//SNU Events//Campus Calendar//KO','CALSCALE:GREGORIAN','BEGIN:VEVENT',
     'UID:'+icsEscape(event.id??event.url)+'@snu-events', 'DTSTAMP:'+now.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z')];
-  if(/^(?:[01]\d|2[0-3]):[0-5]\d(?:~(?:[01]\d|2[0-3]):[0-5]\d)?$/.test(event.time??'')){
-    const [start,end]=event.time.split('~');lines.push('DTSTART:'+utc(event.begin,start));
-    if(end){let endDay=event.end;if(endDay===event.begin&&end<start)endDay=addDays(endDay,1);lines.push('DTEND:'+utc(endDay,end))}
+  if(!range.allDay){
+    lines.push('DTSTART:'+utc(range.start),'DTEND:'+utc(range.end));
   }else{
-    lines.push('DTSTART;VALUE=DATE:'+compact(event.begin),'DTEND;VALUE=DATE:'+compact(addDays(event.end,1)));
+    lines.push('DTSTART;VALUE=DATE:'+range.start,'DTEND;VALUE=DATE:'+range.end);
   }
   lines.push('SUMMARY:'+icsEscape(event.title),'LOCATION:'+icsEscape(event.place),'DESCRIPTION:'+icsEscape('원문: '+sourceHref(event)),
     'URL:'+sourceHref(event),'END:VEVENT','END:VCALENDAR');
@@ -102,7 +146,7 @@ function card(event,today){
   const status=multi?(event.begin>today?'시작 예정':event.end<today?'종료':'진행 중'):'';
   // Only the source's fixed HTTPS origin is accepted as an outbound link.
   const href=sourceHref(event);
-  return `<article class="card"><div class="card-top"><span class="badge" data-type="${esc(event.type)}">${esc(event.type)}</span>${status?`<span class="status">${status}</span>`:''}</div><h4><a class="title-link" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(event.title)}</a></h4><div class="meta"><div class="meta-item"><span>일정 · ${esc(dates)}${event.time?' · '+esc(event.time):''}</span>${evidence(event,'time')}</div>${event.place?`<div class="meta-item"><span>장소 · ${esc(event.place)}</span>${evidence(event,'place')}</div>`:''}</div>${event.summary?`<p class="summary">${esc(event.summary)}</p>`:''}<div class="card-bottom"><button class="calendar-add" type="button" data-calendar-id="${esc(event.id)}" aria-label="${esc(event.title)} 캘린더에 추가">캘린더에 추가</button><a class="original" href="${esc(href)}" target="_blank" rel="noopener noreferrer">원문 보기 <span aria-hidden="true">↗</span><span class="sr-only" hidden>${esc(event.title)}</span></a></div></article>`;
+  return `<article class="card"><div class="card-top"><span class="badge" data-type="${esc(event.type)}">${esc(event.type)}</span>${status?`<span class="status">${status}</span>`:''}</div><h4><a class="title-link" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(event.title)}</a></h4><div class="meta"><div class="meta-item"><span>일정 · ${esc(dates)}${event.time?' · '+esc(event.time):''}</span>${evidence(event,'time')}</div>${event.place?`<div class="meta-item"><span>장소 · ${esc(event.place)}</span>${evidence(event,'place')}</div>`:''}</div>${event.summary?`<p class="summary">${esc(event.summary)}</p>`:''}<div class="card-bottom"><a class="calendar-add" href="${esc(googleCalendarUrl(event))}" target="_blank" rel="noopener noreferrer" aria-label="${esc(event.title)} Google 캘린더에 추가">Google 캘린더에 추가</a><button class="calendar-other" type="button" data-calendar-id="${esc(event.id)}" aria-label="${esc(event.title)} 다른 캘린더(.ics)">다른 캘린더(.ics)</button><a class="original" href="${esc(href)}" target="_blank" rel="noopener noreferrer">원문 보기 <span aria-hidden="true">↗</span><span class="sr-only" hidden>${esc(event.title)}</span></a></div></article>`;
 }
 function render(){
   const today=seoulToday(),[start,end]=bounds(state.period,today);
@@ -130,6 +174,9 @@ function renderGroups(events,today){
 }
 function reset(){state.selected.clear();state.query='';$('search').value='';render()}
 document.querySelector('.periods').addEventListener('click',e=>{const button=e.target.closest('[data-period]');if(button){state.period=button.dataset.period;render()}});
+$('subscribe-open').addEventListener('click',()=>{renderSubscriptions();$('subscribe-dialog').showModal()});
+$('subscribe-close').addEventListener('click',()=>$('subscribe-dialog').close());
+$('subscribe-dialog').addEventListener('click',e=>{if(e.target===$('subscribe-dialog'))$('subscribe-dialog').close();const button=e.target.closest('[data-copy-calendar]');if(button)copySubscription(button)});
 $('chips').addEventListener('click',e=>{const button=e.target.closest('[data-type]');if(!button)return;const type=button.dataset.type;state.selected.has(type)?state.selected.delete(type):state.selected.add(type);render()});
 $('search').addEventListener('input',e=>{state.query=e.target.value;render()});
 $('reset').addEventListener('click',reset);

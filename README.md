@@ -50,6 +50,14 @@ Codex는 임시 디렉터리에서 `codex exec --sandbox read-only`와 JSON 스�
 
 `score.py`는 기본적으로 오프라인 채점만 합니다. 실제 Codex 호출은 `--codex-run`을 명시했을 때만 수행합니다. `--tag run1`과 `--tag run2`는 각각 독립된 `data/codex_cache.run1.json`, `data/codex_cache.run2.json`을 사용하므로 서로의 답을 재사용하지 않습니다. 같은 tag로 다시 실행하면 해당 실행의 미완료 표본만 재시도합니다. 결과는 `eval/RESULT.md`에, tag별 결과는 `eval/RESULT.run1.md` 등에 보존합니다. 기본 평가 캐시는 운영 캐시이며, tag 평가 캐시는 운영 데이터에 반영하지 않습니다. 캐시가 없는 표본은 보고서에 명시하므로 실행 전 수치를 Codex 성능으로 해석하지 마세요.
 
-카드의 시간·장소 근거를 누르면 원문 구절을 볼 수 있습니다. 각 카드의 ‘캘린더에 추가’는 `.ics`를 내려받습니다. 시각은 한국 시간으로, 시간이 없으면 종일 일정으로 내보내고 종일 일정의 마지막 날도 포함합니다. 시작 시각만 있으면 종료 시각을 만들어 넣지 않습니다. 기간 행사는 표시된 시작·종료 날짜를 사용하며, 회차별 반복 일정은 만들지 않습니다.
+카드의 시간·장소 근거를 누르면 원문 구절을 볼 수 있습니다. ‘Google 캘린더에 추가’는 새 탭에서 일정 등록 화면을 엽니다. ‘다른 캘린더(.ics)’로 개별 파일을 받을 수도 있습니다. 시각은 한국 시간이며 시작 시각만 있으면 1시간 일정으로 만듭니다. 시간이 없거나 여러 날에 걸친 행사는 마지막 날을 포함한 종일 일정으로 만듭니다. 회차별 반복 일정은 만들지 않습니다.
 
-`scripts/update_local.cmd`는 수집 → Codex 보강 → 커밋·푸시 순으로 실행하며, 보강이 실패해도 수집 결과는 게시합니다. 테스트는 실제 Codex나 네트워크 없이 실행합니다.
+페이지 위의 ‘내 캘린더에 구독’에서 전체 또는 종류별 Google 캘린더 구독, Apple·Outlook용 `webcal://` 링크, 주소 복사를 선택할 수 있습니다. 현재 선택한 종류를 먼저 보여 줍니다. 구독 주소는 `webcal://iseungsang01.github.io/snu-events/calendar/all.ics`이며 종류별 키는 `performance`, `exhibition`, `contest`, `lecture`, `recruit`, `other`입니다. 캘린더 앱마다 갱신 주기는 다를 수 있습니다.
+
+수집 및 Codex 보강이 끝나면 `docs/calendar/`의 전체·종류별 7개 파일을 다시 만듭니다. 행사 id 기반 UID는 날짜나 제목이 바뀌어도 유지하며, DTSTAMP는 JSON의 수집 시각을 사용합니다. RFC 5545의 CRLF, UTF-8 75옥텟 줄 접기, 텍스트 이스케이프와 서울 시간대 정의를 포함합니다. 생성기는 표준 라이브러리만 사용합니다. `requirements-dev.txt`의 `icalendar`를 설치하면 독립 파서 검증도 실행하며, 설치되지 않았을 때는 그 검사만 건너뜁니다. 기존 JSON으로 구독 파일만 재생성하려면 다음을 실행합니다.
+
+```sh
+python scripts/build_calendars.py
+```
+
+`scripts/update_local.cmd`는 수집 → Codex 보강 → JSON과 구독 파일 커밋·푸시 순으로 실행하며, 보강이 실패해도 수집 결과는 게시합니다. 테스트는 실제 Codex나 네트워크 없이 실행합니다.

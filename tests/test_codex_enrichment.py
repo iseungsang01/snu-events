@@ -186,7 +186,10 @@ def test_cli_transport_is_readonly_schema_json_and_stdin(monkeypatch):
 
 def test_main_writes_rule_fallback_even_when_calls_fail(tmp_path, monkeypatch):
     path, cache = tmp_path / "events.json", tmp_path / "cache.json"
-    path.write_text(json.dumps({"events": [event()], "fetched_at": "keep"}), encoding="utf-8")
+    row = {**event(), "begin": "2026-11-20", "end": "2026-11-20",
+           "url": "https://www.snu.ac.kr/snunow/events?bbsidx=1"}
+    stamp = "2026-11-20T06:00:00+09:00"
+    path.write_text(json.dumps({"events": [row], "fetched_at": stamp}), encoding="utf-8")
     def failure(*args, **kwargs):
         raise FileNotFoundError("CLI missing")
     monkeypatch.setattr(enrich, "call_codex", failure)
@@ -194,9 +197,10 @@ def test_main_writes_rule_fallback_even_when_calls_fail(tmp_path, monkeypatch):
     with pytest.raises(SystemExit, match="1"):
         enrich.main()
     saved = json.loads(path.read_text(encoding="utf-8"))
-    assert saved["fetched_at"] == "keep"
+    assert saved["fetched_at"] == stamp
     assert saved["events"][0]["source"] == "rule"
     assert saved["events"][0]["place"] == "규칙 장소"
+    assert (tmp_path / "calendar/all.ics").exists()
 
 
 @pytest.mark.parametrize("mode", ["nonzero", "timeout", "json"])
