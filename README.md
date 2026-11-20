@@ -32,3 +32,24 @@ python -m http.server 8000 --directory docs
 수집 워크플로에 저장소 쓰기 권한이 필요합니다. `GITHUB_TOKEN`으로 만든 커밋은 Pages의 브랜치 빌드를 다시 실행하지 않으므로, `pages.yml`은 수집 워크플로 성공 후에도 실행됩니다. 기본 브랜치가 `main`이 아니라면 `pages.yml`의 브랜치 이름을 수정하세요.
 
 행사 정보는 항상 SNU 캘린더 원문이 기준입니다.
+
+## Codex로 원문 읽기와 평가
+
+ChatGPT Edu 계정으로 로그인한 Codex CLI가 PATH에 있는 로컬 PC에서 실행합니다. API 키를 설정하지 않으며 기존 CLI 로그인을 사용합니다.
+
+```sh
+python scripts/enrich_with_codex.py
+python eval/score.py
+python eval/score.py --codex-run --tag run1
+python eval/score.py --codex-run --tag run2
+```
+
+첫 명령은 `docs/events.json`의 새 행사·변경된 본문을 10건씩 읽고, 검증한 결과를 반영합니다. `data/codex_cache.json`에 id와 제목·본문의 SHA-256 해시를 저장하므로 같은 원문은 다시 보내지 않습니다. 실패·시간 초과인 묶음은 캐시하지 않아 다음 실행에 재시도합니다. `--timeout 300`으로 묶음당 제한 시간을 바꿀 수 있습니다. 성공한 묶음마다 캐시를 저장합니다.
+
+Codex는 임시 디렉터리에서 `codex exec --sandbox read-only`와 JSON 스키마를 사용합니다. 원문은 stdin으로 전달하고, 최종 JSON만 `--output-last-message`로 읽습니다. [OpenAI 공식 문서](https://learn.chatgpt.com/docs/non-interactive-mode)의 CLI 규격을 따릅니다. 인용이 공백을 정규화한 원문에 없거나 시각과 불일치하면 해당 값을 비웁니다. 장소의 URL·이메일·전화번호도 거부하며, 실행 끝에 버린 필드 수를 출력합니다. Codex가 읽은 행사는 `source: "codex"`와 `evidence`를, 실패하거나 읽지 않은 행사는 기존 규칙 값과 `source: "rule"`을 갖습니다.
+
+`score.py`는 기본적으로 오프라인 채점만 합니다. 실제 Codex 호출은 `--codex-run`을 명시했을 때만 수행합니다. `--tag run1`과 `--tag run2`는 각각 독립된 `data/codex_cache.run1.json`, `data/codex_cache.run2.json`을 사용하므로 서로의 답을 재사용하지 않습니다. 같은 tag로 다시 실행하면 해당 실행의 미완료 표본만 재시도합니다. 결과는 `eval/RESULT.md`에, tag별 결과는 `eval/RESULT.run1.md` 등에 보존합니다. 기본 평가 캐시는 운영 캐시이며, tag 평가 캐시는 운영 데이터에 반영하지 않습니다. 캐시가 없는 표본은 보고서에 명시하므로 실행 전 수치를 Codex 성능으로 해석하지 마세요.
+
+카드의 시간·장소 근거를 누르면 원문 구절을 볼 수 있습니다. 각 카드의 ‘캘린더에 추가’는 `.ics`를 내려받습니다. 시각은 한국 시간으로, 시간이 없으면 종일 일정으로 내보내고 종일 일정의 마지막 날도 포함합니다. 시작 시각만 있으면 종료 시각을 만들어 넣지 않습니다. 기간 행사는 표시된 시작·종료 날짜를 사용하며, 회차별 반복 일정은 만들지 않습니다.
+
+`scripts/update_local.cmd`는 수집 → Codex 보강 → 커밋·푸시 순으로 실행하며, 보강이 실패해도 수집 결과는 게시합니다. 테스트는 실제 Codex나 네트워크 없이 실행합니다.

@@ -83,3 +83,74 @@ if (['week','month'].includes(period)) {
         encoding="utf-8", timeout=20,
     )
     assert result.returncode == 0, result.stderr
+
+
+def test_evidence_and_calendar_download():
+    node = shutil.which("node")
+    assert node, "Node.js is required for calendar tests"
+    page = Path(__file__).resolve().parents[1] / "docs/index.html"
+    script = r"""
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const source=fs.readFileSync(process.argv[1],'utf8').split('<script>')[1].split('</script>')[0];
+let blob,clicked=false,removed=false,appended=false,revoked=false;
+const link={click(){clicked=true},remove(){removed=true}};
+class TestURL extends URL {
+  static createObjectURL(value){blob=value;return 'blob:calendar'}
+  static revokeObjectURL(value){assert.equal(value,'blob:calendar');revoked=true}
+}
+const context=vm.createContext({URL:TestURL,Intl,Date,TextEncoder,Blob,
+  setTimeout(callback){callback()},document:{createElement(){return link},body:{appendChild(){appended=true}}}});
+vm.runInContext(source.split("document.querySelector('.periods')")[0],context);
+const event={id:'123',title:'공연, 특별; 행사\\제목\n다음 줄',begin:'2026-11-20',end:'2026-11-20',
+  time:'14:00~16:20',place:'예술관 콘서트홀',type:'공연',url:'https://www.snu.ac.kr/snunow/events?bbsidx=123',
+  source:'codex',evidence:{time_quote:'오후 2시 <안내>',place_quote:'예술관 콘서트홀'}};
+context.event=event;
+const evaluate=code=>vm.runInContext(code,context);
+const unfold=ics=>ics.replace(/\r\n /g,'');
+const timed=unfold(evaluate('makeIcs(event,new Date("2026-11-01T00:00:00Z"))'));
+assert.ok(timed.includes('DTSTART:20261120T050000Z\r\n'));
+assert.ok(timed.includes('DTEND:20261120T072000Z\r\n'));
+assert.ok(timed.includes('DTSTAMP:20261101T000000Z'));
+assert.ok(timed.includes('LOCATION:예술관 콘서트홀'));
+assert.ok(timed.includes('URL:'+event.url));
+assert.ok(timed.includes('DESCRIPTION:원문: '+event.url));
+assert.ok(timed.includes('SUMMARY:공연\\, 특별\\; 행사\\\\제목\\n다음 줄'));
+assert.ok(timed.endsWith('END:VCALENDAR\r\n'));
+assert.ok(!timed.replace(/\r\n/g,'').includes('\n'));
+const html=evaluate('card(event,"2026-11-20")');
+assert.equal((html.match(/class="evidence"/g)||[]).length,2);
+assert.ok(html.includes('오후 2시 &lt;안내&gt;'));
+assert.ok(html.includes('data-calendar-id="123"'));
+assert.ok(!html.includes('<details open'));
+event.source='rule';assert.ok(!evaluate('card(event,"2026-11-20")').includes('class="evidence"'));
+event.time='';event.end='2026-11-22';
+const allDay=unfold(evaluate('makeIcs(event)'));
+assert.ok(allDay.includes('DTSTART;VALUE=DATE:20261120'));
+assert.ok(allDay.includes('DTEND;VALUE=DATE:20261123'));
+event.end=event.begin;event.time='23:30~01:00';
+const overnight=unfold(evaluate('makeIcs(event)'));
+assert.ok(overnight.includes('DTSTART:20261120T143000Z'));
+assert.ok(overnight.includes('DTEND:20261120T160000Z'));
+event.time='00:30';const single=unfold(evaluate('makeIcs(event)'));
+assert.ok(single.includes('DTSTART:20261119T153000Z'));
+assert.ok(!single.includes('DTEND'));
+event.time='14:00~16:00';event.end='2026-11-22';
+assert.ok(unfold(evaluate('makeIcs(event)')).includes('DTEND:20261122T070000Z'));
+event.title='가나다😀'.repeat(80);
+const folded=evaluate('makeIcs(event)');
+for(const line of folded.split('\r\n'))assert.ok(Buffer.byteLength(line,'utf8')<=75);
+assert.ok(unfold(folded).includes('SUMMARY:'+event.title));
+event.title='제목\r\nBEGIN:VEVENT';event.place='홀\rATTENDEE:evil';event.url='javascript:alert(1)';
+const injection=unfold(evaluate('makeIcs(event)'));
+assert.equal((injection.match(/\r\nBEGIN:VEVENT/g)||[]).length,1);
+assert.ok(!injection.includes('\r\nATTENDEE:evil'));
+assert.ok(!injection.includes('javascript:'));
+evaluate('downloadCalendar(event)');
+assert.ok(clicked&&removed&&appended&&revoked);
+assert.equal(blob.type,'text/calendar;charset=utf-8');
+assert.equal(link.download,'snu-event-123.ics');
+assert.equal(link.href,'blob:calendar');
+"""
+    result = subprocess.run([node, "-e", script, str(page)], stdin=subprocess.DEVNULL, capture_output=True,
+                            text=True, encoding="utf-8", timeout=20)
+    assert result.returncode == 0, result.stderr

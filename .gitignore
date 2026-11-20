@@ -3,3 +3,4 @@ __pycache__/
 .venv/
 *.json.tmp
 prompts/*_log.txt
+data/codex_cache.json

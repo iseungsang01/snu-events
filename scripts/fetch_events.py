@@ -253,6 +253,7 @@ def transform(raw_events: list[dict], today: date) -> list[dict]:
             "summary": public_text(raw.get("desc") or content)[:120],
             "url": f"{LIST_URL}?md=v&bbsidx={idx}",
             "type": classify(title, content), "place": place, "time": clock,
+            "source": "rule",
             "search_text": public_text(content),
         }
     return sorted(events.values(), key=lambda e: (e["begin"], e["end"], e["id"]))

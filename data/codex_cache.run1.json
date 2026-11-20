@@ -1,0 +1,505 @@
+{
+  "version": 1,
+  "events": {
+    "174503": {
+      "body_hash": "7a9416526e6b507eaa986050a426b30c64ee51636c5d9e09feaff34c56cf88eb",
+      "result": {
+        "type": "특강·세미나",
+        "time": "18:00~20:50",
+        "place": "서울대학교 38동 429호",
+        "time_quote": "18:00~20:50",
+        "place_quote": "서울대학교 38동 429호"
+      }
+    },
+    "174821": {
+      "body_hash": "507b0ce83e063a95afc1024d6256fe45a89643702b033694cf67cf3ab94606ae",
+      "result": {
+        "type": "전시",
+        "time": "10:00~18:00",
+        "place": "서울대학교미술관 2~3F 전시실 1~4",
+        "time_quote": "10:00~18:00",
+        "place_quote": "서울대학교미술관 2~3F 전시실 1~4"
+      }
+    },
+    "175493": {
+      "body_hash": "c2ba2b0e0aa24e74b976925cb2b2a4189b4ff6c0cb4c5ef2df539a62c7330422",
+      "result": {
+        "type": "특강·세미나",
+        "time": "15:30~17:30",
+        "place": "서울대학교 미술대학 50동 301호",
+        "time_quote": "15:30 ~ 17:30",
+        "place_quote": "서울대학교 미술대학 50동 301호"
+      }
+    },
+    "176861": {
+      "body_hash": "32217bef8dffbbf23ed299e7e9b783a53161cfb9b24b5b48b5529473713364f6",
+      "result": {
+        "type": "전시",
+        "time": "",
+        "place": "62동(중앙도서관 본관) 4층 로비 내 전시 공간",
+        "time_quote": "",
+        "place_quote": "62동(중앙도서관 본관) 4층 로비 내 전시 공간"
+      }
+    },
+    "177542": {
+      "body_hash": "ac99b953dcffc2faf6fcfc6638e950465a63c91734f298c867de8b2a6b79e2b3",
+      "result": {
+        "type": "특강·세미나",
+        "time": "",
+        "place": "",
+        "time_quote": "",
+        "place_quote": ""
+      }
+    },
+    "177662": {
+      "body_hash": "4b3310e20646fbc069e852669327c200544c0cf53afc5f68febf6f1c98d7e637",
+      "result": {
+        "type": "모집·안내",
+        "time": "",
+        "place": "",
+        "time_quote": "",
+        "place_quote": ""
+      }
+    },
+    "178019": {
+      "body_hash": "60e39db4d4d75df1342fa7f95ebd0507fa08c637b85c6bdb8cf6bc2e3a38ad2d",
+      "result": {
+        "type": "특강·세미나",
+        "time": "",
+        "place": "서울대학교 중앙도서관(62동)",
+        "time_quote": "",
+        "place_quote": "서울대학교 중앙도서관(62동)"
+      }
+    },
+    "178214": {
+      "body_hash": "c2e4bf079dbba47d2da71f824685ea9c71f9430c2458e35d11a2b2f19cd44711",
+      "result": {
+        "type": "특강·세미나",
+        "time": "14:00~16:00",
+        "place": "서울대학교 우석경제관(223동) 504호",
+        "time_quote": "14:00-16:00",
+        "place_quote": "서울대학교 우석경제관(223동) 504호"
+      }
+    },
+    "178232": {
+      "body_hash": "37b5aee908ebf586c974919fb3703271fc27a1158e831c274bf89373d8299461",
+      "result": {
+        "type": "특강·세미나",
+        "time": "15:30",
+        "place": "서울대학교 대형강의동(28동) 302호",
+        "time_quote": "오후 3시 30분",
+        "place_quote": "서울대학교 대형강의동(28동) 302호"
+      }
+    },
+    "178352": {
+      "body_hash": "4a6a01d6ab28da093ead76f977bf8afd4adcd03d32cc75de598657823790c6d2",
+      "result": {
+        "type": "특강·세미나",
+        "time": "",
+        "place": "온라인(GoToWebinar)",
+        "time_quote": "",
+        "place_quote": "실시간 온라인 (GoToWebinar)"
+      }
+    },
+    "178475": {
+      "body_hash": "e606984721b5a43d4986ce7e648cb650cdb5a101e4cefefb90773cc3fe8f6c6b",
+      "result": {
+        "type": "대회·공모",
+        "time": "18:30",
+        "place": "서울대학교 해동학술문화관 해동홀 (32-1동 1층 강연장)",
+        "time_quote": "11월 16일(월) 18:30",
+        "place_quote": "서울대학교 해동학술문화관 해동홀 (32-1동 1층 강연장)"
+      }
+    },
+    "178514": {
+      "body_hash": "89c33d69f3679d89f05a98d3a250d46377c0a2c53572bf5fe3416d69d1cb8889",
+      "result": {
+        "type": "특강·세미나",
+        "time": "",
+        "place": "",
+        "time_quote": "",
+        "place_quote": ""
+      }
+    },
+    "178583": {
+      "body_hash": "36d7b434cbd6af35bbc23e890f96896950aab1b1de6b3ec16fc62fc52596f660",
+      "result": {
+        "type": "특강·세미나",
+        "time": "10:00~11:30",
+        "place": "온라인(Zoom)",
+        "time_quote": "10:00–11:30 (KST)",
+        "place_quote": "Zoom Meeting"
+      }
+    },
+    "178799": {
+      "body_hash": "42d362d79993f849d55e7065a81262068a14226e92250e743f57fec28cfe21c2",
+      "result": {
+        "type": "특강·세미나",
+        "time": "10:00~12:00",
+        "place": "서울대학교 규장각한국학연구원(103동) 444호",
+        "time_quote": "10:00~12:00",
+        "place_quote": "서울대학교 규장각한국학연구원(103동) 444호"
+      }
+    },
+    "178805": {
+      "body_hash": "53f8541d3ae6733535d37df740691728dea776c7e82bd3bb2d2edac971829e1a",
+      "result": {
+        "type": "기타",
+        "time": "",
+        "place": "서울보라매초등학교 2층 강당",
+        "time_quote": "",
+        "place_quote": "서울보라매초등학교 2층 강당"
+      }
+    },
+    "178811": {
+      "body_hash": "59916af3b191d073ea3462b8a69db8e5b44ce6b70308c72f2e94f04a6c55ae3b",
+      "result": {
+        "type": "특강·세미나",
+        "time": "",
+        "place": "Building 4, Room 302, Seoul National University",
+        "time_quote": "",
+        "place_quote": "Building 4, Room 302, Seoul National University"
+      }
+    },
+    "178817": {
+      "body_hash": "105736839bd9705188a65169c03e619a52488217980c2d6b02c7945039195273",
+      "result": {
+        "type": "특강·세미나",
+        "time": "13:30~17:40",
+        "place": "서울대학교 IBK커뮤니케이션센터 64동 201호",
+        "time_quote": "13:30~17:40",
+        "place_quote": "서울대학교 IBK커뮤니케이션센터 64동 201호"
+      }
+    },
+    "178904": {
+      "body_hash": "00e216cf43263d61631462ad272a14465844a4a693c8da9240c42480acb543fe",
+      "result": {
+        "type": "특강·세미나",
+        "time": "12:00~13:30",
+        "place": "서울대학교 국제대학원 국제회의실 (140-2동, 4층)",
+        "time_quote": "12:00–13:30",
+        "place_quote": "서울대학교 국제대학원 국제회의실 (140-2동, 4층)"
+      }
+    },
+    "178931": {
+      "body_hash": "8879435f0f6d047efc4d7bc5728384143d92e34983030795582e237423cf809f",
+      "result": {
+        "type": "공연",
+        "time": "16:00~19:00",
+        "place": "서울대학교 8동 101호(연강홀)",
+        "time_quote": "16:00~19:00",
+        "place_quote": "서울대학교 8동 101호(연강홀)"
+      }
+    },
+    "178934": {
+      "body_hash": "4590e72c948f9b35832c35b1f69db8d30201fa28893abf5992ec19ccc6a86478",
+      "result": {
+        "type": "대회·공모",
+        "time": "",
+        "place": "몬드리안 서울 이태원 호텔 (서울 용산구 장문로 23)",
+        "time_quote": "",
+        "place_quote": "몬드리안 서울 이태원 호텔 (서울 용산구 장문로 23)"
+      }
+    },
+    "178937": {
+      "body_hash": "022e6448cb369cf015cad6fbd4e7c94427c157a69db72dd7c363d3c792bfa3f7",
+      "result": {
+        "type": "특강·세미나",
+        "time": "12:30~13:50",
+        "place": "서울대학교 법학전문대학원 84동 101호 최종길홀",
+        "time_quote": "12:30–13:50",
+        "place_quote": "서울대학교 법학전문대학원 84동 101호 최종길홀"
+      }
+    },
+    "178943": {
+      "body_hash": "59470238c7ab5d17273924d84145d4073bcca43283955f8e40b9229e9f257f75",
+      "result": {
+        "type": "공연",
+        "time": "19:30",
+        "place": "서울대학교 예술관 콘서트홀",
+        "time_quote": "오후 7시 30분",
+        "place_quote": "서울대학교 예술관 콘서트홀"
+      }
+    },
+    "178949": {
+      "body_hash": "7e3d7fcdc79fe4b9d97896c69ef718bf96a953bd116cd02749f15b206d6b7df3",
+      "result": {
+        "type": "특강·세미나",
+        "time": "13:30~17:40",
+        "place": "서울대학교 IBK커뮤니케이션센터 64동 201호",
+        "time_quote": "13:30~17:40",
+        "place_quote": "서울대학교 IBK커뮤니케이션센터 64동 201호"
+      }
+    },
+    "178952": {
+      "body_hash": "05cdedfc611df089d2ae7e2702f98c001333f03af26ac05bf5b24e2e58996560",
+      "result": {
+        "type": "특강·세미나",
+        "time": "16:00~18:00",
+        "place": "서울대학교 인문대학 14동 B101호",
+        "time_quote": "오후 4시-6시",
+        "place_quote": "서울대학교 인문대학 14동 B101호"
+      }
+    },
+    "178958": {
+      "body_hash": "795790e836599d5feaa31097e99e0aebb8d91a668d4365a314106f5ce93f4298",
+      "result": {
+        "type": "특강·세미나",
+        "time": "10:30~11:45",
+        "place": "관악캠퍼스 61동 320호",
+        "time_quote": "10:30 - 11:45",
+        "place_quote": "관악캠퍼스 61동 320호"
+      }
+    },
+    "178961": {
+      "body_hash": "9aa0e7e1702dd66d8dbdbf8ea37faec1e37697d738abccf334d3bf7d30a0098c",
+      "result": {
+        "type": "기타",
+        "time": "16:00~16:45",
+        "place": "28동 201호 관허 코스모스홀",
+        "time_quote": "16:00 ~ 16:45",
+        "place_quote": "28동 201호 관허 코스모스홀"
+      }
+    },
+    "178967": {
+      "body_hash": "cbeb63960aaa525bf40ff2abc27fe02df0fcc455cfece2d7f83bc26f643e2274",
+      "result": {
+        "type": "특강·세미나",
+        "time": "09:00~10:30",
+        "place": "온라인(Zoom)",
+        "time_quote": "9:00 - 10:30",
+        "place_quote": "줌 링크: [ 줌 링크 바로가기 ]"
+      }
+    },
+    "179069": {
+      "body_hash": "d0ae8b93d913459633e9ffa30c301124256d3af9dc55b806674e426ad1416dc5",
+      "result": {
+        "type": "특강·세미나",
+        "time": "14:00",
+        "place": "서울대학교 아시아연구소(101동) 삼익홀",
+        "time_quote": "오후 2시",
+        "place_quote": "서울대학교 아시아연구소(101동) 삼익홀"
+      }
+    },
+    "179078": {
+      "body_hash": "04199a03f561a77bf25ed7cd053ef25a79b655bee3330967331c2831a1dece70",
+      "result": {
+        "type": "특강·세미나",
+        "time": "15:00",
+        "place": "온라인(Zoom)",
+        "time_quote": "오후 3시",
+        "place_quote": "비대면 (사전등록자에게 zoom 접속 링크 발송 예정)"
+      }
+    },
+    "179162": {
+      "body_hash": "01aa9e8ea0b0454c3b8b198697dcf13f2ab4936afe40e98cf1202f7881aa1c11",
+      "result": {
+        "type": "특강·세미나",
+        "time": "14:00~17:00",
+        "place": "서울대학교 우석경제관(관악캠퍼스 223동) 107호",
+        "time_quote": "오후 2시–5시",
+        "place_quote": "서울대학교 우석경제관(관악캠퍼스 223동) 107호"
+      }
+    },
+    "179216": {
+      "body_hash": "60ea72ceddf2df078c75fe0c380637357e56ce314a27e7ca56ce264062f0591d",
+      "result": {
+        "type": "특강·세미나",
+        "time": "14:00~15:50",
+        "place": "서울대학교 우석경제관(223동) 504호",
+        "time_quote": "14:00~15:50",
+        "place_quote": "서울대학교 우석경제관(223동) 504호"
+      }
+    },
+    "179219": {
+      "body_hash": "381b3ff7ad9b951ddb2097a24e744863ec1533616e1eaa5d63c8e7160ec96686",
+      "result": {
+        "type": "공연",
+        "time": "17:00~18:00",
+        "place": "간호대학 제2연구동(13동) 2층 이윤경홀",
+        "time_quote": "17:00–18:00",
+        "place_quote": "간호대학 제2연구동(13동) 2층 이윤경홀"
+      }
+    },
+    "179225": {
+      "body_hash": "c22c3494e1712330a4480acf07f262b9c76e6effa197c15f8aa73e158830fd6c",
+      "result": {
+        "type": "모집·안내",
+        "time": "",
+        "place": "",
+        "time_quote": "",
+        "place_quote": ""
+      }
+    },
+    "179237": {
+      "body_hash": "365cdabd30db15bbb90558595c8088de2097d907b08601108e440fce49cb06d4",
+      "result": {
+        "type": "특강·세미나",
+        "time": "13:20~17:35",
+        "place": "서울대학교 글로벌공학교육센터(38동) 517호",
+        "time_quote": "13:20~17:35",
+        "place_quote": "서울대학교 글로벌공학교육센터(38동) 517호"
+      }
+    },
+    "179240": {
+      "body_hash": "cd044ed21abb12509482d2d5c920d1aa06fa516d6c3c87a799dd909861288c11",
+      "result": {
+        "type": "특강·세미나",
+        "time": "14:00~17:00",
+        "place": "서울대학교 국제대학원 GL룸 (140동 201호)",
+        "time_quote": "14:00–17:00",
+        "place_quote": "서울대학교 국제대학원 GL룸 (140동 201호)"
+      }
+    },
+    "179282": {
+      "body_hash": "4a93f1c1031c54fa6f3bd922529a820a20800ff077ef5b694d1f91de462e1878",
+      "result": {
+        "type": "특강·세미나",
+        "time": "",
+        "place": "온라인(Zoom)",
+        "time_quote": "",
+        "place_quote": "온라인 Zoom 세미나"
+      }
+    },
+    "179327": {
+      "body_hash": "f08677cf7d25bbeb5fa2927b793f474b46645c4b8e8f30dcc3db6c35124e33f3",
+      "result": {
+        "type": "특강·세미나",
+        "time": "12:30",
+        "place": "온라인(Zoom)",
+        "time_quote": "12:30",
+        "place_quote": "참여방법: ZOOM"
+      }
+    },
+    "179414": {
+      "body_hash": "ce00265aa1c2797fdeb53a115dab724720e556e602abf336d83cd01391d889a5",
+      "result": {
+        "type": "특강·세미나",
+        "time": "10:00~17:00",
+        "place": "서울대학교 38동 글로벌공학교육센터 5층 대강당",
+        "time_quote": "10:00~17:00",
+        "place_quote": "서울대학교 38동 글로벌공학교육센터 5층 대강당"
+      }
+    },
+    "179420": {
+      "body_hash": "264e147b97327845ee250adedc15a333da8f0367bbfbb39d97e021a510dd8cab",
+      "result": {
+        "type": "특강·세미나",
+        "time": "16:00~18:00",
+        "place": "서울대학교 아시아연구소 101동 230호",
+        "time_quote": "16:00-18:00",
+        "place_quote": "서울대학교 아시아연구소 101동 230호"
+      }
+    },
+    "179423": {
+      "body_hash": "576a1ef0f9e1c5f6193ea350a3f42e4dac28c833ccd1358f2bee93365642d501",
+      "result": {
+        "type": "특강·세미나",
+        "time": "11:00~13:00",
+        "place": "서울대학교 152-1동 (롯데국제교육관) 208호",
+        "time_quote": "오전 11시-오후1시",
+        "place_quote": "서울대학교 152-1동 (롯데국제교육관) 208호"
+      }
+    },
+    "179435": {
+      "body_hash": "3f12f059b475040d082b307c22e1f5f118cd03e45ab9d7f0309b5f026fb71936",
+      "result": {
+        "type": "특강·세미나",
+        "time": "15:00~16:00",
+        "place": "온라인(Zoom)",
+        "time_quote": "15:00~16:00",
+        "place_quote": "온라인(Zoom)"
+      }
+    },
+    "179441": {
+      "body_hash": "21b6d773645ceeb82b48e75fb0ef3d0f4f88dfe12fd10f0740aeaae6d7bc91ec",
+      "result": {
+        "type": "특강·세미나",
+        "time": "18:45~21:00",
+        "place": "서울대 국제대학원 140-2동 202호",
+        "time_quote": "18:45~21:00",
+        "place_quote": "서울대 국제대학원 140-2동 202호"
+      }
+    },
+    "179447": {
+      "body_hash": "bdbb52a89f29c42f787bced210fed71933129bc938782f359faad8eaf466bce4",
+      "result": {
+        "type": "특강·세미나",
+        "time": "17:00",
+        "place": "302동 105호",
+        "time_quote": "17시",
+        "place_quote": "302동 105호"
+      }
+    },
+    "179516": {
+      "body_hash": "f9e9a7308a9484a62c3130c15a4a019127d400f76e5eac9b89fa3c9716cb2b47",
+      "result": {
+        "type": "기타",
+        "time": "18:00",
+        "place": "서울대학교 국제처(152동)",
+        "time_quote": "18:00",
+        "place_quote": "서울대학교 국제처(152동)"
+      }
+    },
+    "179525": {
+      "body_hash": "761076210d4cc96721eb471c7433e585d0a97e4defe0758ffc8d37ea5f9e903f",
+      "result": {
+        "type": "기타",
+        "time": "16:00~17:00",
+        "place": "국제처 1층 라운지(152동, CJ International Center)",
+        "time_quote": "16:00~17:00",
+        "place_quote": "국제처 1층 라운지(152동, CJ International Center)"
+      }
+    },
+    "179528": {
+      "body_hash": "0138db61ed8755d99c73b9c3ceca084167bd3d93be5ef97e927f50455a0f5c4b",
+      "result": {
+        "type": "특강·세미나",
+        "time": "14:00~17:00",
+        "place": "서울대학교 연구공원 943동 1층 대형 세미나실",
+        "time_quote": "14:00~17:00",
+        "place_quote": "서울대학교 연구공원 943동 1층 대형 세미나실"
+      }
+    },
+    "179594": {
+      "body_hash": "ea02bc265f00b6ebb11fa00cebc3f137b17b3e280867086a85c5a9079fd8e085",
+      "result": {
+        "type": "공연",
+        "time": "17:00",
+        "place": "서울대학교 예술관 콘서트홀",
+        "time_quote": "오후 5시",
+        "place_quote": "서울대학교 예술관 콘서트홀"
+      }
+    },
+    "179615": {
+      "body_hash": "b0c2c90ae5213d0dca3e012c9965265955d015729c08d767e0a02ad0ba2cc43a",
+      "result": {
+        "type": "모집·안내",
+        "time": "",
+        "place": "",
+        "time_quote": "",
+        "place_quote": ""
+      }
+    },
+    "179618": {
+      "body_hash": "3f9ab9412c338dc183fc4bdea530c2e6aada25bef8a828f29c1b96e047567394",
+      "result": {
+        "type": "특강·세미나",
+        "time": "",
+        "place": "서울대학교 인문대학 내 강의실(추후 재안내 예정)",
+        "time_quote": "",
+        "place_quote": "서울대학교 인문대학 내 강의실(추후 재안내 예정)"
+      }
+    },
+    "179684": {
+      "body_hash": "f7730b443a61667d0e05446b9abcfc4b1e7bc4a5b88267e6517c2a6dde262c17",
+      "result": {
+        "type": "특강·세미나",
+        "time": "",
+        "place": "서울대학교 환경대학원 82동 2층 열린플랫폼",
+        "time_quote": "",
+        "place_quote": "서울대학교 환경대학원 82동 2층 열린플랫폼"
+      }
+    }
+  }
+}

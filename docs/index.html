@@ -13,6 +13,7 @@
 @media(prefers-color-scheme:dark){:root{--bg:#111923;--surface:#192331;--ink:#e6edf7;--muted:#abb8ca;--line:#344155;--navy:#c7dcfc;--accent:#bddf83;--soft:#243449;--shadow:none}.mark,.periods button[aria-pressed=true]{color:#142e53}.chip[aria-pressed=true]::before{background:#c7dcfc}h1 span{color:#badb8b}.badge[data-type="공연"]{background:#48332d;color:#f5c2ae}.badge[data-type="전시"]{background:#2c3b2a;color:#c1d8ad}.badge[data-type="대회·공모"]{background:#413b29;color:#e3d09b}}
 .cards{grid-template-columns:minmax(0,1fr)}.card{min-width:0}.meta span{overflow-wrap:anywhere}
 .past-events{border-top:1px solid var(--line);padding-top:18px;margin-top:24px}.past-events summary{cursor:pointer;font-weight:650;margin-bottom:18px}
+.meta-item{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}.evidence{font-size:11px;max-width:100%}.evidence summary{cursor:pointer;text-decoration:underline;text-underline-offset:3px}.evidence blockquote{margin:6px 0;padding:8px 10px;border-left:2px solid var(--line);white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink)}.card-bottom{align-items:center;gap:16px}.calendar-add{font:inherit;font-size:12px;cursor:pointer;border:1px solid var(--line);border-radius:6px;background:var(--soft);color:var(--ink);padding:5px 9px}
 </style>
 </head>
 <body>
@@ -61,13 +62,47 @@ function displayDate(day,year=false){return new Intl.DateTimeFormat('ko-KR',{tim
 function inPeriod(event,start,end){return event.begin<=end&&event.end>=start}
 function periodEvents(today){const [start,end]=bounds(state.period,today);return state.events.filter(e=>inPeriod(e,start,end))}
 function filtered(events){const q=state.query.trim().normalize('NFKC').toLocaleLowerCase('ko');return events.filter(e=>(!state.selected.size||state.selected.has(e.type))&&(!q||[e.title,e.summary,e.search_text].join(' ').normalize('NFKC').toLocaleLowerCase('ko').includes(q)))}
+function sourceHref(event){
+  try{const url=new URL(event.url);if(url.origin==='https://www.snu.ac.kr')return url.href}catch{}
+  return 'https://www.snu.ac.kr/snunow/events';
+}
+function evidence(event,field){
+  const quote=event.evidence?.[field+'_quote'];
+  return event.source==='codex'&&event[field]&&quote?`<details class="evidence"><summary aria-label="${field==='time'?'시간':'장소'} 근거">근거</summary><blockquote>${esc(quote)}</blockquote></details>`:'';
+}
+function icsEscape(value){return String(value??'').replace(/\\/g,'\\\\').replace(/\r\n|\r|\n/g,'\\n').replace(/;/g,'\\;').replace(/,/g,'\\,')}
+function foldIcs(line){
+  const encoder=new TextEncoder();let result='',length=0;
+  for(const character of line){const size=encoder.encode(character).length;if(length+size>75){result+='\r\n ';length=1}result+=character;length+=size}
+  return result;
+}
+function makeIcs(event,now=new Date()){
+  const compact=day=>day.replace(/-/g,'');
+  const utc=(day,time)=>new Date(`${day}T${time}:00+09:00`).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');
+  const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//SNU Events//Campus Calendar//KO','CALSCALE:GREGORIAN','BEGIN:VEVENT',
+    'UID:'+icsEscape(event.id??event.url)+'@snu-events', 'DTSTAMP:'+now.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z')];
+  if(/^(?:[01]\d|2[0-3]):[0-5]\d(?:~(?:[01]\d|2[0-3]):[0-5]\d)?$/.test(event.time??'')){
+    const [start,end]=event.time.split('~');lines.push('DTSTART:'+utc(event.begin,start));
+    if(end){let endDay=event.end;if(endDay===event.begin&&end<start)endDay=addDays(endDay,1);lines.push('DTEND:'+utc(endDay,end))}
+  }else{
+    lines.push('DTSTART;VALUE=DATE:'+compact(event.begin),'DTEND;VALUE=DATE:'+compact(addDays(event.end,1)));
+  }
+  lines.push('SUMMARY:'+icsEscape(event.title),'LOCATION:'+icsEscape(event.place),'DESCRIPTION:'+icsEscape('원문: '+sourceHref(event)),
+    'URL:'+sourceHref(event),'END:VEVENT','END:VCALENDAR');
+  return lines.map(foldIcs).join('\r\n')+'\r\n';
+}
+function downloadCalendar(event){
+  const url=URL.createObjectURL(new Blob([makeIcs(event)],{type:'text/calendar;charset=utf-8'}));
+  const link=document.createElement('a');link.href=url;link.download=`snu-event-${String(event.id??'event').replace(/[^\w-]/g,'')}.ics`;
+  document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
 function card(event,today){
   const multi=event.begin!==event.end;
   const dates=displayDate(event.begin,true)+(multi?' – '+displayDate(event.end,true):'');
   const status=multi?(event.begin>today?'시작 예정':event.end<today?'종료':'진행 중'):'';
   // Only the source's fixed HTTPS origin is accepted as an outbound link.
-  const url=new URL(event.url);const href=url.origin==='https://www.snu.ac.kr'?url.href:'https://www.snu.ac.kr/snunow/events';
-  return `<article class="card"><div class="card-top"><span class="badge" data-type="${esc(event.type)}">${esc(event.type)}</span>${status?`<span class="status">${status}</span>`:''}</div><h4><a class="title-link" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(event.title)}</a></h4><div class="meta"><span>일정 · ${esc(dates)}${event.time?' · '+esc(event.time):''}</span>${event.place?`<span>장소 · ${esc(event.place)}</span>`:''}</div>${event.summary?`<p class="summary">${esc(event.summary)}</p>`:''}<div class="card-bottom"><a class="original" href="${esc(href)}" target="_blank" rel="noopener noreferrer">원문 보기 <span aria-hidden="true">↗</span><span class="sr-only" hidden>${esc(event.title)}</span></a></div></article>`;
+  const href=sourceHref(event);
+  return `<article class="card"><div class="card-top"><span class="badge" data-type="${esc(event.type)}">${esc(event.type)}</span>${status?`<span class="status">${status}</span>`:''}</div><h4><a class="title-link" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(event.title)}</a></h4><div class="meta"><div class="meta-item"><span>일정 · ${esc(dates)}${event.time?' · '+esc(event.time):''}</span>${evidence(event,'time')}</div>${event.place?`<div class="meta-item"><span>장소 · ${esc(event.place)}</span>${evidence(event,'place')}</div>`:''}</div>${event.summary?`<p class="summary">${esc(event.summary)}</p>`:''}<div class="card-bottom"><button class="calendar-add" type="button" data-calendar-id="${esc(event.id)}" aria-label="${esc(event.title)} 캘린더에 추가">캘린더에 추가</button><a class="original" href="${esc(href)}" target="_blank" rel="noopener noreferrer">원문 보기 <span aria-hidden="true">↗</span><span class="sr-only" hidden>${esc(event.title)}</span></a></div></article>`;
 }
 function render(){
   const today=seoulToday(),[start,end]=bounds(state.period,today);
@@ -98,7 +133,7 @@ document.querySelector('.periods').addEventListener('click',e=>{const button=e.t
 $('chips').addEventListener('click',e=>{const button=e.target.closest('[data-type]');if(!button)return;const type=button.dataset.type;state.selected.has(type)?state.selected.delete(type):state.selected.add(type);render()});
 $('search').addEventListener('input',e=>{state.query=e.target.value;render()});
 $('reset').addEventListener('click',reset);
-$('list').addEventListener('click',e=>{if(e.target.id==='empty-reset')reset()});
+$('list').addEventListener('click',e=>{if(e.target.id==='empty-reset')reset();const button=e.target.closest('[data-calendar-id]');if(button){const event=state.events.find(event=>String(event.id)===button.dataset.calendarId);if(event)downloadCalendar(event)}});
 async function load(){
   render();
   try{
