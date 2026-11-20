@@ -15,6 +15,7 @@
 .past-events{border-top:1px solid var(--line);padding-top:18px;margin-top:24px}.past-events summary{cursor:pointer;font-weight:650;margin-bottom:18px}
 .meta-item{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}.evidence{font-size:11px;max-width:100%}.evidence summary{cursor:pointer;text-decoration:underline;text-underline-offset:3px}.evidence blockquote{margin:6px 0;padding:8px 10px;border-left:2px solid var(--line);white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink)}.card-bottom{align-items:center;gap:16px}.calendar-add{font:inherit;font-size:12px;cursor:pointer;border:1px solid var(--line);border-radius:6px;background:var(--soft);color:var(--ink);padding:5px 9px}
 .calendar-add{text-decoration:none}.calendar-other{font-size:11px;color:var(--muted);border:0;background:none;padding:2px;text-decoration:underline}.card-bottom{flex-wrap:wrap;gap:8px 14px}.subscription{padding:0 0 20px}.subscribe-note{font-size:12px;color:var(--muted);margin:8px 0 0}.subscribe-dialog{width:min(540px,calc(100% - 32px));max-height:85vh;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);padding:22px}.subscribe-dialog::backdrop{background:#0008}.dialog-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}.dialog-heading h2{font-size:19px;margin:0}.dialog-heading button{border:0;background:none;font-size:14px}.subscribe-feed{padding:14px 0;border-bottom:1px solid var(--line)}.subscribe-feed h3{font-size:14px;margin:0 0 7px}.subscribe-actions{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:12px}.subscribe-actions button{font-size:12px;background:none;border:0;padding:0;color:var(--ink);text-decoration:underline}.copy-address{width:100%;margin-top:8px;font-size:12px;color:var(--ink);background:var(--soft);border:1px solid var(--line);padding:7px}
+.type-checks{display:flex;flex-wrap:wrap;gap:10px 18px;margin:14px 0}.type-checks label{font-size:14px}.settings-field{border:0;padding:0;margin:18px 0}.settings-field legend{font-weight:650}.word-entry{display:flex;gap:8px;margin-top:8px}.word-entry input{min-width:0;width:100%;padding:8px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:6px}.word-chip{margin:6px 6px 0 0;border:1px solid var(--line);border-radius:16px;padding:4px 10px;background:var(--soft);overflow-wrap:anywhere}.settings-help{color:var(--muted);font-size:14px}.settings-actions{display:flex;gap:8px;flex-wrap:wrap}
 </style>
 </head>
 <body>
@@ -22,10 +23,17 @@
 <header class="masthead"><div class="wrap">
   <div class="brandline"><div class="brand"><span class="mark" aria-hidden="true">SNU</span>캠퍼스 캘린더</div><a class="source-top" href="https://www.snu.ac.kr/snunow/events" target="_blank" rel="noopener noreferrer">SNU 캘린더 ↗</a></div>
   <div class="hero"><div><div class="eyebrow">YOUR WEEK ON CAMPUS</div><h1>이번 주 서울대 행사 <span>한눈에</span></h1><p class="intro">배움부터 문화까지, 캠퍼스의 다음 일정을 만나보세요.</p></div><div class="today">오늘, 서울<strong id="today-label"></strong></div></div>
-  <nav class="periods" aria-label="조회 기간"><button data-period="today" aria-pressed="false">오늘</button><button data-period="week" aria-pressed="true">이번 주</button><button data-period="next" aria-pressed="false">다음 주</button><button data-period="month" aria-pressed="false">이번 달</button><button data-period="all" aria-pressed="false">전체</button></nav>
-  <div class="subscription"><button class="calendar-add" id="subscribe-open" type="button" aria-haspopup="dialog">내 캘린더에 구독</button><p class="subscribe-note" id="subscribe-note">구독하면 매일 아침 갱신된 행사가 캘린더에 자동으로 들어옵니다(캘린더 앱마다 반영 주기는 다를 수 있음).</p></div>
+  <nav class="periods" aria-label="조회 기간"><button data-period="today" aria-pressed="false">오늘</button><button data-period="week" aria-pressed="true">이번 주</button><button data-period="next" aria-pressed="false">다음 주</button><button data-period="month" aria-pressed="false">이번 달</button><button data-period="all" aria-pressed="false">전체</button><button data-period="me" aria-pressed="false">내 관심</button></nav>
+  <div class="subscription"><button class="calendar-add" id="subscribe-open" type="button" aria-haspopup="dialog">내 캘린더에 구독</button><button class="calendar-add" id="settings-open" type="button" aria-haspopup="dialog">관심 설정</button><p class="subscribe-note" id="subscribe-note">구독하면 매일 아침 갱신된 행사가 캘린더에 자동으로 들어옵니다(캘린더 앱마다 반영 주기는 다를 수 있음).</p></div>
 </div></header>
-<dialog class="subscribe-dialog" id="subscribe-dialog" aria-labelledby="subscribe-title" aria-describedby="subscribe-note"><div class="dialog-heading"><h2 id="subscribe-title">내 캘린더에 구독</h2><button id="subscribe-close" type="button" autofocus>닫기</button></div><div id="subscribe-feeds"></div><p id="copy-status" role="status" class="subscribe-note"></p></dialog>
+<dialog class="subscribe-dialog" id="subscribe-dialog" aria-labelledby="subscribe-title" aria-describedby="subscribe-note"><div class="dialog-heading"><h2 id="subscribe-title">내 캘린더에 구독</h2><button id="subscribe-close" type="button" autofocus>닫기</button></div><fieldset class="settings-field"><legend>구독할 종류</legend><div id="subscribe-types" class="type-checks"></div></fieldset><p class="settings-help">키워드 조건은 페이지에서만 적용되고, 구독 캘린더는 고른 종류 기준</p><div id="subscribe-mix" aria-live="polite"></div><details><summary>전체·종류별 주소</summary><div id="subscribe-feeds"></div></details><p id="copy-status" role="status" class="subscribe-note"></p></dialog>
+<dialog class="subscribe-dialog" id="settings-dialog" aria-labelledby="settings-title"><div class="dialog-heading"><h2 id="settings-title">내 관심 설정</h2><button id="settings-close" type="button" autofocus>닫기</button></div>
+<p class="settings-help">설정은 이 브라우저에만 저장돼요. 설정 링크로 다른 기기에 옮길 수 있어요.</p>
+<fieldset class="settings-field"><legend>관심 종류</legend><div id="interest-types" class="type-checks"></div><p class="settings-help">선택하지 않으면 모든 종류를 포함해요.</p></fieldset>
+<fieldset class="settings-field"><legend>관심 키워드</legend><p class="settings-help" id="keywords-help">제목·본문에 하나라도 있으면 포함해요. 띄어쓰기는 무시해요.</p><div id="interest-keywords"></div><div class="word-entry"><input id="keywords-input" aria-label="관심 키워드" aria-describedby="keywords-help" placeholder="입력 후 Enter 또는 추가"><button type="button" data-add-word="keywords">추가</button></div></fieldset>
+<fieldset class="settings-field"><legend>빼고 싶은 말</legend><p class="settings-help" id="excluded-help">하나라도 있으면 제외해요.</p><div id="interest-excluded"></div><div class="word-entry"><input id="excluded-input" aria-label="빼고 싶은 말" aria-describedby="excluded-help" placeholder="입력 후 Enter 또는 추가"><button type="button" data-add-word="excluded">추가</button></div></fieldset>
+<div class="settings-actions"><button class="calendar-add" id="settings-copy" type="button">설정 링크 복사</button><button class="calendar-add" id="settings-view" type="button">내 관심 보기</button></div><input id="settings-link" class="copy-address" readonly hidden aria-label="복사할 설정 링크"><p id="settings-status" role="status" class="settings-help"></p>
+</dialog>
 <main class="wrap"><div class="layout">
   <aside class="filters" aria-label="행사 필터">
     <label class="filter-label" for="search">어떤 행사를 찾으세요?</label><div class="search"><input id="search" type="search" placeholder="제목·내용 검색" autocomplete="off"></div>
@@ -43,10 +51,61 @@
 'use strict';
 const TYPES=['공연','전시','대회·공모','특강·세미나','모집·안내','기타'];
 const CALENDAR_KEYS=['performance','exhibition','contest','lecture','recruit','other'];
-const LABELS={today:'오늘의 행사',week:'이번 주의 행사',next:'다음 주의 행사',month:'이번 달의 행사',all:'전체 행사'};
+const LABELS={today:'오늘의 행사',week:'이번 주의 행사',next:'다음 주의 행사',month:'이번 달의 행사',all:'전체 행사',me:'내 관심 행사'};
 const state={events:[],period:'week',selected:new Set(),query:'',loaded:false};
+const SETTINGS_KEY='snu-events.me.v1';
+let preferences={types:[],keywords:[],excluded:[]};
+let subscriptionSelection=new Set();
 const $=id=>document.getElementById(id);
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const matchText=value=>String(value??'').normalize('NFKC').toLocaleLowerCase('ko').replace(/\s+/g,'');
+function cleanSettings(value){
+  if(!value||typeof value!=='object'||Array.isArray(value))throw new Error('Invalid settings');
+  const words=key=>[...new Set((Array.isArray(value[key])?value[key]:[]).filter(v=>typeof v==='string').map(v=>v.trim()).filter(Boolean))];
+  return {types:words('types').filter(key=>CALENDAR_KEYS.includes(key)).sort(),keywords:words('keywords'),excluded:words('excluded')};
+}
+function encodeSettings(value){return '#me='+encodeURIComponent(JSON.stringify(cleanSettings(value)))}
+function decodeSettings(hash){
+  try{return hash.startsWith('#me=')?cleanSettings(JSON.parse(decodeURIComponent(hash.slice(4)))):null}catch{return null}
+}
+function saveSettings(){try{localStorage.setItem(SETTINGS_KEY,JSON.stringify(preferences))}catch{}}
+function restoreSettings(){
+  try{const stored=localStorage.getItem(SETTINGS_KEY);if(stored)preferences=cleanSettings(JSON.parse(stored))}catch{}
+  importSettingsHash();
+}
+function importSettingsHash(){
+  const imported=decodeSettings(typeof location==='undefined'?'':location.hash);
+  if(imported){preferences=imported;state.period='me';saveSettings()}
+}
+function matchesInterests(event){
+  const text=matchText([event.title,event.summary,event.search_text,event.body,event.description].filter(Boolean).join(' '));
+  const key=CALENDAR_KEYS[TYPES.indexOf(event.type)]??'other';
+  return (!preferences.types.length||preferences.types.includes(key))&&
+    (!preferences.keywords.length||preferences.keywords.some(word=>text.includes(matchText(word))))&&
+    !preferences.excluded.some(word=>text.includes(matchText(word)));
+}
+function typeCheckboxes(selected,attribute){
+  return CALENDAR_KEYS.map((key,i)=>`<label><input type="checkbox" ${attribute}="${key}" ${selected.has(key)?'checked':''}> ${TYPES[i]}</label>`).join('');
+}
+function renderSettings(){
+  $('interest-types').innerHTML=typeCheckboxes(new Set(preferences.types),'data-interest-type');
+  for(const key of ['keywords','excluded'])$('interest-'+key).innerHTML=preferences[key].map((word,i)=>`<button class="word-chip" type="button" data-remove-word="${key}" data-word-index="${i}" aria-label="${esc(word)} 삭제">${esc(word)} ×</button>`).join('');
+}
+function updateSettings(){saveSettings();renderSettings();render()}
+function addWord(key,input){
+  const word=input.value.trim();if(!word)return;
+  if(!preferences[key].includes(word))preferences[key].push(word);
+  input.value='';updateSettings();
+}
+function keywordEnter(event,key){
+  if(event.key!=='Enter'||event.isComposing||event.keyCode===229||event.target.dataset.composing==='true')return;
+  event.preventDefault();addWord(key,event.target);
+}
+async function copySettingsLink(){
+  const url=new URL(location.href);url.hash=encodeSettings(preferences);
+  try{await navigator.clipboard.writeText(url.href);$('settings-status').textContent='설정 링크를 복사했어요.'}
+  catch{$('settings-link').hidden=false;$('settings-link').value=url.href;$('settings-link').focus();$('settings-link').select();$('settings-status').textContent='링크를 선택했어요. 복사해 주세요.'}
+}
 function seoulToday(now=new Date()){
   const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(now);
   return ['year','month','day'].map(k=>parts.find(p=>p.type===k).value).join('-');
@@ -57,6 +116,7 @@ function addDays(day,n){const d=dayDate(day);d.setUTCDate(d.getUTCDate()+n);retu
 function bounds(period,today){
   const d=dayDate(today),monday=addDays(today,-((d.getUTCDay()+6)%7));
   if(period==='today')return [today,today];
+  if(period==='me')return [today,'9999-12-31'];
   if(period==='week')return [monday,addDays(monday,6)];
   if(period==='next')return [addDays(monday,7),addDays(monday,13)];
   if(period==='month')return [today.slice(0,7)+'-01',new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth()+1,0)).toISOString().slice(0,10)];
@@ -64,8 +124,8 @@ function bounds(period,today){
 }
 function displayDate(day,year=false){return new Intl.DateTimeFormat('ko-KR',{timeZone:'UTC',...(year?{year:'numeric'}:{}),month:'long',day:'numeric',weekday:'short'}).format(dayDate(day))}
 function inPeriod(event,start,end){return event.begin<=end&&event.end>=start}
-function periodEvents(today){const [start,end]=bounds(state.period,today);return state.events.filter(e=>inPeriod(e,start,end))}
-function filtered(events){const q=state.query.trim().normalize('NFKC').toLocaleLowerCase('ko');return events.filter(e=>(!state.selected.size||state.selected.has(e.type))&&(!q||[e.title,e.summary,e.search_text].join(' ').normalize('NFKC').toLocaleLowerCase('ko').includes(q)))}
+function periodEvents(today){const [start,end]=bounds(state.period,today);return state.events.filter(e=>inPeriod(e,start,end)&&(state.period!=='me'||matchesInterests(e)))}
+function filtered(events){const q=matchText(state.query);return events.filter(e=>(state.period==='me'||!state.selected.size||state.selected.has(e.type))&&(!q||matchText([e.title,e.summary,e.search_text].join(' ')).includes(q)))}
 function sourceHref(event){
   try{const url=new URL(event.url);if(url.origin==='https://www.snu.ac.kr')return url.href}catch{}
   return 'https://www.snu.ac.kr/snunow/events';
@@ -99,11 +159,21 @@ function subscriptionFeeds(){
   return feeds.sort((a,b)=>Number(state.selected.has(b.label))-Number(state.selected.has(a.label)));
 }
 function subscriptionUrl(key){return `webcal://iseungsang01.github.io/snu-events/calendar/${key}.ics`}
+function combinationKey(keys){const selected=[...new Set(keys)].filter(key=>CALENDAR_KEYS.includes(key)).sort();return selected.length===6?'all':selected.join('-')}
+function renderCombination(){
+  const key=combinationKey(subscriptionSelection);
+  $('subscribe-mix').innerHTML=key?subscriptionSection('mix/'+key,'내 구독 주소'):'<p>구독할 종류를 하나 이상 선택해 주세요.</p>';
+}
+function subscriptionSection(key,label){
+  const address=subscriptionUrl(key);
+  return `<section class="subscribe-feed"><h3>${esc(label)}</h3><div class="subscribe-actions"><a href="https://calendar.google.com/calendar/r?cid=${encodeURIComponent(address)}" target="_blank" rel="noopener noreferrer">Google 캘린더에 구독</a><a href="${address}">webcal · Apple·Outlook</a><button type="button" data-copy-calendar="${key}" aria-label="${esc(label)} 캘린더 주소 복사">주소 복사</button></div><input class="copy-address" readonly aria-label="${esc(label)}" value="${address}"></section>`;
+}
 function renderSubscriptions(){
-  $('subscribe-feeds').innerHTML=subscriptionFeeds().map(({key,label})=>{
-    const address=subscriptionUrl(key);
-    return `<section class="subscribe-feed"><h3>${esc(label)}</h3><div class="subscribe-actions"><a href="https://calendar.google.com/calendar/r?cid=${encodeURIComponent(address)}" target="_blank" rel="noopener noreferrer">Google 캘린더에 구독</a><a href="${address}">Apple·Outlook</a><button type="button" data-copy-calendar="${key}" aria-label="${esc(label)} 캘린더 주소 복사">주소 복사</button></div></section>`;
-  }).join('');
+  subscriptionSelection=new Set(state.period==='me'?preferences.types:CALENDAR_KEYS.filter((key,i)=>state.selected.has(TYPES[i])));
+  if(!subscriptionSelection.size)subscriptionSelection=new Set(CALENDAR_KEYS);
+  $('subscribe-types').innerHTML=typeCheckboxes(subscriptionSelection,'data-subscribe-type');
+  renderCombination();
+  $('subscribe-feeds').innerHTML=subscriptionFeeds().map(({key,label})=>subscriptionSection(key,label)).join('');
   $('copy-status').textContent='';
 }
 async function copySubscription(button){
@@ -152,10 +222,10 @@ function render(){
   const today=seoulToday(),[start,end]=bounds(state.period,today);
   $('today-label').textContent=displayDate(today);
   $('period-title').textContent=LABELS[state.period];
-  $('range').textContent=state.period==='all'?'수집된 모든 일정 · 종료 후 7일까지 보관':`${displayDate(start,true)} – ${displayDate(end)}${['week','next'].includes(state.period)?' · 월–일':''}`;
+  $('range').textContent=state.period==='me'?'오늘 이후 · 관심 설정 기준':state.period==='all'?'수집된 모든 일정 · 종료 후 7일까지 보관':`${displayDate(start,true)} – ${displayDate(end)}${['week','next'].includes(state.period)?' · 월–일':''}`;
   document.querySelectorAll('[data-period]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.period===state.period));
   const candidates=periodEvents(today);
-  $('chips').innerHTML=TYPES.map(type=>`<button class="chip" type="button" data-type="${esc(type)}" aria-pressed="${state.selected.has(type)}">${esc(type)}<small>${candidates.filter(e=>e.type===type).length}</small></button>`).join('');
+  $('chips').innerHTML=TYPES.map((type,i)=>`<button class="chip" type="button" data-type="${esc(type)}" aria-pressed="${state.period==='me'?preferences.types.includes(CALENDAR_KEYS[i]):state.selected.has(type)}">${esc(type)}<small>${candidates.filter(e=>e.type===type).length}</small></button>`).join('');
   if(!state.loaded)return;
   const events=filtered(candidates).sort((a,b)=>a.begin.localeCompare(b.begin)||a.time.localeCompare(b.time)||a.title.localeCompare(b.title,'ko'));
   $('count').textContent=`${events.length}개의 행사`;
@@ -167,19 +237,42 @@ function render(){
 }
 function renderGroups(events,today){
   const groups=new Map();
-  const multi=events.filter(e=>e.begin!==e.end);
-  for(const e of events.filter(e=>e.begin===e.end)){if(!groups.has(e.begin))groups.set(e.begin,[]);groups.get(e.begin).push(e)}
+  const multi=state.period==='me'?[]:events.filter(e=>e.begin!==e.end);
+  for(const e of events.filter(e=>state.period==='me'||e.begin===e.end)){if(!groups.has(e.begin))groups.set(e.begin,[]);groups.get(e.begin).push(e)}
   if(multi.length)groups.set('기간 행사',multi);
   return [...groups].map(([key,items])=>`<section class="group"><h3 class="group-title">${key==='기간 행사'?'<i class="dot" aria-hidden="true"></i>'+key:esc(displayDate(key))}${key===today?' · 오늘':''}<span>${items.length}개</span></h3><div class="cards">${items.map(e=>card(e,today)).join('')}</div></section>`).join('');
 }
-function reset(){state.selected.clear();state.query='';$('search').value='';render()}
+function reset(){state.selected.clear();state.query='';$('search').value='';if(state.period==='me'){preferences.types=[];updateSettings()}else render()}
 document.querySelector('.periods').addEventListener('click',e=>{const button=e.target.closest('[data-period]');if(button){state.period=button.dataset.period;render()}});
 $('subscribe-open').addEventListener('click',()=>{renderSubscriptions();$('subscribe-dialog').showModal()});
+$('subscribe-types').addEventListener('change',e=>{const key=e.target.dataset.subscribeType;if(!key)return;e.target.checked?subscriptionSelection.add(key):subscriptionSelection.delete(key);renderCombination();$('copy-status').textContent=''});
 $('subscribe-close').addEventListener('click',()=>$('subscribe-dialog').close());
 $('subscribe-dialog').addEventListener('click',e=>{if(e.target===$('subscribe-dialog'))$('subscribe-dialog').close();const button=e.target.closest('[data-copy-calendar]');if(button)copySubscription(button)});
-$('chips').addEventListener('click',e=>{const button=e.target.closest('[data-type]');if(!button)return;const type=button.dataset.type;state.selected.has(type)?state.selected.delete(type):state.selected.add(type);render()});
+$('chips').addEventListener('click',e=>{
+  const button=e.target.closest('[data-type]');if(!button)return;const type=button.dataset.type;
+  if(state.period==='me'){
+    const key=CALENDAR_KEYS[TYPES.indexOf(type)],types=new Set(preferences.types);
+    types.has(key)?types.delete(key):types.add(key);preferences.types=[...types].sort();updateSettings();
+  }else{state.selected.has(type)?state.selected.delete(type):state.selected.add(type);render()}
+});
 $('search').addEventListener('input',e=>{state.query=e.target.value;render()});
 $('reset').addEventListener('click',reset);
+$('settings-open').addEventListener('click',()=>{renderSettings();$('settings-status').textContent='';$('settings-link').hidden=true;$('settings-dialog').showModal()});
+$('settings-close').addEventListener('click',()=>$('settings-dialog').close());
+$('settings-view').addEventListener('click',()=>{state.period='me';$('settings-dialog').close();render()});
+$('settings-copy').addEventListener('click',copySettingsLink);
+$('interest-types').addEventListener('change',e=>{const key=e.target.dataset.interestType;if(!key)return;const types=new Set(preferences.types);e.target.checked?types.add(key):types.delete(key);preferences.types=[...types].sort();updateSettings()});
+$('settings-dialog').addEventListener('click',e=>{
+  if(e.target===$('settings-dialog'))$('settings-dialog').close();
+  const add=e.target.closest('[data-add-word]');if(add)addWord(add.dataset.addWord,$(add.dataset.addWord+'-input'));
+  const remove=e.target.closest('[data-remove-word]');if(remove){preferences[remove.dataset.removeWord].splice(Number(remove.dataset.wordIndex),1);updateSettings()}
+});
+for(const key of ['keywords','excluded']){
+  const input=$(key+'-input');
+  input.addEventListener('compositionstart',()=>{input.dataset.composing='true'});
+  input.addEventListener('compositionend',()=>{input.dataset.composing='false'});
+  input.addEventListener('keydown',e=>keywordEnter(e,key));
+}
 $('list').addEventListener('click',e=>{if(e.target.id==='empty-reset')reset();const button=e.target.closest('[data-calendar-id]');if(button){const event=state.events.find(event=>String(event.id)===button.dataset.calendarId);if(event)downloadCalendar(event)}});
 async function load(){
   render();
@@ -200,6 +293,8 @@ async function load(){
     $('retry').addEventListener('click',load);
   }finally{$('results').setAttribute('aria-busy','false')}
 }
+restoreSettings();
+window.addEventListener('hashchange',()=>{importSettingsHash();renderSettings();render()});
 let lastToday=seoulToday();setInterval(()=>{const now=seoulToday();if(now!==lastToday){lastToday=now;render()}},30000);
 load();
 </script>

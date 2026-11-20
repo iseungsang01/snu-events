@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+from itertools import combinations
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
@@ -82,6 +83,15 @@ def write_calendars(payload: dict, output: Path) -> None:
     for key, label in TYPES.items():
         feeds[key] = (label, [row for row in events if (
             row.get("type") == label or key == "other" and row.get("type") not in TYPES.values())])
+    # Every nonempty subset has one stable, alphabetically sorted address.
+    (output / "mix").mkdir(exist_ok=True)
+    for size in range(1, len(TYPES) + 1):
+        for keys in combinations(sorted(TYPES), size):
+            labels = {TYPES[key] for key in keys}
+            name = "all" if size == len(TYPES) else "-".join(keys)
+            rows = [row for row in events if row.get("type") in labels or (
+                "other" in keys and row.get("type") not in TYPES.values())]
+            feeds[f"mix/{name}"] = (" · ".join(TYPES[key] for key in keys), rows)
     for key, (label, rows) in feeds.items():
         target = output / f"{key}.ics"
         temporary = target.with_suffix(".ics.tmp")
@@ -97,7 +107,7 @@ def main() -> None:
     payload = json.loads(args.events.read_text(encoding="utf-8"))
     output = args.output or args.events.parent / "calendar"
     write_calendars(payload, output)
-    print(f"Saved 7 calendars ({len(payload['events'])} events) to {output}")
+    print(f"Saved 7 category calendars and 63 combinations ({len(payload['events'])} events) to {output}")
 
 
 if __name__ == "__main__":

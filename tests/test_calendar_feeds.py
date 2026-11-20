@@ -1,6 +1,7 @@
 """RFC 5545 wire-format, publication, and optional independent parser checks."""
 import json
 import re
+from itertools import combinations
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
@@ -87,7 +88,35 @@ def test_fetch_publishes_calendars(monkeypatch, tmp_path):
     monkeypatch.setattr("sys.argv", ["fetch", "--output", str(tmp_path / "events.json")])
     fetch_events.main()
     assert len(list((tmp_path / "calendar").glob("*.ics"))) == 7
+    assert len(list((tmp_path / "calendar/mix").glob("*.ics"))) == 63
     assert "UID:123@snu-events" in unfold((tmp_path / "calendar/all.ics").read_bytes())
+
+
+def test_all_combinations_names_contents_and_rebuild(tmp_path):
+    rows = [event(id=key, type=label) for key, label in feeds.TYPES.items()]
+    rows.append(event(id="unknown", type="unknown"))
+    payload = {"fetched_at": STAMP.isoformat(), "events": rows}
+    feeds.write_calendars(payload, tmp_path)
+    expected = {}
+    for size in range(1, 7):
+        for keys in combinations(sorted(feeds.TYPES), size):
+            name = "all" if size == 6 else "-".join(keys)
+            expected[name + ".ics"] = set(keys) | ({"unknown"} if "other" in keys else set())
+    files = {p.name: p.read_bytes() for p in (tmp_path / "mix").glob("*.ics")}
+    assert len(files) == 63
+    assert files.keys() == expected.keys()
+    for name, raw in files.items():
+        text = unfold(raw)
+        assert set(re.findall(r"^UID:([^@]+)@snu-events\r$", text, re.M)) == expected[name]
+        # The exact same VEVENT serialization is used by category and mixed feeds.
+        for block in text.split("BEGIN:VEVENT\r\n")[1:]:
+            key = re.search(r"UID:([^@]+)@", block)[1]
+            category = "other" if key == "unknown" else key
+            assert block.split("END:VEVENT")[0] in unfold((tmp_path / f"{category}.ics").read_bytes())
+    feeds.write_calendars(payload, tmp_path)
+    assert files == {p.name: p.read_bytes() for p in (tmp_path / "mix").glob("*.ics")}
+    feeds.write_calendars({**payload, "events": []}, tmp_path)
+    assert all("BEGIN:VEVENT" not in unfold(p.read_bytes()) for p in (tmp_path / "mix").glob("*.ics"))
 
 
 def test_generated_repository_calendars_match_current_json():
@@ -97,6 +126,14 @@ def test_generated_repository_calendars_match_current_json():
     for key, label in feeds.TYPES.items():
         ids = set(re.findall(r"^UID:([^\r]+)", unfold((ROOT / f"docs/calendar/{key}.ics").read_bytes()), re.M))
         assert ids == {str(row["id"]) + "@snu-events" for row in payload["events"] if row["type"] == label}
+
+
+def test_generated_combinations_match_current_json(tmp_path):
+    payload = json.loads((ROOT / "docs/events.json").read_text(encoding="utf-8"))
+    feeds.write_calendars(payload, tmp_path)
+    committed = {p.name: p.read_bytes() for p in (ROOT / "docs/calendar/mix").glob("*.ics")}
+    assert len(committed) == 63
+    assert committed == {p.name: p.read_bytes() for p in (tmp_path / "mix").glob("*.ics")}
 
 
 def test_independent_icalendar_round_trip():
@@ -113,6 +150,6 @@ def test_independent_icalendar_round_trip():
     assert parsed[1].decoded("DTEND") - parsed[1].decoded("DTSTART") == timedelta(hours=1)
     assert parsed[2].decoded("DTSTART") == date(2026, 11, 20)
     assert parsed[2].decoded("DTEND") == date(2026, 11, 23)
-    for path in (ROOT / "docs/calendar").glob("*.ics"):
+    for path in (ROOT / "docs/calendar").rglob("*.ics"):
         parsed_calendar = icalendar.Calendar.from_ical(path.read_bytes())
         assert not any(component.errors for component in parsed_calendar.walk())

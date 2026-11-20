@@ -1,0 +1,1798 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SNU Events//Campus Calendar//KO
+CALSCALE:GREGORIAN
+X-WR-CALNAME:서울대 행사 — 대회·공모 · 특강·세미나 · 
+ 기타 · 모집·안내
+X-WR-TIMEZONE:Asia/Seoul
+BEGIN:VTIMEZONE
+TZID:Asia/Seoul
+BEGIN:STANDARD
+DTSTART:19881009T030000
+TZOFFSETFROM:+1000
+TZOFFSETTO:+0900
+TZNAME:KST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:176327@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20260701
+DTEND;VALUE=DATE:20270901
+SUMMARY:Nature Masterclasses SNU 프로그램 네이처가 만든 연구 
+ 역량 강화 강좌 안내
+LOCATION:온라인(Nature Masterclasses On-demand)
+DESCRIPTION:Nature Masterclasses SNU 프로그램 네이처가 만든 연
+ 구 역량 강화 강좌 안내\n원문: https://www.snu.ac.kr/snunow/even
+ ts?md=v&bbsidx=176327
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176327
+END:VEVENT
+BEGIN:VEVENT
+UID:174503@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20260903
+DTEND;VALUE=DATE:20261204
+SUMMARY:경영전략세미나 개최 안내
+LOCATION:서울대학교 38동 429호
+DESCRIPTION:경영전략세미나 개최를 안내드립니다.\n원문: ht
+ tps://www.snu.ac.kr/snunow/events?md=v&bbsidx=174503
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=174503
+END:VEVENT
+BEGIN:VEVENT
+UID:174239@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20260904
+DTEND;VALUE=DATE:20261114
+SUMMARY:대학원 공통 특강 시리즈 「SHINE AI: 통찰과 성찰」 
+ 개설 안내
+LOCATION:관악캠퍼스 61동 320호
+DESCRIPTION:대학원 공통 특강 시리즈 「SHINE AI: 통찰과 성찰
+ 」 개설 안내\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx
+ =174239
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=174239
+END:VEVENT
+BEGIN:VEVENT
+UID:175037@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20260904
+DTEND;VALUE=DATE:20261201
+SUMMARY:2026 Fall BCS Colloquium Series 안내
+LOCATION:
+DESCRIPTION:뇌인지과학과에서 2026 Fall BCS Colloquium Series를 안
+ 내드리오니 많은 관심과 참여 바랍니다.\n원문: https://www
+ .snu.ac.kr/snunow/events?md=v&bbsidx=175037
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=175037
+END:VEVENT
+BEGIN:VEVENT
+UID:174683@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20260910
+DTEND;VALUE=DATE:20261127
+SUMMARY:제24기 통일법강좌 안내
+LOCATION:서울대학교 법학전문대학원 17동 103호
+DESCRIPTION:서울대학교 법학연구소 헌법·통일법센터에서
+ 는 본교 및 타고 대학(원)생을 대상으로 2026학년도 2학기
+  통일법 강좌를 개설할 예정이니 관심 있는 학생들이 많
+ 이 참여하시길 기대합니다.\n원문: https://www.snu.ac.kr/snunow
+ /events?md=v&bbsidx=174683
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=174683
+END:VEVENT
+BEGIN:VEVENT
+UID:175493@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20260918
+DTEND;VALUE=DATE:20261128
+SUMMARY:물체를 통한 정서표현 디자인 워크샵 참여자 모집
+LOCATION:서울대학교 미술대학 50동 301호
+DESCRIPTION:일상생활에서의 감정\, 정서\, 기분을 다양한 소
+ 재들로 시각화\, 물체화 하여 보고\, 자신을 더 잘 이해
+ 할 수 있는 워크샵 프로그램을 가을학기중에 정기적으
+ 로 아래와 같이 개최합니다.\n원문: https://www.snu.ac.kr/snuno
+ w/events?md=v&bbsidx=175493
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=175493
+END:VEVENT
+BEGIN:VEVENT
+UID:175817@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261119
+SUMMARY:2026년 하반기 수요교양강좌 〈건축의 유산: 시대를
+  잇는 풍경〉
+LOCATION:서울대학교박물관 1층 강당
+DESCRIPTION:서울대학교박물관에서는 관악구와 함께 매년 
+ 봄과 가을\, ‘수요교양강좌’를 통해 학생과 교직원\, 
+ 일반인에게 쉽고 흥미로우면서 수준 높은 강연을 제공
+ 하고 있습니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbs
+ idx=175817
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=175817
+END:VEVENT
+BEGIN:VEVENT
+UID:176255@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261130
+SUMMARY:「하루 400g\, 과일·채소 먹기 60일 챌린지(2기)」 참
+ 여자 모집
+LOCATION:
+DESCRIPTION:「하루 400g\, 과일·채소 먹기 60일 챌린지」 참
+ 여자 모집\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176
+ 255
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176255
+END:VEVENT
+BEGIN:VEVENT
+UID:175832@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261002
+DTEND;VALUE=DATE:20261121
+SUMMARY:영어글쓰기교실 워크숍 안내(10월-11월)
+LOCATION:
+DESCRIPTION:영어글쓰기교실 워크숍 안내(10월-11월)\n원문: ht
+ tps://www.snu.ac.kr/snunow/events?md=v&bbsidx=175832
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=175832
+END:VEVENT
+BEGIN:VEVENT
+UID:174947@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261006
+DTEND;VALUE=DATE:20261125
+SUMMARY:제14기 평화아카데미 수강생 모집
+LOCATION:
+DESCRIPTION:제14기 평화아카데미 수강생 모집\n원문: https://w
+ ww.snu.ac.kr/snunow/events?md=v&bbsidx=174947
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=174947
+END:VEVENT
+BEGIN:VEVENT
+UID:176045@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20270127
+SUMMARY:[서울대학교]바이오최고경영자과정(Bio-CEO) 제32기 
+ 모집 안내
+LOCATION:서울대학교 호암교수회관
+DESCRIPTION:서울대학교 생명공학공동연구원은 바이오 산업
+ 의 미래를 함께 이끌어갈 리더를 대상으로 「서울대학
+ 교 바이오최고경영자과정(Bio-CEO) 제32기」를 개설합니다
+ .\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176045
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176045
+END:VEVENT
+BEGIN:VEVENT
+UID:177509@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261128
+SUMMARY:[연합전공 정치경제철학]26-2 시장과 윤리 특강시리
+ 즈
+LOCATION:서울대학교 43-1동 301호
+DESCRIPTION:서울대학교 분배정의연구센터와 인문대 연합전
+ 공 정치경제철학이 공동으로 주최하는 [시장과 윤리 특
+ 강시리즈]가 오는 10월 16일 금요일부터 4회에 걸쳐 진행
+ 됩니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=177509
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=177509
+END:VEVENT
+BEGIN:VEVENT
+UID:178013@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261116
+SUMMARY:[경력개발센터]2026 하반기 면접 전략 특강 안내
+LOCATION:
+DESCRIPTION:2026 하반기 취업을 준비 중인 학생들을 돕고자 
+ 면접 전략 특강을 진행 합니다.\n원문: https://www.snu.ac.kr/s
+ nunow/events?md=v&bbsidx=178013
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178013
+END:VEVENT
+BEGIN:VEVENT
+UID:177653@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261117
+SUMMARY:[사범대 상담실]ADHD 특성 집단상담 프로그램 참여
+ 자 모집
+LOCATION:
+DESCRIPTION:대학생 ADHD 특성 검사 기반 집단상담 프로그램
+ 에 참여해보세요!\n원문: https://www.snu.ac.kr/snunow/events?md=v&
+ bbsidx=177653
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=177653
+END:VEVENT
+BEGIN:VEVENT
+UID:176558@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261128
+SUMMARY:[스포츠진흥원]2026학년도 서울대학교 종합체육대
+ 회 개최 안내
+LOCATION:종합운동장\, 보조운동장\, 종합체육관\, 기숙사삼
+ 거리 풋살장\, 본부 테니스코트
+DESCRIPTION:2026학년도 서울대학교 종합체육대회 개최 안내\
+ n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176558
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176558
+END:VEVENT
+BEGIN:VEVENT
+UID:176774@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261027
+DTEND;VALUE=DATE:20261125
+SUMMARY:2026년 제5기 바이오 창업과 기술사업화 교육프로그
+ 램 안내
+LOCATION:서울대학교 호암교수회관 스튜디오2
+DESCRIPTION:생명공학공동연구원은 바이오 분야 예비 창업
+ 자와 초기 창업기업 관계자를 대상으로 「2026년 제5기 
+ 바이오 창업과 기술사업화 교육프로그램」을 개최합니
+ 다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176774
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176774
+END:VEVENT
+BEGIN:VEVENT
+UID:178244@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261028
+DTEND;VALUE=DATE:20261115
+SUMMARY:(사)서울대출판문화원 마케팅팀 직원 채용 공고
+LOCATION:
+DESCRIPTION:(사)서울대출판문화원 마케팅팀 직원 채용 공고
+ \n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178244
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178244
+END:VEVENT
+BEGIN:VEVENT
+UID:176813@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261028
+DTEND;VALUE=DATE:20261203
+SUMMARY:사회과학연구원 고전강좌(26-2학기) 일정 안내
+LOCATION:우석경제관 504호 (223동 504호)
+DESCRIPTION:서울대학교 사회과학연구원은 유수 학자들의 
+ 시선을 통해 사회과학의 고전을 재조명하는 강좌를 매 
+ 학기 진행하고 있습니다. 이번 2026년 2학기 고전강좌는 
+ 아래와 같이 진행될 예정이니 많은 참여 부탁드립니다.\
+ n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176813
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176813
+END:VEVENT
+BEGIN:VEVENT
+UID:177542@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261203
+SUMMARY:SNU 창의적 프레젠테이션 역량 강화 워크숍 신청 안
+ 내(10월~12월)
+LOCATION:
+DESCRIPTION:커뮤니케이션 능력 함양을 위해 학부대학 교수
+ 학습개발센터에서 운영하는「SNU 창의적 프레젠테이션 
+ 역량 강화 워크숍」을 안내드립니다.\n원문: https://www.snu
+ .ac.kr/snunow/events?md=v&bbsidx=177542
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=177542
+END:VEVENT
+BEGIN:VEVENT
+UID:178520@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261118
+SUMMARY:10\,000보 드림 챌린지 보조 봉사 - 대학생활문화원 
+ 이웃사랑 11월 1차 특별단기봉사활동 및 나눔교육 참여
+ 자 모집
+LOCATION:영등포공원
+DESCRIPTION:11월 1차 특별단기봉사활동 및 나눔교육 참여자
+ 를 아래와 같이 모집하고 있사오니 많은 관심과 신청 바
+ 랍니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178520
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178520
+END:VEVENT
+BEGIN:VEVENT
+UID:178820@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261130
+SUMMARY:SNU Commons 융합 미디어 작품 공모전 참가 안내
+LOCATION:
+DESCRIPTION:중앙도서관은 SNU Commons의 비전에 따라 학생들이
+  직접 참여하고 함께 만들어가는 창의·융합의 장을 조
+ 성하고자 아래와 같이 공모전을 개최하오니 많은 참여 
+ 바랍니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178
+ 820
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178820
+END:VEVENT
+BEGIN:VEVENT
+UID:177470@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261215
+SUMMARY:[철학사상연구소]AI 강연시리즈 「AI 시대의 삶을 
+ 다시 생각하기」 개최
+LOCATION:서울대 철학사상연구소 6동 403호
+DESCRIPTION:서울대학교 철학사상연구소에서 여러분을 AI 강
+ 연시리즈 「AI 시대의 삶을 다시 생각하기」에 초대합니
+ 다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=177470
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=177470
+END:VEVENT
+BEGIN:VEVENT
+UID:178928@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261116
+SUMMARY:[경력개발센터]취업역량강화특강(합격을 부르는 
+ 노션 포트폴리오 작성법) 참여자 모집
+LOCATION:서울대학교 롯데국제교육관(152-1동) 208호
+DESCRIPTION:이번 특강에서는 노션의 기본 기능과 페이지 및
+  블록 구성부터 포트폴리오 작성 실습까지 진행합니다. 
+ 노션이 익숙하지 않은 학생도 기초부터 배울 수 있으니\
+ , 자신의 경험과 경력을 정리해 취업 준비에 활용하고 
+ 싶은 학생들\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=
+ 178928
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178928
+END:VEVENT
+BEGIN:VEVENT
+UID:177662@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261210
+SUMMARY:[보건진료소]2026년 겨울 금연클리닉 참여자 모집
+LOCATION:
+DESCRIPTION:[보건진료소]2026년 겨울 금연클리닉 참여자 모
+ 집 "오늘도 금연!"\n원문: https://www.snu.ac.kr/snunow/events?md=v&
+ bbsidx=177662
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=177662
+END:VEVENT
+BEGIN:VEVENT
+UID:179084@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261105
+DTEND;VALUE=DATE:20261120
+SUMMARY:프로네시스 나눔실천단 2026학년도 겨울 나눔교실 
+ 모집
+LOCATION:
+DESCRIPTION:서울대학교 프로네시스 나눔실천단에서 ★2026
+ 학년도 겨울 나눔교실★에 참여할 봉사자를 모집합니다
+ !!\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179084
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179084
+END:VEVENT
+BEGIN:VEVENT
+UID:178805@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261119
+SUMMARY:[ 대학생활문화원 이웃사랑 11월 2차 특별단기봉사
+ 활동 및 나눔교육 참여자 모집 ]
+LOCATION:서울보라매초등학교 2층 강당
+DESCRIPTION:도전! 골든벨을 울려라 장애 인식 개선 캠페인 
+ 보조 자원봉사 - 대학생활문화원 이웃사랑 11월 2차 특별
+ 단기봉사활동 및 나눔교육 참여자 모집\n원문: https://www.
+ snu.ac.kr/snunow/events?md=v&bbsidx=178805
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178805
+END:VEVENT
+BEGIN:VEVENT
+UID:178514@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261114
+SUMMARY:[중앙도서관]논문 준비부터 투고까지! 2026학년도 2
+ 학기 논문작성 집중주간 안내(11. 9.~11. 13.)
+LOCATION:
+DESCRIPTION:중앙도서관에서 논문 준비부터 투고까지 필요
+ 한 교육을 한자리에 모은 《2026학년도 2학기 논문작성 
+ 집중주간》을 아래와 같이 운영하오니 관심 있는 분들
+ 의 많은 참여 부탁드립니다.\n원문: https://www.snu.ac.kr/snuno
+ w/events?md=v&bbsidx=178514
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178514
+END:VEVENT
+BEGIN:VEVENT
+UID:178934@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261127
+SUMMARY:SNU E&I X SNAAC 더 비기닝 아이디어톤 모집
+LOCATION:몬드리안 서울 이태원 호텔 (서울 용산구 장문로 2
+ 3)
+DESCRIPTION:서울대학교 창업지원단과 SNAAC가 공동으로 AZIT X
+  아이디어톤을 진행합니다!\n원문: https://www.snu.ac.kr/snunow
+ /events?md=v&bbsidx=178934
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178934
+END:VEVENT
+BEGIN:VEVENT
+UID:179009@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20270201
+SUMMARY:해외 인턴십 및 취업 지원 프로그램 참여자 모집
+LOCATION:
+DESCRIPTION:서울대학교 학생들의 글로벌 진출을 지원하기 
+ 위해 글로벌 인턴십 참여 지원사업과 해외 취업 지원사
+ 업을 안내드립니다.\n원문: https://www.snu.ac.kr/snunow/events?md
+ =v&bbsidx=179009
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179009
+END:VEVENT
+BEGIN:VEVENT
+UID:178352@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261119
+SUMMARY:Nature Masterclasses Expert Trainer-led(NMT) 라이브 워크숍 
+ 참가자 모집
+LOCATION:온라인(GoToWebinar)
+DESCRIPTION:학부대학(BK21 대학원혁신사업)은 Nature Masterclasse
+ s Expert Trainer-led(NMT) 라이브 워크숍을 운영합니다.\n원문:
+  https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178352
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178352
+END:VEVENT
+BEGIN:VEVENT
+UID:179225@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261120
+SUMMARY:학업 미루기 개선을 위한 인지행동치료(CBT) 프로그
+ 램 참여자 모집 안내
+LOCATION:
+DESCRIPTION:학업 미루기 개선을 위한 인지행동치료 프로그
+ 램의 참여자를 모집합니다.\n원문: https://www.snu.ac.kr/snunow
+ /events?md=v&bbsidx=179225
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179225
+END:VEVENT
+BEGIN:VEVENT
+UID:178016@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261114
+SUMMARY:[중앙도서관]2026년 연구자 커리어 멘토링 특강 안
+ 내
+LOCATION:
+DESCRIPTION:중앙도서관에서 사회과학 연구\, 논문 구조화\, 
+ 디자인 연구의 논문 작성 및 해외학술대회 발표 경험을 
+ 주제로 제6·7·8회 연구자 커리어 멘토링 특강을 개최하
+ 오니 관심 있는 분들의 많은 참여 부탁드립니다.\n원문: 
+ https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178016
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178016
+END:VEVENT
+BEGIN:VEVENT
+UID:179330@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261221
+SUMMARY:2026 문학창작워크숍 수강생 모집
+LOCATION:서울대학교 인문대학 1동 101\, 102호
+DESCRIPTION:2026 문학창작워크숍 수강생 모집\n원문: https://ww
+ w.snu.ac.kr/snunow/events?md=v&bbsidx=179330
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179330
+END:VEVENT
+BEGIN:VEVENT
+UID:178760@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261112
+DTEND;VALUE=DATE:20261125
+SUMMARY:〈첨단융합학부-2026년 SNUTI.ExP( )〉 11월 [늦게 피어
+ 도 꽃은 핀다: 김기인(Kiin-Gen.G)]프로그램 외 2개 과정 안
+ 내
+LOCATION:
+DESCRIPTION:〈 SNUTI.ExP( ) 〉 26년 11월 프로그램을 소개해 드
+ 립니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178760
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178760
+END:VEVENT
+BEGIN:VEVENT
+UID:176291@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261113T130000
+DTEND;TZID=Asia/Seoul:20261113T170000
+SUMMARY:제2회 환경인문학 학술대회 〈관계의 인문학: 생명
+ \, 물질\, 여성\, 노동〉 안내
+LOCATION:서울대학교 인문대학 4동 309호
+DESCRIPTION:서울대학교 인문대학 환경인문학 리딩 그룹에
+ 서 제2회 환경인문학 학술대회를 개최합니다.\n원문: http
+ s://www.snu.ac.kr/snunow/events?md=v&bbsidx=176291
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176291
+END:VEVENT
+BEGIN:VEVENT
+UID:178214@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261113T140000
+DTEND;TZID=Asia/Seoul:20261113T160000
+SUMMARY:[국가미래전략원]"청년이 말하는 지역의 삶" 청년
+ 패널토크 안내
+LOCATION:서울대학교 우석경제관(223동) 504호
+DESCRIPTION:"청년이 말하는 지역의 삶"을 주제로 진행하는 
+ 청년패널토크에 초대합니다.\n원문: https://www.snu.ac.kr/snun
+ ow/events?md=v&bbsidx=178214
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178214
+END:VEVENT
+BEGIN:VEVENT
+UID:178544@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:라틴아메리카는 지금: 브라질 대선과 라틴아메리
+ 카의 블루타이드
+LOCATION:인문대학 신양관(4동) 301호
+DESCRIPTION:라틴아메리카연구소와 라틴아메리카학 연계전
+ 공에서 「라틴아메리카는 지금: 브라질 대선과 라틴아
+ 메리카의 블루타이드」라는 제목으로 '제1회 시사 세미
+ 나'를 진행합니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v
+ &bbsidx=178544
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178544
+END:VEVENT
+BEGIN:VEVENT
+UID:178577@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261113T190000
+DTEND;TZID=Asia/Seoul:20261113T203000
+SUMMARY:[제93차 통일학세미나]권영세 국회의원 강연
+LOCATION:서울대학교 우석경제관(223동) 107호
+DESCRIPTION:통일평화연구원에서 서울대학교 한반도문제연
+ 구회(SNUKoA)와 함께 권영세 국회의원(전 통일부장관)을 
+ 모시고 〈 동서독과 남북한 비교\, 그 차이가 주는 함의 
+ 〉를 주제로 한 제93차 통일학세미나를 개최합니다.\n원
+ 문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178577
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178577
+END:VEVENT
+BEGIN:VEVENT
+UID:178778@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261113T150000
+DTEND;TZID=Asia/Seoul:20261113T170000
+SUMMARY:2026 제6차 서울대학교 교육연구소 포럼:교직\, 그리
+ 고 젠더: 직업으로서 교직과 젠더화된 노동
+LOCATION:사범대학 10-1동 103호
+DESCRIPTION:2026 제6차 서울대학교 교육연구소 포럼에 여러
+ 분을 초대합니다!\n원문: https://www.snu.ac.kr/snunow/events?md=v&
+ bbsidx=178778
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178778
+END:VEVENT
+BEGIN:VEVENT
+UID:178817@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261113T133000
+DTEND;TZID=Asia/Seoul:20261113T174000
+SUMMARY:[언론정보연구소]11월 13일 (금) 국제학술대회 〈Heal
+ th Communication in the Digital Era〉 안내
+LOCATION:서울대학교 IBK커뮤니케이션센터 64동 201호
+DESCRIPTION:11월 13일(금) 열리는 국제학술대회 〈 Health Commun
+ ication in the Digital Era: Beliefs\, Decisions\, and Equity 〉에 대해
+  안내드립니다. 본 행사는 영어로\n원문: https://www.snu.ac.k
+ r/snunow/events?md=v&bbsidx=178817
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178817
+END:VEVENT
+BEGIN:VEVENT
+UID:178958@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261113T103000
+DTEND;TZID=Asia/Seoul:20261113T114500
+SUMMARY:대학원 공통 「SHINE AI: 통찰과 성찰」 8회차 특강
+LOCATION:관악캠퍼스 61동 320호
+DESCRIPTION:대학원 공통 「SHINE AI: 통찰과 성찰」 여덟번째 
+ 여정\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178958
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178958
+END:VEVENT
+BEGIN:VEVENT
+UID:179069@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261113T140000
+DTEND;TZID=Asia/Seoul:20261113T150000
+SUMMARY:2026년 〈선화학술기금 세미나〉 개최 안내 (26.11.13.
+  14:00)
+LOCATION:서울대학교 아시아연구소(101동) 삼익홀
+DESCRIPTION:사회복지연구소 발전기금으로 조성된 ‘선화학
+ 술기금’을 바탕으로\, 2026년 〈 선화학술기금 세미나 
+ 〉를 아래와 같이 개최합니다.\n원문: https://www.snu.ac.kr/sn
+ unow/events?md=v&bbsidx=179069
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179069
+END:VEVENT
+BEGIN:VEVENT
+UID:179078@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261113T150000
+DTEND;TZID=Asia/Seoul:20261113T160000
+SUMMARY:생성형 AI 연구윤리 세미나 안내(11월 13일(금) 3시)
+LOCATION:온라인(Zoom)
+DESCRIPTION:11월 13일 금요일 오후에 개최되는 "생성형 AI 연
+ 구윤리 세미나" 안내드립니다.\n원문: https://www.snu.ac.kr/sn
+ unow/events?md=v&bbsidx=179078
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179078
+END:VEVENT
+BEGIN:VEVENT
+UID:179087@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:[아시아산업노동전환프로그램]콜로키움 안내 - 자
+ 동차 산업의 피지컬 AI 전환 실태와 쟁점
+LOCATION:서울대학교 아시아연구소 101동 304호
+DESCRIPTION:아시아 산업-노동 전환 프로그램과 '아시아의 
+ 미래 모빌리티 전환과 공진화하는 산업-노동 넥서스' 연
+ 구과제에서 주관하는 콜로키움을 안내해 드립니다.\n원
+ 문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179087
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179087
+END:VEVENT
+BEGIN:VEVENT
+UID:179618@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261121
+SUMMARY:2026학년도 동계 일본어 캠프 안내
+LOCATION:서울대학교 인문대학 내 강의실
+DESCRIPTION:2026학년도 동계 일본어 캠프 안내\n원문: https://w
+ ww.snu.ac.kr/snunow/events?md=v&bbsidx=179618
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179618
+END:VEVENT
+BEGIN:VEVENT
+UID:178643@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261115T140000
+DTEND;TZID=Asia/Seoul:20261115T160000
+SUMMARY:2026년 11월 서울대학교 천문학전공 공개행사
+LOCATION:서울대학교 28동 2층 관허 코스모스홀(천체투영관)
+DESCRIPTION:2026년 11월 서울대학교 천문학전공 공개행사\n원
+ 문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178643
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178643
+END:VEVENT
+BEGIN:VEVENT
+UID:178475@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261116T183000
+DTEND;TZID=Asia/Seoul:20261116T193000
+SUMMARY:[서울대학교 창업 동아리 SNAAC]🍕 빌더's 피자파티 
+ 참가자 모집!!!
+LOCATION:서울대학교 해동학술문화관 해동홀 (32-1동 1층 강
+ 연장)
+DESCRIPTION:11/16(월) 저녁\, 카카오벤처스와 함께하는 SNAAC 
+ 빌더's 피자파티가 열립니다!\n원문: https://www.snu.ac.kr/snun
+ ow/events?md=v&bbsidx=178475
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178475
+END:VEVENT
+BEGIN:VEVENT
+UID:178937@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261116T123000
+DTEND;TZID=Asia/Seoul:20261116T135000
+SUMMARY:[공익법률센터 특별강연]기억을 권리로 만드는 사
+ 람들: 영화숙·재생원 피해생존자와 공익변호사가 말하
+ 는 진실과 권리
+LOCATION:서울대학교 법학전문대학원 84동 101호 최종길홀
+DESCRIPTION:공익법률센터 특별강연 : 기억을 권리로 만드는
+  사람들: 영화숙·재생원 피해생존자와 공익변호사가 말
+ 하는 진실과 권리\n원문: https://www.snu.ac.kr/snunow/events?md=v&
+ bbsidx=178937
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178937
+END:VEVENT
+BEGIN:VEVENT
+UID:178961@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261116T160000
+DTEND;TZID=Asia/Seoul:20261116T164500
+SUMMARY:2026년 11월 서울대학교 천체투영관 상영회
+LOCATION:28동 201호 관허 코스모스홀
+DESCRIPTION:사람과 우주를 이어주는 공간인 천체투영관 '관
+ 허 코스모스 홀'은 교내외 방문객들을 위한 행사를 진행
+ 하고 있습니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbs
+ idx=178961
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178961
+END:VEVENT
+BEGIN:VEVENT
+UID:178667@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261201
+SUMMARY:[연계전공 러시아학]"동유럽 문학 특강: 동유럽 소
+ 설과 시간의 지층학" - 이현우(로쟈) 작가
+LOCATION:
+DESCRIPTION:연계전공 러시아학 전공\, 러시아연구소에서 이
+ 현우(로쟈) 작가님을 연사로 모시고 '동유럽 소설과 시
+ 간의 지층학'을 주제로 연계전공 특강 시리즈 제7회를 3
+ 부작으로 기획했습니다.\n원문: https://www.snu.ac.kr/snunow/eve
+ nts?md=v&bbsidx=178667
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178667
+END:VEVENT
+BEGIN:VEVENT
+UID:179426@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261208
+SUMMARY:제148회 규장각 컬로퀴엄: Kyrie Vermette
+LOCATION:서울대학교 규장각한국학연구원(103동) 444호
+DESCRIPTION:2026년 12월 7일(월) 오후 2시\, 규장각한국학연구
+ 원에서 제148회 컬로퀴엄을 개최합니다. 이번 행사에서
+ 는 규장각 펠로 Kyrie Vermette (University of British Columbia) 선
+ 생\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179426
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179426
+END:VEVENT
+BEGIN:VEVENT
+UID:178460@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261117T140000
+DTEND;TZID=Asia/Seoul:20261117T150000
+SUMMARY:제147회 규장각 컬로퀴엄 | 147th Kyujanggak Colloquium
+LOCATION:서울대학교 규장각한국학연구원(103동) 444호
+DESCRIPTION:2026년 11월 17일(화) 오후 2시\, 규장각한국학연구
+ 원에서 제147회 컬로퀴엄을 개최합니다.\n원문: https://www.
+ snu.ac.kr/snunow/events?md=v&bbsidx=178460
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178460
+END:VEVENT
+BEGIN:VEVENT
+UID:178502@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261117T120000
+DTEND;TZID=Asia/Seoul:20261117T133000
+SUMMARY:11/17(화) 사회과학연구원 방법론 세미나 "정치적 폭
+ 력 연구의 방법론적 과제" (싱가포르 국립대학교 손상용
+  교수)
+LOCATION:우석경제관(223동) 504호
+DESCRIPTION:사회과학연구원에서는 다양한 방법론에 대해 
+ 심층적으로 연구하고\, 학제 간 교류를 위해 방법론 세
+ 미나를 개최하고 있습니다.\n원문: https://www.snu.ac.kr/snunow
+ /events?md=v&bbsidx=178502
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178502
+END:VEVENT
+BEGIN:VEVENT
+UID:178562@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+SUMMARY:서울공대 80주년 「이슈&보이스 포럼」
+LOCATION:
+DESCRIPTION:서울대학교 공과대학·공학연구원은 서울공대 8
+ 0주년을 맞이하여 오는 11월 17일 「이슈&보이스 포럼」
+ 을 아래와 같이 개최합니다.\n원문: https://www.snu.ac.kr/snuno
+ w/events?md=v&bbsidx=178562
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178562
+END:VEVENT
+BEGIN:VEVENT
+UID:179213@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261117T133000
+DTEND;TZID=Asia/Seoul:20261117T150000
+SUMMARY:[정보화본부]ChatGPT Edu 고급활용법(AI 기업 초청 세
+ 미나(10차)\, 비대면 강의)
+LOCATION:온라인(Zoom)
+DESCRIPTION:정보화본부에서는 「2026 AI Native Campus Journey」 AI
+  기업 초청 세미나(10차)의 일환으로 OpenAI의 August Lee(Appli
+ ed AI Architect)를 초청하여 ‘ChatGPT\n원문: https://www.snu.ac.kr
+ /snunow/events?md=v&bbsidx=179213
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179213
+END:VEVENT
+BEGIN:VEVENT
+UID:179237@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261117T132000
+DTEND;TZID=Asia/Seoul:20261117T173500
+SUMMARY:AI-BIO Workshop 2026 개최 안내 (11/17\, 38동 517호)
+LOCATION:서울대학교 글로벌공학교육센터(38동) 517호
+DESCRIPTION:AI-BIO Workshop 2026은 Central Dogma 기반 파운데이션 
+ 모델과 멀티오믹스 인공지능(AI)을 활용한 가상세포(Virtu
+ al Cell) 구현 기술 및 연구 동향을 공유하고\, 차세대 바
+ 이오 인공지\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=
+ 179237
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179237
+END:VEVENT
+BEGIN:VEVENT
+UID:179408@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261117T115000
+DTEND;TZID=Asia/Seoul:20261117T130000
+SUMMARY:[한국정책지식센터]제1176회「정책&지식」포럼 개
+ 최 안내
+LOCATION:서울대학교 행정대학원 57동 203호
+DESCRIPTION:서울대학교 행정대학원 한국정책지식센터는 오
+ 는 2026년 11월 17일(화)\, 제1176회「정책&지식」포럼을 개
+ 최합니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179
+ 408
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179408
+END:VEVENT
+BEGIN:VEVENT
+UID:179075@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261125
+SUMMARY:[서울대 캠퍼스타운]📢 START-UP 아카데미(START) 참여
+ 자 모집
+LOCATION:서울대학교 943동 1층 대형세미나실
+DESCRIPTION:생성형 AI를 활용한 예비·초기 창업자의 실무 
+ 역량 강화와 사업 아이디어 구체화를 위한 「START-UP 아
+ 카데미(START)」 참여자를 모집하고 있어 안내드립니다.\n
+ 원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179075
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179075
+END:VEVENT
+BEGIN:VEVENT
+UID:179615@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261201
+SUMMARY:2027학년도 LnL 멘토(학부 재학생) 모집 공고
+LOCATION:
+DESCRIPTION:2027학년도 LnL 멘토(학부 재학생) 모집 공고\n원
+ 문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179615
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179615
+END:VEVENT
+BEGIN:VEVENT
+UID:178916@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261118T133000
+DTEND;TZID=Asia/Seoul:20261118T143000
+SUMMARY:[마음의 기초체력을 높이는 뇌회복의 기술]강좌 신
+ 청 안내
+LOCATION:63동 3층 보건진료소 보건교육실
+DESCRIPTION:마음의 기초체력을 높이는 뇌 회복의 기술을 주
+ 제로 정신건강 강좌를 보건진료소에서 개최합니다.\n원
+ 문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178916
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178916
+END:VEVENT
+BEGIN:VEVENT
+UID:178955@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261118T120000
+DTEND;TZID=Asia/Seoul:20261118T130000
+SUMMARY:역사연구소 제136차 월례집담회 "AI라는 호랑이 등
+ 에 올라타기: 소프트웨어를 매개로 한 역사연구의 심화
+ ·확대·산학화"
+LOCATION:인문대학 신양관 국제회의실(4동 302호)
+DESCRIPTION:역사연구소 제136차 월례집담회 "AI라는 호랑이 
+ 등에 올라타기: 소프트웨어를 매개로 한 역사연구의 심
+ 화·확대·산학화"(11/18 수요일 12시)\n원문: https://www.snu.ac
+ .kr/snunow/events?md=v&bbsidx=178955
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178955
+END:VEVENT
+BEGIN:VEVENT
+UID:179147@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261118T120000
+DTEND;TZID=Asia/Seoul:20261118T130000
+SUMMARY:[간호과학연구소]11/18(수) 겸무연구원 연구동향세
+ 미나 안내: 환자안전역량\, 무엇을 측정하는가
+LOCATION:서울대학교 간호대학 본관 408호
+DESCRIPTION:11월 겸무연구원 연구동향세미나를 안내드립니
+ 다. 환자안전역량은 무엇을 어떤 기준으로 측정하느냐
+ 에 따라 교육성과의 해석이 달라집니다. 이번 세미나에
+ 서는 WHO\, CPSI\, TeamSTEPPS 등 국제 프레임워크와 국내\n원
+ 문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179147
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179147
+END:VEVENT
+BEGIN:VEVENT
+UID:179567@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261118T170000
+DTEND;TZID=Asia/Seoul:20261118T183000
+SUMMARY:2026. 11. 18.(수) SNU AI.MED Talks 26 - 23rd Seminar( 가천의대
+  한창호 교수 )
+LOCATION:온라인(Zoom)
+DESCRIPTION:의료 인공지능 융합인재 양성 사업단 세미나 시
+ 리즈 ‘SNU AI.MED Talks 26’의 스물세번째 세미나에 여러분
+ 을 초대합니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbs
+ idx=179567
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179567
+END:VEVENT
+BEGIN:VEVENT
+UID:178547@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261119T092000
+DTEND;TZID=Asia/Seoul:20261119T173000
+SUMMARY:[국가미래전략원]"국가 전략기술과 기술협력" 국제
+ 포럼 개최 안내
+LOCATION:서울대학교 중앙도서관 관정관 3층 양두석홀
+DESCRIPTION:서울대학교 국가미래전략원 과학과 기술의 미
+ 래 클러스터\, 과학기술정책연구원(STEPI)\, 한국연구재단
+  글로벌기초연구실이 공동으로 「국가 전략기술과 기술
+ 협력」국제포럼을 개최합니다.\n원문: https://www.snu.ac.kr/s
+ nunow/events?md=v&bbsidx=178547
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178547
+END:VEVENT
+BEGIN:VEVENT
+UID:178811@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+SUMMARY:Empire\,Liberalism&Violence : From the British Empire & U.S. to Pal
+ estine
+LOCATION:Building 4\, Room 302\, Seoul National University
+DESCRIPTION:Symposium hosted by the Institute of Historical Research at Seo
+ ul National University:\n원문: https://www.snu.ac.kr/snunow/events?md=v&
+ bbsidx=178811
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178811
+END:VEVENT
+BEGIN:VEVENT
+UID:178847@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261119T170000
+DTEND;TZID=Asia/Seoul:20261119T183000
+SUMMARY:2026 의학연구원 특별 R&D 세미나
+LOCATION:서울대학교 의학연구원 디스커버리 라운지(의학
+ 도서관 7층)
+DESCRIPTION:서울대학교 의학연구원에서는 Harvard Medical School
+ 의 Andrew Wellman 교수님과 Daniel Vena 교수님을 모시고 특별 
+ R&D 세미나를 개최합니다.\n원문: https://www.snu.ac.kr/snunow/ev
+ ents?md=v&bbsidx=178847
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178847
+END:VEVENT
+BEGIN:VEVENT
+UID:178904@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261119T120000
+DTEND;TZID=Asia/Seoul:20261119T133000
+SUMMARY:[SNU GSIS BK21]국제형사재판소(ICC) 특별 커리어 세션 
+ 안내
+LOCATION:서울대학교 국제대학원 국제회의실 (140-2동\, 4층)
+DESCRIPTION:안녕하십니까\, 서울대학교 국제대학원 BK21 사
+ 업단에서 국제형사재판소(International Criminal Court\, ICC) 특
+ 별 커리어 세션 개최 소식을 안내드립니다.\n원문: https:/
+ /www.snu.ac.kr/snunow/events?md=v&bbsidx=178904
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178904
+END:VEVENT
+BEGIN:VEVENT
+UID:178952@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261119T160000
+DTEND;TZID=Asia/Seoul:20261119T180000
+SUMMARY:제 16회 아시아의 목소리: "잊혀진 살인의 기록들: M
+ uder Records of the Forgotten"
+LOCATION:서울대학교 인문대학 14동 B101호
+DESCRIPTION:제 16회 아시아의 목소리: "잊혀진 살인의 기록
+ 들: Muder Records of the Forgotten"\n원문: https://www.snu.ac.kr/snunow
+ /events?md=v&bbsidx=178952
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178952
+END:VEVENT
+BEGIN:VEVENT
+UID:179429@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261119T163000
+DTEND;TZID=Asia/Seoul:20261119T180000
+SUMMARY:2026년 교육정책연구센터 11월 학술세미나 안내
+LOCATION:서울대 사범대학 10동 105호
+DESCRIPTION:서울대학교 교육종합연구원 교육정책연구센터
+ 는 "학령인구 감소 시대의 학교 체제 변화와 정책 대응 
+ 과제"를 주제로 아래와 같이 11월 학술세미나를 개최합
+ 니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179429
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179429
+END:VEVENT
+BEGIN:VEVENT
+UID:179447@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261119T170000
+DTEND;TZID=Asia/Seoul:20261119T180000
+SUMMARY:AI 콜로퀴움 "데이터마이닝 시스템의 기술과 응용" 
+ 장준기 교수
+LOCATION:302동 105호
+DESCRIPTION:2026년 AI연구원 하반기 콜로퀴움 시리즈 세 번째
+  강연을 개최합니다.\n원문: https://www.snu.ac.kr/snunow/events?m
+ d=v&bbsidx=179447
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179447
+END:VEVENT
+BEGIN:VEVENT
+UID:179525@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261119T160000
+DTEND;TZID=Asia/Seoul:20261119T170000
+SUMMARY:[해피아워]SNU OGA_HAPPY HOUR (2026-11-19\, Thu\, 16:00~17:00) I
+ nvitation (2026 Fall)
+LOCATION:국제처 1층 라운지(152동\, CJ International Center)
+DESCRIPTION:2026학년도 2학기 OGA HAPPY HOUR가 이번 주에도 계속
+  진행됩니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx
+ =179525
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179525
+END:VEVENT
+BEGIN:VEVENT
+UID:179579@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261119T143000
+DTEND;TZID=Asia/Seoul:20261119T162000
+SUMMARY:기업의 물리적 기후위험 관리와 기후보험의 역할
+LOCATION:국회의원회관 제3세미나실
+DESCRIPTION:서울대학교 기후테크센터가 공동 주관하는 「
+ 기업의 물리적 기후위험 관리와 기후보험의 역할: 기후
+ 위험 진단에서 현장 적응·보험까지」 행사를 안내드립
+ 니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179579
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179579
+END:VEVENT
+BEGIN:VEVENT
+UID:178808@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261120T143000
+DTEND;TZID=Asia/Seoul:20261120T163000
+SUMMARY:Palestine in a Connected World: Muhannad Ayyash on the Middle East 
+ and the U.S.
+LOCATION:Building 14\, Room 203
+DESCRIPTION:Palestine in a Connected World: Invited Lecture hosted by the A
+ merican Studies Institute\, the Department of History\, & t\n원문: https
+ ://www.snu.ac.kr/snunow/events?md=v&bbsidx=178808
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178808
+END:VEVENT
+BEGIN:VEVENT
+UID:178901@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261120T113000
+DTEND;TZID=Asia/Seoul:20261120T130000
+SUMMARY:SNU Commons (특임)석좌교수 강연 시리즈 제1회 : 사회
+ 과학대학 사회학과 장경섭 특임석좌교수
+LOCATION:SNU Commons 행정관 1층 렉처홀
+DESCRIPTION:교무처 교무과에서 SNU Commons (특임)석좌교수 강
+ 연 시리즈를 개최합니다.\n원문: https://www.snu.ac.kr/snunow/ev
+ ents?md=v&bbsidx=178901
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178901
+END:VEVENT
+BEGIN:VEVENT
+UID:178922@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261120T160000
+DTEND;TZID=Asia/Seoul:20261120T180000
+SUMMARY:[제80차 지속가능 교통물류 콜로키움]교통인프라 
+ 지하화\, 도시공간 혁신의 기회
+LOCATION:서울대학교 환경대학원(82동) 306호
+DESCRIPTION:오는 11월 20일 금요일\, "교통인프라 지하화\, 도
+ 시공간 혁신의 기회"라는 주제로 제80차 지속가능 교통
+ 물류 콜로키움을 개최합니다.\n원문: https://www.snu.ac.kr/snu
+ now/events?md=v&bbsidx=178922
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178922
+END:VEVENT
+BEGIN:VEVENT
+UID:179174@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261120T140000
+DTEND;TZID=Asia/Seoul:20261120T170000
+SUMMARY:"2차 공공기관 지방이전의 성공적 추진 방향과 과
+ 제" 심포지엄 안내
+LOCATION:서울대학교 우석경제관(223동) 504호
+DESCRIPTION:"2차 공공기관 지방이전의 성공적 추진 방향과 
+ 과제" 심포지엄 안내\n원문: https://www.snu.ac.kr/snunow/events?m
+ d=v&bbsidx=179174
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179174
+END:VEVENT
+BEGIN:VEVENT
+UID:179228@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261120T140000
+DTEND;TZID=Asia/Seoul:20261120T170000
+SUMMARY:SNU The Day After Forum —「우리가 몰랐던 북한」 (11/20 
+ 금)
+LOCATION:서울대학교 500동 1층 목암홀
+DESCRIPTION:서울대 통일 이후 포럼 「SNU The Day After Forum」이
+  첫 시즌을 시작합니다.\n원문: https://www.snu.ac.kr/snunow/even
+ ts?md=v&bbsidx=179228
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179228
+END:VEVENT
+BEGIN:VEVENT
+UID:179273@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261120T095000
+DTEND;TZID=Asia/Seoul:20261120T170000
+SUMMARY:[GSIS BK21]서울대–규슈대 국제학술대회 안내(11.20. 
+ 금\, 09:50–17:00)
+LOCATION:서울대학교 국제대학원 GL룸 (140동 201호)
+DESCRIPTION:서울대학교 국제대학원 BK21 사업단에서 국제학
+ 술대회 개최 소식을 안내드립니다.\n원문: https://www.snu.ac
+ .kr/snunow/events?md=v&bbsidx=179273
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179273
+END:VEVENT
+BEGIN:VEVENT
+UID:179327@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261120T123000
+DTEND;TZID=Asia/Seoul:20261120T133000
+SUMMARY:치의학대학원 상아콜로키엄 개최 안내
+LOCATION:온라인(Zoom)
+DESCRIPTION:치의학대학원 상아콜로키엄 개최 안내\n원문: ht
+ tps://www.snu.ac.kr/snunow/events?md=v&bbsidx=179327
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179327
+END:VEVENT
+BEGIN:VEVENT
+UID:179333@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261120T110000
+DTEND;TZID=Asia/Seoul:20261120T120000
+SUMMARY:2026 Data Science Colloquium(11.20(금).11:00 UNIST 백승렬교수
+ )
+LOCATION:서울대학교 43동 B102호
+DESCRIPTION:2026 Data Science Colloquium(11.20(금).11:00 UNIST 백승렬
+ 교수)\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179333
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179333
+END:VEVENT
+BEGIN:VEVENT
+UID:179390@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261120T160000
+DTEND;TZID=Asia/Seoul:20261120T183000
+SUMMARY:제34회 서울대학교 기계공학부 창의공학설계 로보
+ 콘 2026 개최
+LOCATION:서울대학교 해동첨단공학관(303동) 2층 메인홀
+DESCRIPTION:서울대학교 기계공학부에서 '창의공학설계 로
+ 보콘 2026' 행사에 여러분을 초대합니다.\n원문: https://www.
+ snu.ac.kr/snunow/events?md=v&bbsidx=179390
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179390
+END:VEVENT
+BEGIN:VEVENT
+UID:179420@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261120T160000
+DTEND;TZID=Asia/Seoul:20261120T180000
+SUMMARY:한국사회복지연구회 제266회 월례세미나 개최 안내
+  (11/20)
+LOCATION:서울대학교 아시아연구소 101동 230호
+DESCRIPTION:[2026년 한국사회복지연구회 제266회 월례세미나]
+ \n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179420
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179420
+END:VEVENT
+BEGIN:VEVENT
+UID:179432@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261120T130000
+DTEND;TZID=Asia/Seoul:20261120T140000
+SUMMARY:[환경대학원 제262차 콜로키움]Seeing Walkable Cities Thro
+ ugh Street View Images and AI: Why
+LOCATION:서울대학교 환경대학원 82동 113호
+DESCRIPTION:[환경대학원 제262차 콜로키움] Seeing Walkable Cities
+  Through Street View Images and AI: Why\, What\, How\, and For Whom?\n원
+ 문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179432
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179432
+END:VEVENT
+BEGIN:VEVENT
+UID:179435@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261120T150000
+DTEND;TZID=Asia/Seoul:20261120T160000
+SUMMARY:[환경대학원 제263차 콜로키움]LLMs as Urban Simulators: A
+  Preliminary Exploration
+LOCATION:온라인(Zoom)
+DESCRIPTION:[환경대학원 제263차 콜로키움] LLMs as Urban Simulato
+ rs: A Preliminary Exploration\n원문: https://www.snu.ac.kr/snunow/events
+ ?md=v&bbsidx=179435
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179435
+END:VEVENT
+BEGIN:VEVENT
+UID:179516@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261120T180000
+DTEND;TZID=Asia/Seoul:20261120T190000
+SUMMARY:[SNU 80: The OGA Chapter]SISA 2nd Homecoming: The SISA Soirée (Nov
+ . 20)
+LOCATION:서울대학교 국제처(152동)
+DESCRIPTION:서울대학교 외국인학생회(SISA)에서 두 번째 홈
+ 커밍 행사 「The SISA Soirée: Stories Beyond SNU」를 개최합니
+ 다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179516
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179516
+END:VEVENT
+BEGIN:VEVENT
+UID:179534@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:2026 Data Science Colloquium (11.20.(금) 16:00) 성균관대학교
+  허재필 교수
+LOCATION:서울대학교 43동 101호
+DESCRIPTION:서울대학교 데이터사이언스연구소에서 2026 Data 
+ Science Colloquium을 개최합니다.\n원문: https://www.snu.ac.kr/snun
+ ow/events?md=v&bbsidx=179534
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179534
+END:VEVENT
+BEGIN:VEVENT
+UID:176921@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261121T090000
+DTEND;TZID=Asia/Seoul:20261121T163000
+SUMMARY:2026년 대한성학회 추계학술대회 "성(性)\, 그 존귀
+ 함에 대하여: 생명\, 관계\, 그리고 인권의 지평" 개최 안
+ 내
+LOCATION:서울대학교 간호대학 제2연구동 강당\, 서울특별
+ 시 종로구 대학로 103(연건동 )
+DESCRIPTION:대한성학회에서 2026년 추계학술대회 "성(性)\, 
+ 그 존귀함에 대하여: 생명\, 관계\, 그리고 인권의 지평"
+ 을 개최합니다. 여러분의 많은 관심과 참여를 부탁드립
+ 니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176921
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176921
+END:VEVENT
+BEGIN:VEVENT
+UID:178967@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261121T090000
+DTEND;TZID=Asia/Seoul:20261121T103000
+SUMMARY:공익법률센터 HPOD(하버드장애프로젝트) 온라인 공
+ 개 강연 - 연사: Michael Stein(HPOD’s Executive Director)
+LOCATION:온라인(Zoom)
+DESCRIPTION:서울대학교 법학전문대학원 공익법률센터에서 
+ Harvard Project on Disability(HPOD)\, 현대차 정몽구 재단과 함께
+  강연을 준비했습니다.\n원문: https://www.snu.ac.kr/snunow/event
+ s?md=v&bbsidx=178967
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178967
+END:VEVENT
+BEGIN:VEVENT
+UID:179240@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261121T140000
+DTEND;TZID=Asia/Seoul:20261121T170000
+SUMMARY:서울대학교 김구포럼 후원 공동연구발표회 〈균열
+ 과 재편의 한국정치사: 이승만∙박정희 정권 시기 정치 
+ 갈등과 전개〉 개최
+LOCATION:서울대학교 국제대학원 GL룸 (140동 201호)
+DESCRIPTION:서울대학교 김구포럼이 후원하는 ‘한국역사연
+ 구회 제185회 공동연구발표회’가 개최됩니다.\n원문: htt
+ ps://www.snu.ac.kr/snunow/events?md=v&bbsidx=179240
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179240
+END:VEVENT
+BEGIN:VEVENT
+UID:178964@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261123T120000
+DTEND;TZID=Asia/Seoul:20261123T133000
+SUMMARY:[중국연구소]콜로퀴움 안내 - 리바이어던의 귀환: 
+ 시진핑 시대의 중국 정치
+LOCATION:아시아연구소 삼익홀(101동 220호)
+DESCRIPTION:[중국연구소]콜로퀴움 안내 - 리바이어던의 귀
+ 환: 시진핑 시대의 중국 정치\n원문: https://www.snu.ac.kr/snun
+ ow/events?md=v&bbsidx=178964
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178964
+END:VEVENT
+BEGIN:VEVENT
+UID:179090@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261123T140000
+DTEND;TZID=Asia/Seoul:20261123T150000
+SUMMARY:SNU 건강•돌봄 AI 웨비나 (11/23)
+LOCATION:온라인(줌)
+DESCRIPTION:서울대학교 AI연구원 건강·돌봄 AI센터가 〈 초
+ 고령·저출생 시대의 헬스\, 케어 그리고 웰빙 인공지능
+ 과 관련된 연구 주제와 정책 이슈\, 최신 동향 등 〉에 
+ 관한 주제로 개최하는 11월 웨비나에 여러분을 초대합니
+ 다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179090
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179090
+END:VEVENT
+BEGIN:VEVENT
+UID:179411@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+SUMMARY:[제도혁신위원회]제7회 SNU 혁신 포럼 개최 안내
+LOCATION:
+DESCRIPTION:서울대학교 제도혁신위원회에서는 11월23일 오
+ 후에 2026년도 가을학기 공청회를 개최합니다.\n원문: http
+ s://www.snu.ac.kr/snunow/events?md=v&bbsidx=179411
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179411
+END:VEVENT
+BEGIN:VEVENT
+UID:179549@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261123T130000
+DTEND;TZID=Asia/Seoul:20261123T140000
+SUMMARY:[경력개발센터]국방과학연구소 채용설명회 안내(11
+ /23)
+LOCATION:공학관 301동 118호
+DESCRIPTION:대한민국 안보의 핵심! 국방과학연구소가 채용
+ 설명회를 진행합니다.\n원문: https://www.snu.ac.kr/snunow/events
+ ?md=v&bbsidx=179549
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179549
+END:VEVENT
+BEGIN:VEVENT
+UID:179696@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261123T130000
+DTEND;TZID=Asia/Seoul:20261123T140000
+SUMMARY:백세범 교수 초청 강연
+LOCATION:
+DESCRIPTION:백세범 교수 초청 강연\n원문: https://www.snu.ac.kr/s
+ nunow/events?md=v&bbsidx=179696
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179696
+END:VEVENT
+BEGIN:VEVENT
+UID:178232@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261124T153000
+DTEND;TZID=Asia/Seoul:20261124T163000
+SUMMARY:[바이오인공지능연구단 초청 세미나]Peter Sicinski(Har
+ vard)
+LOCATION:서울대학교 대형강의동(28동) 302호
+DESCRIPTION:안녕하십니까. 서울대학교 바이오인공지능연구
+ 단에서 진행하는 초청 세미나에 여러분을 초대합니다.\n
+ 원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178232
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178232
+END:VEVENT
+BEGIN:VEVENT
+UID:178796@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261124T163000
+DTEND;TZID=Asia/Seoul:20261124T180000
+SUMMARY:[국가미래전략원 글로벌 한국 클러스터]"미중패권
+ 전쟁의 진화과정과 한국의 당면과제" 11/24 (화) 대담회 
+ 안내
+LOCATION:서울대학교 아시아연구소 영원홀 (101동 210호)
+DESCRIPTION:서울대학교 국가미래전략원 소속 글로벌 한국 
+ 클러스터에서 주최하는 〈 미중패권전쟁의 진화과정과 
+ 한국의 당면과제 〉 대담회에 대해 안내해 드립니다.\n
+ 원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178796
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178796
+END:VEVENT
+BEGIN:VEVENT
+UID:179282@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261124
+DTEND;VALUE=DATE:20261125
+SUMMARY:"사회적 권리들을 둘러싼 개념적 지도 그리기" (11.2
+ 4 화 오전 9시 30분\, 온라인 / 장애와돌봄연구센터 연속
+ 세미나 5회차 안내)
+LOCATION:온라인(Zoom)
+DESCRIPTION:서울대학교 사회복지연구소 산하 장애와돌봄연
+ 구센터에서 총 5회에 걸친 연속세미나를 개최합니다.\n
+ 원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179282
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179282
+END:VEVENT
+BEGIN:VEVENT
+UID:179438@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261124T120000
+DTEND;TZID=Asia/Seoul:20261124T130000
+SUMMARY:서울대 인공지능신뢰성 연구센터 2026 월례세미나 
+ 시리즈-신뢰할 수 있는 인공지능 만들기
+LOCATION:서울대학교 근대법학교육백주년기념관 최종길홀 
+ (84동 101호)
+DESCRIPTION:서울대학교 인공지능신뢰성 연구센터(Center for T
+ rustworthy AI)가 주관하는 2026년 월례세미나 시리즈 - 신뢰
+ 할 수 있는 인공지능 만들기의 여섯 번째 세미나에 여러
+ 분을 초대합니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&
+ bbsidx=179438
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179438
+END:VEVENT
+BEGIN:VEVENT
+UID:179444@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261124T120000
+DTEND;TZID=Asia/Seoul:20261124T140000
+SUMMARY:일본전문가 초청세미나 〈보편의 언어와 주권의 
+ 그늘: 1960년대 재일조선인·대만인의 정치망명 재판이 
+ 묻는 것〉
+LOCATION:서울대 국제대학원 140동 GL룸
+DESCRIPTION:일본연구소는 일본의 정치·경제·사회문화·예
+ 술 전반에 걸친 다양한 주제로 한국과 일본뿐 아니라\, 
+ 유럽과 미국\, 일본 전문가들을 초청하여 일어\, 한국어\
+ , 영어로 세미나를 열고 있습니다.\n원문: https://www.snu.ac.
+ kr/snunow/events?md=v&bbsidx=179444
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179444
+END:VEVENT
+BEGIN:VEVENT
+UID:179450@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261124T130000
+DTEND;TZID=Asia/Seoul:20261124T150000
+SUMMARY:[경력개발센터]위바이옴 이형진 대표님과 함께하
+ 는 SNU 진로콘서트 참여자 모집
+LOCATION:서울대학교 체육문화연구동 206호
+DESCRIPTION:안녕하세요. 경력개발센터입니다. 우리 센터에
+ 서는 '위바이옴 이형진 대표님과 함께하는 SNU진로콘서
+ 트'를 개최합니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v
+ &bbsidx=179450
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179450
+END:VEVENT
+BEGIN:VEVENT
+UID:179531@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261124T110000
+DTEND;TZID=Asia/Seoul:20261124T120000
+SUMMARY:제32차 아카데미아: The Next Pandemic: Are We Truly Ready? (1
+ 1.24)
+LOCATION:서울대학교 의과대학 교육관 117호
+DESCRIPTION:서울대학교 의과대학 이종욱글로벌의학센터가 
+ 주관하는 제32차 아카데미아가 아래와 같이 개최됩니다.
+ \n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179531
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179531
+END:VEVENT
+BEGIN:VEVENT
+UID:179684@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261124
+DTEND;VALUE=DATE:20261125
+SUMMARY:A Just Transition for Auto Workers? Negotiating the Electric
+LOCATION:서울대학교 환경대학원 82동 2층 열린플랫폼
+DESCRIPTION:A Just Transition for Auto Workers? Negotiating the Electric\n
+ 원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179684
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179684
+END:VEVENT
+BEGIN:VEVENT
+UID:178676@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261125T120000
+DTEND;TZID=Asia/Seoul:20261125T130000
+SUMMARY:[보건진료소]관악건강특강 - 탈모증의 진단과 치료
+LOCATION:관악캠퍼스 예술복합연구동 오디토리움(74동 201호
+ )
+DESCRIPTION:[보건진료소]관악건강특강 - 탈모증의 진단과 
+ 치료\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178676
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178676
+END:VEVENT
+BEGIN:VEVENT
+UID:179180@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261125T140000
+DTEND;TZID=Asia/Seoul:20261125T170000
+SUMMARY:서울대학교 인권센터·젠더연구소 학술회의 〈AI 
+ 개발의 생태적 비용〉
+LOCATION:서울대학교 아시아연구소 삼익홀
+DESCRIPTION:서울대학교 인권센터·젠더연구소 학술회의 〈A
+ I 개발의 생태적 비용〉\n원문: https://www.snu.ac.kr/snunow/even
+ ts?md=v&bbsidx=179180
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179180
+END:VEVENT
+BEGIN:VEVENT
+UID:179216@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261125T140000
+DTEND;TZID=Asia/Seoul:20261125T155000
+SUMMARY:[국가미래전략원 글로벌 한국 클러스터]"광복 100주
+ 년\, 한국의 중장기 외교안보전략" 11/25 (수) 공개포럼 안
+ 내
+LOCATION:서울대학교 우석경제관(223동) 504호
+DESCRIPTION:서울대학교 국가미래전략원 글로벌 한국 클러
+ 스터는 2045년을 준비하는 「광복 100주년\, 한국의 중장
+ 기 외교안보전략」 공개포럼을 개최합니다.\n원문: https:
+ //www.snu.ac.kr/snunow/events?md=v&bbsidx=179216
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179216
+END:VEVENT
+BEGIN:VEVENT
+UID:179285@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261125T120000
+DTEND;TZID=Asia/Seoul:20261125T133000
+SUMMARY:사회과학연구원 월례세미나 “결혼과 가족 재생산
+ : 부모 자산과 배우자 가족배경에 대한 선호” (권오재 
+ 교수)
+LOCATION:우석경제관 504호
+DESCRIPTION:서울대학교 사회과학연구원은 매 정규학기마다
+  대학 신임교원 및 저명학자를 초청하여 월례세미나를 
+ 운영하고 있습니다.\n원문: https://www.snu.ac.kr/snunow/events?md
+ =v&bbsidx=179285
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179285
+END:VEVENT
+BEGIN:VEVENT
+UID:179414@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261125T100000
+DTEND;TZID=Asia/Seoul:20261125T170000
+SUMMARY:[차세대반도체]2026 SNU AI Semiconductor Forum 개최 안내
+LOCATION:서울대학교 38동 글로벌공학교육센터 5층 대강당
+DESCRIPTION:2026 서울대학교 AI반도체 포럼이 오는 11월 25일 
+ 수요일에 개최됩니다.\n원문: https://www.snu.ac.kr/snunow/events
+ ?md=v&bbsidx=179414
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179414
+END:VEVENT
+BEGIN:VEVENT
+UID:179441@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261125T184500
+DTEND;TZID=Asia/Seoul:20261125T210000
+SUMMARY:[학부대학X일본연구소](11/25) 일본 생활세계 탐구교
+ 실 공개특강
+LOCATION:서울대 국제대학원 140-2동 202호
+DESCRIPTION:"일본 생활세계 탐구교실"은 일본연구소에서 매
+ 회 교내외의 일본 전문가를 초청하여\, 일본 관련 다양
+ 하고 흥미로운 주제로 진행하는 강연입니다. 서울대학
+ 교 학부생이라면 누구나 일본 생활세계 탐구교실의 강
+ 연을 신청하여 들으\n원문: https://www.snu.ac.kr/snunow/events?md
+ =v&bbsidx=179441
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179441
+END:VEVENT
+BEGIN:VEVENT
+UID:179552@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261125T120000
+DTEND;TZID=Asia/Seoul:20261125T130000
+SUMMARY:법\, 인문학\, 인공지능 스터디 그룹 에레혼(Erewhon) 
+ #25(11/25)
+LOCATION:온라인(Zoom)
+DESCRIPTION:법\, 인문학\, 인공지능 스터디 그룹 에레혼 (Erew
+ hon: An Interdisciplinary Reading Group on Law\, Humanities\, and AI) #25 
+ 모임을 진행하니 많은 관심과 참여\n원문: https://www.snu.ac
+ .kr/snunow/events?md=v&bbsidx=179552
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179552
+END:VEVENT
+BEGIN:VEVENT
+UID:179678@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261125T120000
+DTEND;TZID=Asia/Seoul:20261125T130000
+SUMMARY:간호플러스세미나 안내 AI 기반 노인 돌봄서비스의
+  건강효과
+LOCATION:서울대학교 간호대학 본관 408호
+DESCRIPTION:간호플러스세미나 안내 AI 기반 노인 돌봄서비
+ 스의 건강효과\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsi
+ dx=179678
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179678
+END:VEVENT
+BEGIN:VEVENT
+UID:178853@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261126T190000
+DTEND;TZID=Asia/Seoul:20261126T210000
+SUMMARY:"책임을 묻는 法\, 학습하는 社會: 반복되는 재난과
+  책임 귀속의 재구성" 콜로키움(11.26. 목\, 19시\, 온라인)
+LOCATION:온라인(Zoom)
+DESCRIPTION:2026년 여섯번째 정기 콜로키움 소식을 전해드립
+ 니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178853
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178853
+END:VEVENT
+BEGIN:VEVENT
+UID:178913@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261126T093000
+DTEND;TZID=Asia/Seoul:20261126T103000
+SUMMARY:2026 SNU 그랜드퀘스트 챌린지 콜로퀴엄
+LOCATION:서울대학교 SNU Commons 중앙도서관 1층
+DESCRIPTION:2026 SNU 그랜드퀘스트 챌린지 콜로퀴엄에 여러분
+ 을 초대합니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbs
+ idx=178913
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178913
+END:VEVENT
+BEGIN:VEVENT
+UID:179129@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261126T120000
+DTEND;TZID=Asia/Seoul:20261126T130000
+SUMMARY:🍀COSS그린바이오🍀 제6회 그린백세미나 안내 (※
+ 오프라인 세미나 사전신청 시 다과 제공)
+LOCATION:서울대학교 75동 B121호
+DESCRIPTION:🍀 그린바이오 혁신융합대학사업단에서「2026 
+ 제6회 그린백세미나」를 개최합니다.🍀\n원문: https://www
+ .snu.ac.kr/snunow/events?md=v&bbsidx=179129
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179129
+END:VEVENT
+BEGIN:VEVENT
+UID:179417@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261126
+DTEND;VALUE=DATE:20261127
+SUMMARY:[국가미래전략원]2026 K-GX FORUM: 한국형 녹색대전환 
+ 전략과 실행과제
+LOCATION:
+DESCRIPTION:서울대학교 국가미래전략원에서 「2026 K-GX FORUM:
+  한국형 녹색대전환 전략과 실행과제」를 개최합니다.\n
+ 원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179417
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179417
+END:VEVENT
+BEGIN:VEVENT
+UID:179528@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261126T140000
+DTEND;TZID=Asia/Seoul:20261126T170000
+SUMMARY:[서울대기술지주]AI와 함께 만들어보는 창업로드맵
+  Bootcamp
+LOCATION:서울대학교 연구공원 943동 1층 대형 세미나실
+DESCRIPTION:2026 밸류업데이 AX 「AI와 함께 만들어보는 창업
+ 로드맵 Bootcamp에 창업자와 예비창업자 여러분을 초대합
+ 니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179528
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179528
+END:VEVENT
+BEGIN:VEVENT
+UID:179690@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261126T140000
+DTEND;TZID=Asia/Seoul:20261126T170000
+SUMMARY:"보호지역 지속가능관광의 세계적 도약: 첨단기술
+ 과 환경계획의 접목" 공동세미나 개최
+LOCATION:서울대학교 환경대학원 글로컬홀 (82동 306호)
+DESCRIPTION:"보호지역 지속가능관광의 세계적 도약: 첨단기
+ 술과 환경계획의 접목" 공동세미나 개최\n원문: https://www
+ .snu.ac.kr/snunow/events?md=v&bbsidx=179690
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179690
+END:VEVENT
+BEGIN:VEVENT
+UID:178583@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261127T100000
+DTEND;TZID=Asia/Seoul:20261127T113000
+SUMMARY:[SNUCKS]Riding the Korean Wave in China: The Afterlives of Korea Sc
+ reen Culture
+LOCATION:온라인(Zoom)
+DESCRIPTION:서울대학교 현대한국종합연구단 글로벌 한류팀
+ 에서 세미나를 개최합니다.\n원문: https://www.snu.ac.kr/snunow
+ /events?md=v&bbsidx=178583
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178583
+END:VEVENT
+BEGIN:VEVENT
+UID:178799@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261127T100000
+DTEND;TZID=Asia/Seoul:20261127T120000
+SUMMARY:규장각 특별 한국학 워크숍: 불교와 ‘힙’ 사이
+LOCATION:서울대학교 규장각한국학연구원(103동) 444호
+DESCRIPTION:규장각한국학연구원에서 2026년 규장각 특별 한
+ 국학 워크숍 제3강을 개최합니다.\n원문: https://www.snu.ac.k
+ r/snunow/events?md=v&bbsidx=178799
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178799
+END:VEVENT
+BEGIN:VEVENT
+UID:178925@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261127T180000
+DTEND;TZID=Asia/Seoul:20261127T194000
+SUMMARY:[서울대학교 의과대학 통일의학센터]제26회 통일 
+ 보건의료로 통하는 열린강좌 개최 안내
+LOCATION:고려대학교 고영캠퍼스(청담) 10층 라운지
+DESCRIPTION:저희 서울대학교 의과대학 통일의학센터는 고
+ 려대학교 및 남북보건의료교육재단과 함께 오는 11월 27
+ 일(금)\, 북한 보건의료 인프라의 오늘: 의료체계에서 응
+ 급·재난 대응까지」를 주제로 제26회 통일 보건의료로 
+ 통하는 열\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178
+ 925
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178925
+END:VEVENT
+BEGIN:VEVENT
+UID:178949@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261127T133000
+DTEND;TZID=Asia/Seoul:20261127T174000
+SUMMARY:[언론정보연구소]11/27 (금) 국제학술대회 〈Technocult
+ ures of Futurity in East Asia〉 안내
+LOCATION:서울대학교 IBK커뮤니케이션센터 64동 201호
+DESCRIPTION:11월 27일(금) 열리는 국제학술행사 〈Technocultures
+  of Futurity in East Asia: Infrastructures\, Imaginaries\, Governmentality
+ 〉를 안내드립니다.\n원문: https://www.snu.ac.kr/snunow/events?md
+ =v&bbsidx=178949
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178949
+END:VEVENT
+BEGIN:VEVENT
+UID:179222@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261127T140000
+DTEND;TZID=Asia/Seoul:20261127T170000
+SUMMARY:2026 Asian Residential Education Network(AREN) 국제 심포지엄 
+ 개최 안내
+LOCATION:서울대학교 관악학생생활관 900동 가온 컨퍼런스 
+ 홀(Gaon Conference Hall\, Bldg #900)
+DESCRIPTION:관악학생생활관에서 아시아 주요 대학들과 함
+ 께 주거형 대학 교육(Residential Education\, RE)의 미래를 논
+ 의하는 2026 AREN(Asian Residential Education Network) 창\n원문: http
+ s://www.snu.ac.kr/snunow/events?md=v&bbsidx=179222
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179222
+END:VEVENT
+BEGIN:VEVENT
+UID:179423@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261127T110000
+DTEND;TZID=Asia/Seoul:20261127T130000
+SUMMARY:미국독립혁명과 근대세계의 격동: 라틴아메리카와
+  유럽\, 서인도제도의 시선에서
+LOCATION:서울대학교 152-1동 (롯데국제교육관) 208호
+DESCRIPTION:미국독립혁명 250주년을 맞아 서울대학교 미국
+ 학연구소에서 아래와 같이 학술행사를 준비하였습니다.
+ \n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179423
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179423
+END:VEVENT
+BEGIN:VEVENT
+UID:179546@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261130T183000
+DTEND;TZID=Asia/Seoul:20261130T193000
+SUMMARY:[서울대학교 창업 동아리 SNAAC](선착순 마감!!) 🍕 B
+ luepoint in 피자파티 참가자 모집!!
+LOCATION:서울대학교 해동학술문화관 해동홀 (32-1동 4층)
+DESCRIPTION:11/30(월) 저녁\, 블루포인트파트너스와 함께하는
+  SNAAC 피자파티가 열립니다! 🍕\n원문: https://www.snu.ac.kr/s
+ nunow/events?md=v&bbsidx=179546
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179546
+END:VEVENT
+BEGIN:VEVENT
+UID:179564@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261201T150000
+DTEND;TZID=Asia/Seoul:20261201T170000
+SUMMARY:철학사상연구소 제263회 정례 콜로키움 개최(탄밍
+ 란(譚明冉) 교수-난카이대학교)
+LOCATION:인문대학 6동 403호(철학사상연구소)
+DESCRIPTION:서울대학교 철학사상연구소에서 주관하는 제263
+ 회 정례 콜로키움 행사를 안내드립니다.\n원문: https://www
+ .snu.ac.kr/snunow/events?md=v&bbsidx=179564
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179564
+END:VEVENT
+BEGIN:VEVENT
+UID:179144@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261204
+SUMMARY:서울대학교 역사학부\, 미국학연구소\, 아시아연구
+ 소 서아시아센터는 엑서터대학교의 일란 파페(Ilan Pappé)
+  교수를 초청하여 두 차례 강연을 개최합니다. 관심 있
+ 는 여러분의 많은 참여 바랍니다.
+LOCATION:서울대학교 아시아연구소 영원홍(101동 210호)
+DESCRIPTION:서울대학교 역사학부\, 미국학연구소\, 아시아
+ 연구소 서아시아센터는 엑서터대학교의 일란 파페(Ilan P
+ appé) 교수를 초청하여 두 차례 강연을 개최합니다. 관심
+  있는 여러분의 많은 참여 바랍니다.\n원문: https://www.snu.
+ ac.kr/snunow/events?md=v&bbsidx=179144
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179144
+END:VEVENT
+BEGIN:VEVENT
+UID:179582@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261203T150000
+DTEND;TZID=Asia/Seoul:20261203T180000
+SUMMARY:[서울대기술지주]VC 출신 심사역·변호사에게 배우
+ 는 투자유치 실전 교육!
+LOCATION:서울대학교 연구공원 943동 1층 대형 세미나실
+DESCRIPTION:딥테크 창업기업의 투자유치\, 설득력 있는 IR과
+  투자계약에 대한 이해에서 시작합니다. 서울대학교 기
+ 반의 벤처투자사 서울대학교기술지주 밸류업(Value-UP) 데
+ 이에서 IR Deck 작성법부터 투자계약서 실무까지\, 투\n원
+ 문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179582
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179582
+END:VEVENT
+BEGIN:VEVENT
+UID:179279@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261204T110000
+DTEND;TZID=Asia/Seoul:20261204T143000
+SUMMARY:기후·환경경제학 신진 학자 세미나 (12/4)
+LOCATION:서울대학교 환경대학원(82동) 113호
+DESCRIPTION:12월 4일(금) 환경대학원 지속가능경제·정책 연
+ 구실(LSEP)에서 "Frontiers in Climate and Environmental Economics"를 
+ 주제로 기후·환경경제학 신진 학자 세미나를 개최합니
+ 다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179279
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179279
+END:VEVENT
+BEGIN:VEVENT
+UID:179345@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261207T153000
+DTEND;TZID=Asia/Seoul:20261207T180000
+SUMMARY:서울대 과학학과 특별 콜로키움(토론토대 Elise K. Bu
+ rton 교수 초청)
+LOCATION:서울대학교 25-1동 국제회의실
+DESCRIPTION:서울대 과학학과 특별 콜로키움(토론토대 Elise K
+ . Burton 교수 초청)\n원문: https://www.snu.ac.kr/snunow/events?md=v&
+ bbsidx=179345
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179345
+END:VEVENT
+BEGIN:VEVENT
+UID:179588@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261209T120000
+DTEND;TZID=Asia/Seoul:20261209T133000
+SUMMARY:“작동하는 신경 아비투스: fMRI와 전체 사회연결망
+  자료의 결합을 통해 모색하는 사회연결망 신경과학” 
+ 방법론 세미나
+LOCATION:우석경제관(223동) 504호
+DESCRIPTION:사회과학연구원에서는 다양한 방법론에 대해 
+ 심층적으로 연구하고\, 학제 간 교류를 위해 방법론 세
+ 미나를 개최하고 있습니다. 이번 2026년 2학기 사회과학
+ 연구원 3차 방법론 세미나는 아래와 같이 진행될 예정이
+ 니 많은 참\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=17
+ 9588
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179588
+END:VEVENT
+BEGIN:VEVENT
+UID:179135@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261211T130000
+DTEND;TZID=Asia/Seoul:20261211T150000
+SUMMARY:한국학습과학회 SIG 1 〈AI와 인간 학습〉 공개 세미
+ 나 안내
+LOCATION:서울대학교 12동 401호
+DESCRIPTION:학습과학연구소는 생성형 AI 시대에 '안다'와 '
+ 기억한다'의 차이를 다시 묻고\, 기억의 수정과 갱신을 
+ 뇌과학과 인공지능의 관점에서 함께 탐구하기 위해 한
+ 국학습과학회 SIG 1 〈 AI와 인간 학습 〉 의 공개 세미나\
+ n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179135
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179135
+END:VEVENT
+BEGIN:VEVENT
+UID:179162@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261211T140000
+DTEND;TZID=Asia/Seoul:20261211T170000
+SUMMARY:〈페미니스틱 평화: 알고리즘\, 지뢰\, 메가특구〉
+LOCATION:서울대학교 우석경제관(관악캠퍼스 223동) 107호
+DESCRIPTION:〈페미니스틱 평화: 알고리즘\, 지뢰\, 메가특구
+ 〉\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179162
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179162
+END:VEVENT
+BEGIN:VEVENT
+UID:178940@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261228
+DTEND;VALUE=DATE:20261231
+SUMMARY:「제2회 f(x) Academy: MNM 기반 반도체 산업 인사이트
+ 」참가자 모집
+LOCATION:대전광역시 소재 호텔
+DESCRIPTION:차세대반도체 혁신융합대학사업단에서는 반도
+ 체 산업 및 첨단소재·나노융합 기술의 최신 동향을 공
+ 유하고\, 연구기관 현장 체험을 통한 융합형 전문인재 
+ 양성을 위해 「제2회 f(x) Academy: MNM 기반 반도체 산업\n원
+ 문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178940
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178940
+END:VEVENT
+BEGIN:VEVENT
+UID:178019@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20270106
+DTEND;VALUE=DATE:20270109
+SUMMARY:2027 서울대학교 대학원생 주도 국제 심포지엄 “Int
+ ergenerational Learning in East Asia” 안내
+LOCATION:서울대학교 중앙도서관(62동)
+DESCRIPTION:서울대학교 대학원 교육학과 평생교육전공은 
+ 연구처의 지원을 받아\, 대학원생들이 기획·운영하는 
+ 국제 심포지엄 NEXTEAFAE 2027 「Intergenerational Learning in East A
+ sia: Reth\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178019
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178019
+END:VEVENT
+END:VCALENDAR

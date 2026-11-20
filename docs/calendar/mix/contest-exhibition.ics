@@ -1,0 +1,163 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SNU Events//Campus Calendar//KO
+CALSCALE:GREGORIAN
+X-WR-CALNAME:서울대 행사 — 대회·공모 · 전시
+X-WR-TIMEZONE:Asia/Seoul
+BEGIN:VTIMEZONE
+TZID:Asia/Seoul
+BEGIN:STANDARD
+DTSTART:19881009T030000
+TZOFFSETFROM:+1000
+TZOFFSETTO:+0900
+TZNAME:KST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:174821@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20260911
+DTEND;VALUE=DATE:20261123
+SUMMARY:[서울대미술관] 〈일상의 이미지\, 어떻게 말을 거
+ 는가〉 전시 안내
+LOCATION:서울대학교미술관 2~3F 전시실 1~4
+DESCRIPTION:[서울대미술관] 〈일상의 이미지\, 어떻게 말을 
+ 거는가〉 전시 안내드립니다.\n원문: https://www.snu.ac.kr/snu
+ now/events?md=v&bbsidx=174821
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=174821
+END:VEVENT
+BEGIN:VEVENT
+UID:174155@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20261123
+SUMMARY:서울대학교 개교 80주년 기념전 《새로운 미래 (New 
+ Horizons)》
+LOCATION:서울대학교미술관
+DESCRIPTION:서울대학교 개교 80주년 기념전 《새로운 미래 (
+ New Horizons)》\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=
+ 174155
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=174155
+END:VEVENT
+BEGIN:VEVENT
+UID:176861@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261014
+DTEND;VALUE=DATE:20261212
+SUMMARY:〈중앙도서관〉 개교 80주년 기념 총동창회와 함께
+ 하는 중앙도서관 특별전 「세대를 잇는 서가」 전시
+LOCATION:62동(중앙도서관 본관) 4층 로비 내 전시 공간
+DESCRIPTION:개교 80주년 기념 총동창회와 함께하는 중앙도
+ 서관 특별전 「세대를 잇는 서가」 전시\n원문: https://www
+ .snu.ac.kr/snunow/events?md=v&bbsidx=176861
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176861
+END:VEVENT
+BEGIN:VEVENT
+UID:176558@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261128
+SUMMARY:[스포츠진흥원]2026학년도 서울대학교 종합체육대
+ 회 개최 안내
+LOCATION:종합운동장\, 보조운동장\, 종합체육관\, 기숙사삼
+ 거리 풋살장\, 본부 테니스코트
+DESCRIPTION:2026학년도 서울대학교 종합체육대회 개최 안내\
+ n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176558
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176558
+END:VEVENT
+BEGIN:VEVENT
+UID:178820@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261130
+SUMMARY:SNU Commons 융합 미디어 작품 공모전 참가 안내
+LOCATION:
+DESCRIPTION:중앙도서관은 SNU Commons의 비전에 따라 학생들이
+  직접 참여하고 함께 만들어가는 창의·융합의 장을 조
+ 성하고자 아래와 같이 공모전을 개최하오니 많은 참여 
+ 바랍니다.\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178
+ 820
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178820
+END:VEVENT
+BEGIN:VEVENT
+UID:179591@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261124
+SUMMARY:[SNU Commons 중앙도서관]「AI Insight: 상상으로 잇는 관
+ 악의 미래」 전시 개최 안내
+LOCATION:SNU Commons 중앙도서관 뉴박스 및 케이브 1
+DESCRIPTION:SNU Commons 중앙도서관은 관악문화재단 산하 미디
+ 어센터관악과 협력해 제2회 첨단 미디어 작품전시회를 
+ 개최하여 새로운 지식 창출의 장을 마련하고\, 대학–지
+ 역사회간 지식·문화 연계를 확대하고자 합니다.\n원문: 
+ https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179591
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179591
+END:VEVENT
+BEGIN:VEVENT
+UID:178934@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261127
+SUMMARY:SNU E&I X SNAAC 더 비기닝 아이디어톤 모집
+LOCATION:몬드리안 서울 이태원 호텔 (서울 용산구 장문로 2
+ 3)
+DESCRIPTION:서울대학교 창업지원단과 SNAAC가 공동으로 AZIT X
+  아이디어톤을 진행합니다!\n원문: https://www.snu.ac.kr/snunow
+ /events?md=v&bbsidx=178934
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178934
+END:VEVENT
+BEGIN:VEVENT
+UID:178475@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261116T183000
+DTEND;TZID=Asia/Seoul:20261116T193000
+SUMMARY:[서울대학교 창업 동아리 SNAAC]🍕 빌더's 피자파티 
+ 참가자 모집!!!
+LOCATION:서울대학교 해동학술문화관 해동홀 (32-1동 1층 강
+ 연장)
+DESCRIPTION:11/16(월) 저녁\, 카카오벤처스와 함께하는 SNAAC 
+ 빌더's 피자파티가 열립니다!\n원문: https://www.snu.ac.kr/snun
+ ow/events?md=v&bbsidx=178475
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178475
+END:VEVENT
+BEGIN:VEVENT
+UID:179234@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261128
+SUMMARY:[중앙도서관]제30회 중앙도서관 작은 전시회 「2026 
+ 서울대학교 서예회 신인전」 개최
+LOCATION:중앙도서관 관정관 1층 관정 갤러리
+DESCRIPTION:우리 도서관은 서울대학교 서예회와 함께 「2026
+  서울대학교 서예회 신인전」을 개최합니다.\n원문: https
+ ://www.snu.ac.kr/snunow/events?md=v&bbsidx=179234
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179234
+END:VEVENT
+BEGIN:VEVENT
+UID:179390@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261120T160000
+DTEND;TZID=Asia/Seoul:20261120T183000
+SUMMARY:제34회 서울대학교 기계공학부 창의공학설계 로보
+ 콘 2026 개최
+LOCATION:서울대학교 해동첨단공학관(303동) 2층 메인홀
+DESCRIPTION:서울대학교 기계공학부에서 '창의공학설계 로
+ 보콘 2026' 행사에 여러분을 초대합니다.\n원문: https://www.
+ snu.ac.kr/snunow/events?md=v&bbsidx=179390
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179390
+END:VEVENT
+BEGIN:VEVENT
+UID:174146@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20270101
+SUMMARY:규장각한국학연구원 개교 80주년 기념 특별전 <250
+ 년의 뜻\, 80년의 길>
+LOCATION:규장각한국학연구원(103동)
+DESCRIPTION:규장각한국학연구원 개교 80주년 기념 특별전 
+ 〈250년의 뜻\, 80년의 길〉\n원문: https://www.snu.ac.kr/snunow/e
+ vents?md=v&bbsidx=174146
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=174146
+END:VEVENT
+END:VCALENDAR

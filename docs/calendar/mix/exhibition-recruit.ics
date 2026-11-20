@@ -1,0 +1,195 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SNU Events//Campus Calendar//KO
+CALSCALE:GREGORIAN
+X-WR-CALNAME:서울대 행사 — 전시 · 모집·안내
+X-WR-TIMEZONE:Asia/Seoul
+BEGIN:VTIMEZONE
+TZID:Asia/Seoul
+BEGIN:STANDARD
+DTSTART:19881009T030000
+TZOFFSETFROM:+1000
+TZOFFSETTO:+0900
+TZNAME:KST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:176327@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20260701
+DTEND;VALUE=DATE:20270901
+SUMMARY:Nature Masterclasses SNU 프로그램 네이처가 만든 연구 
+ 역량 강화 강좌 안내
+LOCATION:온라인(Nature Masterclasses On-demand)
+DESCRIPTION:Nature Masterclasses SNU 프로그램 네이처가 만든 연
+ 구 역량 강화 강좌 안내\n원문: https://www.snu.ac.kr/snunow/even
+ ts?md=v&bbsidx=176327
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176327
+END:VEVENT
+BEGIN:VEVENT
+UID:174821@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20260911
+DTEND;VALUE=DATE:20261123
+SUMMARY:[서울대미술관] 〈일상의 이미지\, 어떻게 말을 거
+ 는가〉 전시 안내
+LOCATION:서울대학교미술관 2~3F 전시실 1~4
+DESCRIPTION:[서울대미술관] 〈일상의 이미지\, 어떻게 말을 
+ 거는가〉 전시 안내드립니다.\n원문: https://www.snu.ac.kr/snu
+ now/events?md=v&bbsidx=174821
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=174821
+END:VEVENT
+BEGIN:VEVENT
+UID:174947@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261006
+DTEND;VALUE=DATE:20261125
+SUMMARY:제14기 평화아카데미 수강생 모집
+LOCATION:
+DESCRIPTION:제14기 평화아카데미 수강생 모집\n원문: https://w
+ ww.snu.ac.kr/snunow/events?md=v&bbsidx=174947
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=174947
+END:VEVENT
+BEGIN:VEVENT
+UID:174155@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20261123
+SUMMARY:서울대학교 개교 80주년 기념전 《새로운 미래 (New 
+ Horizons)》
+LOCATION:서울대학교미술관
+DESCRIPTION:서울대학교 개교 80주년 기념전 《새로운 미래 (
+ New Horizons)》\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=
+ 174155
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=174155
+END:VEVENT
+BEGIN:VEVENT
+UID:176045@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20270127
+SUMMARY:[서울대학교]바이오최고경영자과정(Bio-CEO) 제32기 
+ 모집 안내
+LOCATION:서울대학교 호암교수회관
+DESCRIPTION:서울대학교 생명공학공동연구원은 바이오 산업
+ 의 미래를 함께 이끌어갈 리더를 대상으로 「서울대학
+ 교 바이오최고경영자과정(Bio-CEO) 제32기」를 개설합니다
+ .\n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176045
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176045
+END:VEVENT
+BEGIN:VEVENT
+UID:176861@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261014
+DTEND;VALUE=DATE:20261212
+SUMMARY:〈중앙도서관〉 개교 80주년 기념 총동창회와 함께
+ 하는 중앙도서관 특별전 「세대를 잇는 서가」 전시
+LOCATION:62동(중앙도서관 본관) 4층 로비 내 전시 공간
+DESCRIPTION:개교 80주년 기념 총동창회와 함께하는 중앙도
+ 서관 특별전 「세대를 잇는 서가」 전시\n원문: https://www
+ .snu.ac.kr/snunow/events?md=v&bbsidx=176861
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=176861
+END:VEVENT
+BEGIN:VEVENT
+UID:177653@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261117
+SUMMARY:[사범대 상담실]ADHD 특성 집단상담 프로그램 참여
+ 자 모집
+LOCATION:
+DESCRIPTION:대학생 ADHD 특성 검사 기반 집단상담 프로그램
+ 에 참여해보세요!\n원문: https://www.snu.ac.kr/snunow/events?md=v&
+ bbsidx=177653
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=177653
+END:VEVENT
+BEGIN:VEVENT
+UID:178244@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261028
+DTEND;VALUE=DATE:20261115
+SUMMARY:(사)서울대출판문화원 마케팅팀 직원 채용 공고
+LOCATION:
+DESCRIPTION:(사)서울대출판문화원 마케팅팀 직원 채용 공고
+ \n원문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178244
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=178244
+END:VEVENT
+BEGIN:VEVENT
+UID:179591@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261124
+SUMMARY:[SNU Commons 중앙도서관]「AI Insight: 상상으로 잇는 관
+ 악의 미래」 전시 개최 안내
+LOCATION:SNU Commons 중앙도서관 뉴박스 및 케이브 1
+DESCRIPTION:SNU Commons 중앙도서관은 관악문화재단 산하 미디
+ 어센터관악과 협력해 제2회 첨단 미디어 작품전시회를 
+ 개최하여 새로운 지식 창출의 장을 마련하고\, 대학–지
+ 역사회간 지식·문화 연계를 확대하고자 합니다.\n원문: 
+ https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179591
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179591
+END:VEVENT
+BEGIN:VEVENT
+UID:179009@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20270201
+SUMMARY:해외 인턴십 및 취업 지원 프로그램 참여자 모집
+LOCATION:
+DESCRIPTION:서울대학교 학생들의 글로벌 진출을 지원하기 
+ 위해 글로벌 인턴십 참여 지원사업과 해외 취업 지원사
+ 업을 안내드립니다.\n원문: https://www.snu.ac.kr/snunow/events?md
+ =v&bbsidx=179009
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179009
+END:VEVENT
+BEGIN:VEVENT
+UID:179234@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261128
+SUMMARY:[중앙도서관]제30회 중앙도서관 작은 전시회 「2026 
+ 서울대학교 서예회 신인전」 개최
+LOCATION:중앙도서관 관정관 1층 관정 갤러리
+DESCRIPTION:우리 도서관은 서울대학교 서예회와 함께 「2026
+  서울대학교 서예회 신인전」을 개최합니다.\n원문: https
+ ://www.snu.ac.kr/snunow/events?md=v&bbsidx=179234
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179234
+END:VEVENT
+BEGIN:VEVENT
+UID:179615@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261201
+SUMMARY:2027학년도 LnL 멘토(학부 재학생) 모집 공고
+LOCATION:
+DESCRIPTION:2027학년도 LnL 멘토(학부 재학생) 모집 공고\n원
+ 문: https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179615
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179615
+END:VEVENT
+BEGIN:VEVENT
+UID:179549@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;TZID=Asia/Seoul:20261123T130000
+DTEND;TZID=Asia/Seoul:20261123T140000
+SUMMARY:[경력개발센터]국방과학연구소 채용설명회 안내(11
+ /23)
+LOCATION:공학관 301동 118호
+DESCRIPTION:대한민국 안보의 핵심! 국방과학연구소가 채용
+ 설명회를 진행합니다.\n원문: https://www.snu.ac.kr/snunow/events
+ ?md=v&bbsidx=179549
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=179549
+END:VEVENT
+BEGIN:VEVENT
+UID:174146@snu-events
+DTSTAMP:20261119T210749Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20270101
+SUMMARY:규장각한국학연구원 개교 80주년 기념 특별전 <250
+ 년의 뜻\, 80년의 길>
+LOCATION:규장각한국학연구원(103동)
+DESCRIPTION:규장각한국학연구원 개교 80주년 기념 특별전 
+ 〈250년의 뜻\, 80년의 길〉\n원문: https://www.snu.ac.kr/snunow/e
+ vents?md=v&bbsidx=174146
+URL:https://www.snu.ac.kr/snunow/events?md=v&bbsidx=174146
+END:VEVENT
+END:VCALENDAR
